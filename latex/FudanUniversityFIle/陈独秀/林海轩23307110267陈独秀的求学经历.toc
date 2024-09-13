@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{杭州求中西是书院学习}{3}{0}{1}
+\beamer@sectionintoc {2}{上海协助章士钊主编《国民日报》}{4}{0}{2}
+\beamer@sectionintoc {3}{芜湖创办《安徽俗话报》}{5}{0}{3}
+\beamer@sectionintoc {4}{组织反清秘密革命组织岳王会}{6}{0}{4}
+\beamer@sectionintoc {5}{赴日本留学}{7}{0}{5}
+\beamer@sectionintoc {6}{浙江陆军学堂任教}{8}{0}{6}
+\beamer@sectionintoc {7}{担任安徽省都督府秘书长}{9}{0}{7}
+\beamer@sectionintoc {8}{创办并主编《青年》杂志}{10}{0}{8}
+\beamer@sectionintoc {9}{受聘为北京大学文科学长}{11}{0}{9}
+\beamer@sectionintoc {10}{与李大钊等创办《每周评论》}{12}{0}{10}

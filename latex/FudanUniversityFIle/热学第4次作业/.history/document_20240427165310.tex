@@ -1,0 +1,150 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{caption}
+%\usepackage{newtxmath}
+%\usepackage{txfonts}
+\usepackage{times}
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amssymb, amsgen, amsthm, amscd, amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+%\usepackage{pxfonts}
+\usepackage{bm}
+%\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{Thermodynamics Assignment For The Forth Time}
+
+\author{Haixuan Lin - 23307110267}
+\email{23307110267@m.fudan.edu.cn}
+
+
+\address{Fudan University, Physics Department, China}
+
+\begin{document}
+	
+	\begin{abstract}
+		Here is the thermodynamics assignment for the Forth time which is for the course given by professor Yuanbo Zhang. In order to practise the expertise in scientific film of physics, students need to practise using \LaTeX to composing their own work, even if this is only a ordinary homework.
+	\end{abstract}
+	
+	\maketitle
+	
+	\section*{Main Text}
+
+	\subsection*{Q1}
+
+	\subsubsection*{(1)}
+
+	The number of molecules per unit time per unit area of the impactor wall is.
+
+	$$
+	\varGamma =\frac{1}{4}n\bar{v}
+	$$
+	
+	The relationship between pressure and temperature is established by the mean kinetic energy of the molecules.
+
+	$$
+	p=\frac{1}{3}nm\overline{v^2}
+	$$
+
+	Both work together to eliminate the molecular number density $n$:
+
+	$$
+	\varGamma =\frac{3}{4}\frac{p\bar{v}}{m\overline{v^2}}
+	$$
+
+	Plug in concrete expressions for the two speeds.
+
+	$$
+	\varGamma =\dfrac{3}{4}\dfrac{p\bar{v}}{m\overline{v^2}}=\dfrac{3}{4}\dfrac{p\sqrt{\dfrac{\pi}{8}\frac{kT}{m}}}{m\dfrac{3kT}{m}}=\dfrac{p}{\sqrt{2\pi mkT}}
+	$$
+
+	As a result $\displaystyle\Delta S\varGamma=\frac{p}{\sqrt{2\pi mkT}}.$
+
+	\subsubsection*{(2)}
+
+	By the expression for pressure, since we know that the temperature doesn't change, that is, $\overline{v^2}$ doesn't change, then a reduction in pressure by half is equivalent to a reduction in the number of molecules by half.
+
+	$$
+	\mathrm{d}n=-\frac{1}{V}\Delta S\varGamma \mathrm{d}t=-\frac{1}{V}\frac{p}{\sqrt{2\pi mkT}}\mathrm{d}t=-\frac{1}{V}\frac{\frac{1}{3}nm\overline{v^2}}{\sqrt{2\pi mkT}}\mathrm{d}t=-\frac{\bar{v}\Delta S}{4V}n\mathrm{d}t
+	$$
+
+	$$
+	\frac{\mathrm{d}n}{n}=-\frac{\bar{v}\Delta S}{4V}\mathrm{d}t
+	$$
+
+	$$
+	\ln 2=-\frac{\bar{v}\Delta S}{4V}t_{1/2}
+	$$
+
+	As a result $\displaystyle t_{1/2}=\frac{4V\ln 2}{\bar{v}\Delta S}$.
+
+	\subsection*{Q2}
+
+	Borrowing from the conclusion of the previous question, the theoretical expression of the answer to this question is as follows:
+
+	$$
+	\Delta t=\frac{4V}{\bar{v}\Delta S}\ln \frac{p_0}{p^{\prime}}
+	$$
+
+	Take into the number we get $t=20.78\,\mathrm{s}$.
+
+	\subsection*{Q3}
+
+	We need to borrow a little mathematical skill in order to do this gracefully. As follows, we directly give the volume of the n-dimensional hypersphere:
+
+	$$
+	V_n=\frac{\pi ^{\tfrac{n}{2}}}{\Gamma \left( \cfrac{n}{2}-1 \right)}r^n
+	$$
+
+	The surface area of the N-dimensional hypersphere can be obtained by taking the derivative of the volume.
+
+	$$
+	S_n=\frac{\partial}{\partial r}V_n=\frac{\pi ^{\frac{n}{2}}}{\Gamma \left( \frac{n}{2}-1 \right)}r^n=\frac{n\pi ^{\frac{n}{2}}}{\Gamma \left( \frac{n}{2}-1 \right)}r^{n-1}
+	$$
+\end{document}
+

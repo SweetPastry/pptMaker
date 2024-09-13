@@ -1,0 +1,186 @@
+\documentclass[10pt,a4paper]{book}
+
+\title{标题}
+\author{}
+\date{\today}
+
+\usepackage{ctex} 
+\usepackage{geometry,graphicx,xcolor,color}
+\usepackage{amssymb,amsmath,amsthm}                             % 数学字体
+\usepackage{newpxtext,mathpazo}                                % 采用 Palatino 风格字体
+\usepackage{newclude,ulem}
+\definecolor{winered}{rgb}{0.5,0,0}
+\definecolor{structurecolor}{RGB}{122,122,142}
+\definecolor{main}{rgb}{0.5,0,0}
+\definecolor{second}{RGB}{115,45,2}
+\definecolor{third}{RGB}{0,80,80}
+\usepackage[colorlinks,linkcolor = winered]{hyperref}           % 定义引用的颜色
+
+
+% ------------------------------------------------------------%
+% 定义定理环境
+\usepackage{amsthm}
+\newtheoremstyle{defstyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{main}}{}{0.5em}{\indent 【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+\newtheoremstyle{thmstyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{second}}{}{0.5em}{\indent【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+\newtheoremstyle{prostyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{third}}{}{0.5em}{\indent【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+
+\theoremstyle{thmstyle} %theorem style
+\newtheorem{theorem}{定理}[chapter]
+\theoremstyle{defstyle} % definition style
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{prostyle} % proposition style
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{example}[theorem]{例题}
+
+\renewenvironment{proof}[1][证明]{\par{\kaishu \uline{\textbf{#1.}}} \;\fangsong}{\qed\par}
+\newenvironment{solution}{\par\underline{\textbf{解.}} \;\kaishu}{\par}
+\newenvironment{remark}{\par\underline{\textbf{注.}} \;\fangsong}{\par}
+\newcommand{\intro}[1]{\rightline{\parbox[t]{5cm}{\footnotesize \fangsong\quad\quad #1 }}}
+% ------------------------------------------------------------%
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\color{structurecolor}\arabic*.}
+\setlist[enumerate,2]{label=\color{structurecolor}(\arabic*).}
+\setlist[enumerate,3]{label=\color{structurecolor}\Roman*.}
+\setlist[enumerate,4]{label=\color{structurecolor}\Alph*.}
+
+
+% 设置章形式
+% ---------------------------------- %
+% \setlength{\parindent}{0pt}  	
+\usepackage{titlesec, titletoc}
+\linespread{1.2} 				
+
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+\titlecontents{chapter}[0em]{}{\large \fangsong{第 \thecontentslabel 回\quad}}{}{\hfill\contentspage}
+\titlecontents{section}[2em]{}{\thecontentslabel\quad\textcolor{blue}}{}{\titlerule*{ .} \contentspage}
+
+\titleformat{\chapter}[display]{\Large}
+{\color{structurecolor}\centering\small \color{structurecolor}第 \zhnumber{\arabic{chapter}} \ 回 }{0.5ex}
+{\color{structurecolor}{\titlerule[1pt]}\Large \kaishu \centering \bfseries}
+
+\titleformat{\section}[frame]
+{\normalfont\color{structurecolor}}
+{\footnotesize \enspace \large \textcolor{structurecolor}{\S \,\thesection}\enspace}{6pt}
+{\Large\filcenter \bf \kaishu }
+
+\titlespacing*{\section}{1pc}{*7}{*2.3}[1pc]
+\titleformat{\subsection}[hang]{\bfseries}{
+	\large\bfseries\color{structurecolor}\thesubsection\enspace}{1pt}{%
+	\color{structurecolor}\large\bfseries\filright}
+\titleformat{\subsubsection}[hang]{\bfseries}{
+	\large\bfseries\color{structurecolor}\thesubsubsection\enspace}{1pt}{%
+	\color{structurecolor}\large\bfseries\filright}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{bm}
+\renewcommand{\qedsymbol}{}
+\usepackage{pdfpages}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Aop{\operatornamewithlimits{%
+		\mathchoice{\vcenter{\hbox{\huge K}}}
+		{\vcenter{\hbox{\Large K}}}
+		{\mathrm{K}}
+		{\mathrm{K}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	
+	\begin{titlepage}	
+		% 封面信息
+		\includepdf[pages={1}]{FYBJ.pdf} %曲线救国的思路，外界自建封面，然后调用
+	\end{titlepage}
+	\thispagestyle{empty}
+	
+	\maketitle
+	
+	\tableofcontents
+	
+	
+	\chapter{求极限誓破妖魔，察秋毫妙手回春}
+	
+	
+	
+	\intro{
+		香饽饽同学终于开始写书了, 他很开心, 这是他学习使用\LaTeX的大进步.
+		
+		\rightline{——香饽饽}
+	}
+	
+	\section{离散化连续——一类递推数列估阶通法\textsuperscript{\cite{QLN2021}}}
+	
+	\begin{definition}
+		数列是\bm{整标函数}, 定义域是离散的.
+	\end{definition}
+	
+	\begin{theorem}
+		数列对应的整标函数可以通过如下构造延拓成可导函数：\\
+		$\forall a_n=f(n)$, 用分段多项式$g(x)$进行分段拟合, 保证所有自然数点可导. 让$g(x)$在$[2k-1,2k]$上取次数大于1的多项式函数, 在$(2k,2k+1)$上取一次函数, 区间$[n,n+1]$满足：
+		\begin{align*}
+			g(n)&=a_n \\
+			g(n+1)&=a_{n+1} \\
+			g^\prime(n)&=a_n-a_{n-1} \\
+			g^\prime(n+1)&=a_{n+2}-a_{n+1}
+		\end{align*}
+	\end{theorem}
+	
+	\begin{proposition}
+		若行列式
+		$$
+		\det \left. \left( \begin{matrix}
+			\left( t+1 \right) ^3&		\left( t+1 \right) ^2&		\left( t+1 \right)&		1\\
+			t^3&		t^2&		t&		1\\
+			3\left( t+1 \right) ^2&		2\left( t+1 \right)&		1&		0\\
+			3t^2&		2t&		1&		0\\
+		\end{matrix} \right. \right) 
+		$$
+		的值不为0, 则下面式子是一个符合要求的构造：
+		\begin{align*}
+			g\left( x \right) &=g_{2k}\left( x \right) , &2k<x<2k+1, k\in N^* \\
+			g\left( x \right) &=\left( a_{2k}-a_{2k-1} \right) x+a_{2k-1}, &2k-1\leqslant x\leqslant 2k, k\in N^*
+		\end{align*}
+		
+	\end{proposition}    
+	
+	\begin{proof}
+		将上式代回原方程组, 可以验证符合题意. 
+	\end{proof}
+	\begin{example}
+		设$a_{n+1}=a_n+\frac{1}{a_n}$, 估计$a_n$的主阶.
+	\end{example}
+	\begin{solution}
+		通常有两种方法：
+		\begin{itemize}
+			\item 法一：待定表达式法\footnote{一般情况下，$g(n)$只考虑三种形式：$\alpha\beta^n, \alpha n^\beta, \alpha ln^\beta n$}: \\
+			$
+			\text{设}a_n\sim \alpha \beta ^n, \text{则}\alpha \beta ^{n+1}=\alpha \beta ^n+\frac{1}{\alpha \beta ^n}, \text{整理得}\beta ^{2n}=\frac{1}{\alpha ^2\left( \beta -1 \right)}, \text{不可能}. 
+			$
+			\\
+			$
+			\text{设}a_n\sim \alpha \ln ^{\beta}\beta , \text{则有}\alpha \ln ^{\beta}\left( n+1 \right) =\alpha \ln ^{\beta}n+\frac{1}{\alpha \ln ^{\beta}n}, \text{整理得}\ln ^{\beta}n\left[ \ln ^{\beta}\left( n+1 \right) -\ln ^{\beta}n \right] =\frac{1}{\alpha ^2}, \text{利用}n\rightarrow\infty , \frac{1}{\alpha ^2}=\ln ^{\beta}n\ln ^{\beta}\left( 1+\frac{1}{n} \right) =\left( \frac{\ln n}{n} \right) ^{\beta}\rightarrow 0, \text{不可能}. 
+			$\\
+			$
+			\text{设}a_n\sim \alpha n^{\beta}, \text{则有}\alpha \left( n+1 \right) ^{\beta}=an^{\beta}+\frac{1}{an^{\beta}}, \text{利用等价无穷小展开}, \beta n^{2\beta -1}=\frac{1}{\alpha ^2}, \text{所以}\beta =\frac{1}{2}, \alpha =\sqrt{2}.\ \text{因此}a_n\sim \sqrt{2n}
+			$
+			
+			
+			\item 法二：微分方程法:\\
+			
+			
+		\end{itemize}
+	\end{solution}
+	
+	
+	\bibliographystyle{plain}
+	\bibliography{example.bib}
+\end{document}

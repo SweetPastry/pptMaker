@@ -1,0 +1,180 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{caption}
+%\usepackage{newtxmath}
+%\usepackage{txfonts}
+\usepackage{times}
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amssymb, amsgen, amsthm, amscd, amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+%\usepackage{pxfonts}
+\usepackage{bm}
+%\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{Thermodynamics Assignment For The Third Time}
+
+\author{Haixuan Lin - 23307110267}
+\email{23307110267@m.fudan.edu.cn}
+
+
+\address{Fudan University, Physics Department, China}
+
+\begin{document}
+	
+	\begin{abstract}
+		Here is the thermodynamics assignment for the third time which is for the corse given by professor Yuanbo Zhang. In order to practise the expertise in scientific film of physics, students need to practise using \LaTeX to composing their own work, even if this is only a ordinary homework.
+	\end{abstract}
+	
+	\maketitle
+	
+	\section*{Main Text}
+	
+	\subsection*{5-4}
+	
+	\subsubsection*{(1)}
+	
+	According to the Faraday disk we know that
+	
+	$$
+	E=\dfrac{1}{2}BR^2\omega=\pi NBR^2	
+	$$
+	
+	
+	\subsubsection*{(2)}
+	
+	Assuming that the direction of the magnetic field is perpendicular to the paper and the spokes are rotated clockwise, the direction of the current appears to the external circuit to be from b to a.
+	
+	If any factor be reversed, the direction of current will be reversed too.
+		
+	\subsubsection*{(3)}
+	
+	Let us do some integraty:
+	
+	$$
+	M=\int_0^R{BIr\mathrm{d}r=\frac{1}{2}IBR^2}
+	$$
+	
+	\subsubsection*{(4)}
+	
+	Yes, off course.
+	
+	\subsubsection*{(5)}
+	
+	As the same as above.
+	
+	\subsection*{5-7}
+	
+	\subsubsection*{(1)}
+	
+	When balance is reached, there is
+	
+	$$
+	F_A=mg\sin\theta
+	$$
+	
+	$$
+	F_A=B\cos\theta IL
+	$$
+	
+	$$
+	E=B\cos\theta Lv
+	$$
+	
+	$$
+	I=\dfrac{E}{R}
+	$$
+	
+	As a result $v=\dfrac{mgR\sin\theta}{B^2L^2\cos^2\theta}$.
+	
+	\subsubsection*{(2)}
+	
+	$$
+	P_\text{Gravity}=mg\sin\theta v=\dfrac{m^2g^2R\sin^2\theta}{B^2L^2\cos^2\theta}
+	$$
+	
+	$$
+	P_\text{Joule}=I^2R=\dfrac{E^2}{R}=\dfrac{B^2L^2}{R}v^2=\dfrac{B^2L^2}{R}\dfrac{m^2g^2R^2\sin^2\theta}{B^4L^4\cos^4\theta}=\dfrac{m^2g^2R\sin^2\theta}{B^2L^2\cos^2\theta}
+	$$
+	
+	As a result $P_\text{Gravity}=P_\text{Joule}$, so the result comes from (1) is compatible with the law of energy conservation.
+	
+	\subsection*{5-12}
+	
+	\subsubsection*{(1)}
+	
+	It's easy to know that $\bm{E}(0)=0$ by symmetry.
+	
+	\subsubsection*{(2)}
+	
+	Let us do Ampere loop theorm:
+	
+	$$
+	E\cdot2\Delta y=\dfrac{\mathrm{d}}{\mathrm{d}t}d\Delta yat
+	$$
+	
+	So it has no correlation with $\Delta y$ when $|x|\geqslant\dfrac{d}{2}.$
+	
+	As a result $\bm{E}\left(\dfrac{d}{2}\right)=\dfrac{1}{2}ad\bm{\hat{y}}$.
+	
+	\subsubsection*{(3)}
+	
+	According to the conclution of (2) we know As a result $\bm{E}(d)=\dfrac{1}{2}ad\bm{\hat{y}}$.
+	
+	\subsection*{5-15}
+	
+	\subsubsection*{(1)}
+	
+	We do calculate $E=\dfrac{\mathrm{d}B}{\mathrm{d}t}\pi R^2$, so $\dfrac{\mathrm{d}B}{\mathrm{d}t}=318\,\mathrm{V}.$
+	
+	\subsubsection*{(2)}
+	
+	We can know $N=\dfrac{16\,\mathrm{MeV}}{150\mathrm{eV}}=10^5$ and $S=N\cdot2\pi r=251\,\mathrm{km}.$
+	
+\end{document}
+

@@ -1,0 +1,594 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.15)  1 MAR 2024 17:41
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
+(c:/texlive/2023/texmf-dist/tex/latex/amscls/amsart.cls
+Document Class: amsart 2020/05/29 v2.20.6
+\linespacing=\dimen140
+\normalparindent=\dimen141
+\normaltopskip=\skip48
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen142
+))
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+)
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count185
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count186
+\leftroot@=\count187
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count188
+\DOTSCASE@=\count189
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count190
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count191
+\dotsspace@=\muskip16
+\c@parentequation=\count192
+\dspbrk@lvl=\count193
+\tag@help=\toks17
+\row@=\count194
+\column@=\count195
+\maxfields@=\count196
+\andhelp@=\toks18
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 397
+.
+
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+\copyins=\insert199
+\abstractbox=\box53
+\listisep=\skip52
+\c@part=\count197
+\c@section=\count198
+\c@subsection=\count266
+\c@subsubsection=\count267
+\c@paragraph=\count268
+\c@subparagraph=\count269
+\c@figure=\count270
+\c@table=\count271
+\abovecaptionskip=\skip53
+\belowcaptionskip=\skip54
+\captionindent=\dimen151
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip55
+\thm@postskip=\skip56
+\thm@headsep=\skip57
+\dth@everypar=\toks26
+)
+(c:/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks27
+)
+(c:/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(c:/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count272
+\Gm@cntv=\count273
+\c@Gm@tempcnt=\count274
+\Gm@bindingoffset=\dimen152
+\Gm@wd@mp=\dimen153
+\Gm@odd@mp=\dimen154
+\Gm@even@mp=\dimen155
+\Gm@layoutwidth=\dimen156
+\Gm@layoutheight=\dimen157
+\Gm@layouthoffset=\dimen158
+\Gm@layoutvoffset=\dimen159
+\Gm@dimlist=\toks28
+)
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(c:/texlive/2023/texmf-dist/tex/latex/amsmath/amscd.sty
+Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
+\athelp@=\toks29
+\minaw@=\dimen160
+\bigaw@=\dimen161
+\minCDarrowwidth=\dimen162
+)
+(c:/texlive/2023/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup6
+)
+(c:/texlive/2023/texmf-dist/tex/latex/domitian/domitian.sty
+Package: domitian 
+
+(c:/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(c:/texlive/2023/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+Package: fontaxes 2020/07/21 v1.0e Font selection axes
+LaTeX Info: Redefining \upshape on input line 29.
+LaTeX Info: Redefining \itshape on input line 31.
+LaTeX Info: Redefining \slshape on input line 33.
+LaTeX Info: Redefining \swshape on input line 35.
+LaTeX Info: Redefining \scshape on input line 37.
+LaTeX Info: Redefining \sscshape on input line 39.
+LaTeX Info: Redefining \ulcshape on input line 41.
+LaTeX Info: Redefining \textsw on input line 47.
+LaTeX Info: Redefining \textssc on input line 48.
+LaTeX Info: Redefining \textulc on input line 49.
+)
+(c:/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(c:/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(c:/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks30
+\XKV@tempa@toks=\toks31
+)
+\XKV@depth=\count275
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)))
+(c:/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+Domitian-TLF on inpu
+t line 112.
+
+(c:/texlive/2023/texmf-dist/tex/latex/domitian/T1Domitian-TLF.fd
+File: T1Domitian-TLF.fd 2020/05/25 (autoinst) Font definitions for T1/Domitian-
+TLF.
+)
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/m/n' aliased to
+(Font)              `T1/Domitian-TLF/regular/n' on input line 112.
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/n' will be
+(Font)              scaled to size 10.95pt on input line 112.
+)
+(c:/texlive/2023/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks32
+)
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(c:/texlive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+)
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xy.sty
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing: catcodes,
+docmode, (c:/texlive/2023/texmf-dist/tex/generic/xypic/xyrecat.tex)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen163
+\Y@c=\dimen164
+\U@c=\dimen165
+\D@c=\dimen166
+\L@c=\dimen167
+\R@c=\dimen168
+\Edge@c=\toks33
+\X@p=\dimen169
+\Y@p=\dimen170
+\U@p=\dimen171
+\D@p=\dimen172
+\L@p=\dimen173
+\R@p=\dimen174
+\Edge@p=\toks34
+\X@origin=\dimen175
+\Y@origin=\dimen176
+\X@xbase=\dimen177
+\Y@xbase=\dimen178
+\X@ybase=\dimen179
+\Y@ybase=\dimen180
+\X@min=\dimen181
+\Y@min=\dimen182
+\X@max=\dimen183
+\Y@max=\dimen184
+\lastobjectbox@=\box54
+\zerodotbox@=\box55
+\almostz@=\dimen185
+ direction,
+\d@X=\dimen186
+\d@Y=\dimen187
+\K@=\count276
+\KK@=\count277
+\Direction=\count278
+\K@dXdY=\dimen188
+\K@dYdX=\dimen189
+\xyread@=\read2
+\xywrite@=\write3
+\csp@=\count279
+\quotPTK@=\dimen190
+
+utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks35
+\connectobjectbox@@=\box56
+ objects,
+\styletoks@=\toks36
+ decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
+Package: xy 2013/10/06 Xy-pic version 3.8.9
+
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xyall.tex
+ Xy-pic option: All features v.3.8
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.12 curve,
+\crv@cnt@=\count280
+\crvpts@=\toks37
+\splinebox@=\box57
+\splineval@=\dimen191
+\splinedepth@=\dimen192
+\splinetol@=\dimen193
+\splinelength@=\dimen194
+ circles,
+\L@=\dimen195
+ loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.14 loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xycmtip.tex
+ Xy-pic option: Computer Modern tip extension v.3.7
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xytips.tex
+ Xy-pic option: More Tips extension v.3.11 loaded) loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xyline.tex
+ Xy-pic option: Line styles extension v.3.10
+\xylinethick@=\dimen196
+ loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xyrotate.tex
+ Xy-pic option: Rotate and Scale extension v.3.8 loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xycolor.tex
+ Xy-pic option: Colour extension v.3.11 loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.14
+\Row=\count281
+\Col=\count282
+\queue@=\toks38
+\queue@@=\toks39
+\qcount@=\count283
+\qcount@@=\count284
+\matrixsize@=\count285
+ loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xygraph.tex
+ Xy-pic option: Graph feature v.3.11 loaded) loaded)
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xypdf.tex
+ Xy-pic option: PDF driver v.1.7 Xy-pic pdf driver: `color' extension support
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xypdf-co.tex loaded)
+Xy-pic pdf driver: `curve' extension support
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded)
+Xy-pic pdf driver: `frame' extension support
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xypdf-fr.tex loaded)
+Xy-pic pdf driver: `line' extension support
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xypdf-li.tex loaded)
+Xy-pic pdf driver: `rotate' extension support
+(c:/texlive/2023/texmf-dist/tex/generic/xypic/xypdf-ro.tex loaded) loaded))
+\c@theorem=\count286
+
+(c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count287
+\l__pdf_internal_box=\box58
+)
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/n' will be
+(Font)              scaled to size 9.0pt on input line 56.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 5
+6.
+ (c:/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
+56.
+
+(c:/texlive/2023/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
+56.
+
+(c:/texlive/2023/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
+56.
+
+(c:/texlive/2023/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+
+
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+
+
+(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
+56.
+
+(c:/texlive/2023/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(65.44133pt, 466.62521pt, 65.44133pt)
+* v-part:(T,H,B)=(76.82243pt, 702.78308pt, 65.44133pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=466.62521pt
+* \textheight=702.78308pt
+* \oddsidemargin=-6.82866pt
+* \evensidemargin=-6.82866pt
+* \topmargin=-17.44756pt
+* \headheight=8.0pt
+* \headsep=14.0pt
+* \topskip=10.0pt
+* \footskip=12.0pt
+* \marginparwidth=90.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=7.0pt plus 11.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\c@mv@tabular=\count288
+\c@mv@boldtabular=\count289
+(c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count290
+\scratchdimen=\dimen197
+\scratchbox=\box59
+\nofMPsegments=\count291
+\nofMParguments=\count292
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count293
+\MPscratchDim=\dimen198
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
+\everyMPtoPDFconversion=\toks41
+)
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 56.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 56.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 56.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 56.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 56.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 56.
+Package xypdf Info: Line width: 0.43799pt on input line 56.
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/sc' will be
+(Font)              scaled to size 9.0pt on input line 58.
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/bold/n' will be
+(Font)              scaled to size 10.95pt on input line 62.
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/sc' will be
+(Font)              scaled to size 10.95pt on input line 63.
+LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 
+67.
+ (c:/texlive/2023/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+)
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/it' will be
+(Font)              scaled to size 10.95pt on input line 67.
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/n' will be
+(Font)              scaled to size 8.0pt on input line 72.
+ [1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/20
+23/texmf-dist/fonts/enc/dvips/domitian/a_4ivb7d.enc}{c:/texlive/2023/texmf-dist
+/fonts/enc/dvips/domitian/a_hjkpcv.enc}{c:/texlive/2023/texmf-dist/fonts/enc/dv
+ips/domitian/a_ms3bme.enc}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}]
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/n' will be
+(Font)              scaled to size 6.0pt on input line 73.
+ <xymatrix 4x1
+114>
+Overfull \hbox (3.34811pt too wide) in paragraph at lines 90--93
+ \T1/Domitian-TLF/regular/n/10.95 1.1.\T1/Domitian-TLF/bold/n/10.95 Simplicial 
+and cosim-pli-cial mod-ules.[] \T1/Domitian-TLF/regular/n/10.95 We con-sider th
+e skele-tal cat-e-gory of fi-nite well-ordered
+ []
+
+
+Overfull \hbox (2.47145pt too wide) in paragraph at lines 104--106
+\T1/Domitian-TLF/regular/n/10.95 With this no-ta-tion, right and left $\OT1/zpl
+m/m/n/10.95 ^^A$\T1/Domitian-TLF/regular/n/10.95 -modules re-spec-tively are si
+m-pli-cial and cosim-pli-cial $\U/msb/m/n/10.95 |$\T1/Domitian-TLF/regular/n/10
+.95 -modules. 
+ []
+
+[2]
+Overfull \hbox (2.23131pt too wide) in paragraph at lines 120--121
+\T1/Domitian-TLF/regular/n/10.95 The ex-ten-sion cat-e-gory $\OT1/zplm/m/n/10.9
+5 ^^A\OML/zplm/m/it/10.95 G$ \T1/Domitian-TLF/regular/n/10.95 is called \T1/Dom
+itian-TLF/regular/it/10.95 a crossed sim-pli-cial group\T1/Domitian-TLF/regular
+/n/10.95 . The no-table ex-am-ples in-clude Connes'
+ []
+
+[3]
+Overfull \hbox (7.51295pt too wide) detected at line 173
+\OT1/zplm/m/n/10.95 ^^A = [][](\OML/zplm/m/it/10.95 id[]\OT1/ppl/m/n/10.95 , \O
+ML/zplm/m/it/10.95 ^^[[] [] ^^[[]d[] [] d[] \OMS/zplm/m/n/10.95 j \OML/zplm/m/i
+t/10.95 n \OMS/zplm/m/n/10.95 ^^U \OML/zplm/m/it/10.95 m \OT1/zplm/m/n/10.95 + 
+\OT1/ppl/m/n/10.95 1,  \OML/zplm/m/it/10.95 i[] > [] > i[]\OT1/zplm/m/n/10.95 )
+ \OMS/zplm/m/n/10.95 
+ [][]\OT1/zplm/m/n/10.95 (\OT1/ppl/m/n/10.95 1[], \OML/zplm/m/it/10.95 d[] \OMS
+/zplm/m/n/10.95 j \OML/zplm/m/it/10.95 m \OMS/zplm/m/n/10.95 ^^U \OT1/ppl/m/n/1
+0.95 1\OT1/zplm/m/n/10.95 )
+ []
+
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/it' will be
+(Font)              scaled to size 8.0pt on input line 181.
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/it' will be
+(Font)              scaled to size 6.0pt on input line 181.
+[4] [5]
+Overfull \hbox (2.06042pt too wide) in paragraph at lines 313--314
+[]\T1/Domitian-TLF/bold/n/10.95 Corollary 4.2. []\T1/Domitian-TLF/regular/it/10
+.95 Let $\OML/zplm/m/it/10.95 f[] [] [] X[] \OMS/zplm/m/n/10.95 ! \OML/zplm/m/i
+t/10.95 Y[]$ \T1/Domitian-TLF/regular/it/10.95 be a mor-phism of $\OT1/zplm/m/n
+/10.95 ^^A\OML/zplm/m/it/10.95 G$\T1/Domitian-TLF/regular/it/10.95 -modules. Th
+en the in-duced mor-phism $[][]\OT1/zplm/m/n/10.95 (\OML/zplm/m/it/10.95 f[]\OT
+1/ppl/m/n/10.95 , \U/msb/m/n/10.95 |[]\OT1/zplm/m/n/10.95 )$
+ []
+
+[6] <xymatrix 5x1 214>
+Overfull \hbox (11.17818pt too wide) in paragraph at lines 332--334
+\T1/Domitian-TLF/regular/it/10.95 after we lo-cal-ize each cat-e-gory with re-s
+pect to the cor-re-spond-ing ho-mo-topy equiv-a-lences or quasi-isomorphisms. 
+ []
+
+[7] <xymatrix 4x1 114> (./main.bbl
+LaTeX Font Info:    Font shape `T1/Domitian-TLF/regular/it' will be
+(Font)              scaled to size 9.0pt on input line 4.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+6.
+
+(c:/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+[]\T1/Domitian-TLF/regular/sc/9 E. R. An-toko-letz\T1/Domitian-TLF/regular/n/9 
+, \T1/Domitian-TLF/regular/it/9 Non-abelian Dold-Kan de-com-po-si-tions for sim
+-pli-cial and symmetric-simplicial groups\T1/Domitian-TLF/regular/n/9 .
+ []
+
+[8{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [9])
+[10] (./main.aux) ) 
+Here is how much of TeX's memory you used:
+ 7260 strings out of 476025
+ 100958 string characters out of 5794014
+ 1869382 words of memory out of 5000000
+ 27365 multiletter control sequences out of 15000+600000
+ 564416 words of font info for 153 fonts, out of 8000000 for 9000
+ 1302 hyphenation exceptions out of 8191
+ 71i,15n,76p,3215b,818s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/domitian/Domi
+tian-Bold.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/domitian/Domitian-
+Italic.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/domitian/Domitian-Rom
+an.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c
+:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive
+/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fo
+nts/type1/public/mathpazo/fplmbb.pfb><c:/texlive/2023/texmf-dist/fonts/type1/pu
+blic/mathpazo/fplmr.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/mathpazo
+/fplmri.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
+m10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb><c:/te
+xlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2023/texm
+f-dist/fonts/type1/urw/palatino/uplri8a.pfb><c:/texlive/2023/texmf-dist/fonts/t
+ype1/public/xypic/xyatip10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/x
+ypic/xybtip10.pfb>
+Output written on main.pdf (10 pages, 317618 bytes).
+PDF statistics:
+ 130 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

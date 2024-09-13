@@ -1,0 +1,275 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{caption}
+%\usepackage{newtxmath}
+%\usepackage{txfonts}
+\usepackage{times}
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amssymb, amsgen, amsthm, amscd, amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+%\usepackage{pxfonts}
+\usepackage{bm}
+%\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{Thermodynamics Assignment For The Third Time}
+
+\author{Haixuan Lin - 23307110267}
+\email{23307110267@m.fudan.edu.cn}
+
+
+\address{Fudan University, Physics Department, China}
+
+\begin{document}
+	
+	\begin{abstract}
+		Here is the thermodynamics assignment for the third time which is for the corse given by professor Yuanbo Zhang. In order to practise the expertise in scientific film of physics, students need to practise using \LaTeX to composing their own work, even if this is only a ordinary homework.
+	\end{abstract}
+	
+	\maketitle
+	
+	\section*{Main Text}
+	
+    \subsubsection*{Q1}
+
+    Do an intergral:
+
+    $$
+    \left<\frac{1}{v}\right>=\int_0^{+\infty}{\frac{1}{v}f_{\mathrm{M}}\left( v \right) \mathrm{d}v=4\pi \left( \frac{m}{2\pi kT} \right) ^{\frac{3}{2}}\int_0^{+\infty}{v}\exp \left( -\frac{mv^2}{2kT} \right) \mathrm{d}v}=4\pi \left( \frac{m}{2\pi kT} \right) ^{\frac{3}{2}}\zeta _2\left( \frac{m}{2kT} \right) 
+    $$
+
+	The $\zeta$ means Guass integral:
+	
+	$$
+	\zeta _n\left( a \right) =\int_0^{+\infty}{x^{n-1}\exp \left( -ax^2 \right) \mathrm{d}x}
+	$$
+	
+	It has some properties like
+	
+	\begin{itemize}
+		
+		\item $\displaystyle\zeta _n\left( a \right) =\frac{\Gamma \left( \tfrac{n}{2} \right)}{2a^{\tfrac{n}{2}}}$ is we use $\Gamma$ to present Gamma function like $\displaystyle\Gamma \left( s \right) =\int_0^{+\infty}{x^{s-1}\exp \left( -x \right) \mathrm{d}x}$
+		
+		\item $\displaystyle\zeta _{n+2}\left( a \right) =-\frac{\partial}{\partial a}\zeta _n\left( a \right)$ and with $\displaystyle\zeta _1=\frac{\sqrt{\pi}}{2\sqrt{a}},\,\zeta _2=\frac{1}{2a}$
+		
+	\end{itemize}
+	
+	As a result:
+	
+	$$
+	\left<\frac{1}{v}\right>=\sqrt{\frac{2}{\pi}}\sqrt{\frac{m}{kT}}
+	$$
+	
+	It is very diffrent from $\displaystyle\dfrac{1}{\left<v\right>}=\sqrt{\dfrac{\pi}{8}}\sqrt{\dfrac{m}{kT}}.$ What more we have $\displaystyle\left<\dfrac{1}{v}\right>>\dfrac{1}{\left< v\right>}$.
+	
+    \subsubsection*{Q2}
+
+	Use some conclutions we get from class:
+	
+	\begin{align}
+		M&=\left( \varGamma _1-\varGamma _2 \right) Am_0=\frac{1}{4}A\frac{M^{\mathrm{mol}}}{N_{\mathrm{A}}}\bar{v}\left( n_1-n_2 \right) =\frac{1}{4}A\frac{M^{\mathrm{mol}}}{N_{\mathrm{A}}}\bar{v}\frac{p_1-p_2}{kT}\\
+		&=\frac{1}{4}A\frac{M^{\mathrm{mol}}}{R/k}\frac{1}{kT}\sqrt{\frac{8}{\pi}}\sqrt{\frac{RT}{M^{\mathrm{mol}}}}\left( p_1-p_2 \right) =\sqrt{\frac{M^{\mathrm{mol}}}{2\pi RT}}A\left( p_1-p_2 \right) 
+	\end{align}
+	
+    \subsubsection*{Q3}
+
+	We know that $\displaystyle f_{\mathrm{M}}\left( v_i \right) =\sqrt{\frac{m}{2\pi kT}}\exp \left( -\frac{mv_{i}^{2}}{2kT} \right) $ is correct for $i=x, y, z, w...$ When it comes to two dimension the Maxwell distribution law of velocity:
+	
+	$$
+	f_{\mathrm{M}}\left( v \right) =2\pi vf_{\mathrm{M}}\left( v_x \right) f_{\mathrm{M}}\left( v_y \right) =\frac{mv}{kT}\exp \left( -\frac{mv^2}{2kT} \right) 
+	$$
+	
+	So
+	
+	$$
+	\left. \frac{\mathrm{d}\ln}{\mathrm{d}v}f_{\mathrm{M}}\left( v \right) \right|_{v=v_p}=\frac{1}{v_p}-\frac{mv_p}{kT}=0
+	$$
+	
+	$$
+	v_p=\sqrt{\dfrac{kT}{m}}
+	$$
+	
+	$$
+	v_{\mathrm{rms}}^{2}=\int_0^{+\infty}{v^2f_{\mathrm{M}}\left( v \right) \mathrm{d}v=\frac{m}{kT}\int_0^{+\infty}{v^3\exp \left( -\frac{mv^2}{2kT} \right) \mathrm{d}v=}}\frac{m}{kT}\zeta _4\left( -\frac{m}{2kT} \right) 	
+	$$
+
+	$$
+	v_{\mathrm{rms}}=\sqrt{2}\sqrt{\frac{kT}{m}}
+	$$
+	
+	$$
+	v_{\mathrm{mean}}=\int_0^{+\infty}{vf_{\mathrm{M}}\left( v \right) \mathrm{d}v=\frac{m}{kT}\int_0^{+\infty}{v^2\exp \left( -\frac{mv^2}{2kT} \right) \mathrm{d}v=\frac{m}{kT}\zeta _3\left( -\frac{m}{2kT} \right)}}
+	$$
+	
+	$$
+	v_{\mathrm{mean}}=\sqrt{\frac{\pi}{2}}\sqrt{\frac{kT}{m}}
+	$$
+	
+    \subsubsection*{Q4}
+
+	Solve it by Boltzman distribution:
+	
+	$$
+	p\left( h \right) =p_0\exp \left( -\frac{1}{kT}\left( E\left( h \right) -E\left( 0 \right) \right) \right) 
+	$$
+	
+	$$
+	\frac{E\left( h \right)}{E\left( 0 \right)}=\frac{R_E}{h+R_E}
+	$$
+	
+	$$
+	E\left( 0 \right) =mgR_E
+	$$
+	
+	As a result we have
+	
+	$$
+	p\left( h \right) =p_0\exp \left( -\frac{1}{kT}\frac{h}{h+R_E}mgR_E \right) 
+	$$
+	
+    \subsubsection*{Q5}
+	
+	Because of $\displaystyle v=\sqrt{\frac{2\varepsilon}{m}}$ so we have $\displaystyle\mathrm{d}v=\frac{1}{2}\left( \frac{2\varepsilon}{m} \right) ^{-\tfrac{1}{2}}\frac{2}{m}\mathrm{d}\varepsilon=\frac{1}{m}\sqrt{\frac{m}{2\varepsilon}}\mathrm{d}\varepsilon$.
+	
+	$$
+	f_{\mathrm{M}}\left( v \right) \mathrm{d}v=4\pi v^2\left( \frac{m}{2\pi kT} \right) ^{\tfrac{3}{2}}\exp \left( -\frac{mv^2}{2kT} \right) \mathrm{d}v=4\pi \frac{2\varepsilon}{m}\left( \frac{m}{2\pi kT} \right) ^{\tfrac{3}{2}}\exp \left( -\frac{\varepsilon}{kT} \right) \frac{1}{m}\sqrt{\frac{m}{2\varepsilon}}\mathrm{d}\varepsilon 
+	$$
+	
+	Just clean up the formula:
+	
+	$$
+	f_{\mathrm{M}}\left( v \right) \mathrm{d}v=\frac{2}{\sqrt{\pi}}\left( kT \right) ^{-\tfrac{3}{2}}\varepsilon ^{\tfrac{1}{2}}\exp \left( -\frac{\varepsilon}{kT} \right) \mathrm{d}\varepsilon 
+	$$
+	
+	Let's rewrite the way we write the quantum
+	
+	$$
+	f\left( \varepsilon \right) \mathrm{d}\varepsilon =\frac{2}{\sqrt{\pi}}\left( kT \right) ^{-\tfrac{3}{2}}\varepsilon ^{\tfrac{1}{2}}\exp \left( -\frac{\varepsilon}{kT} \right) \mathrm{d}\varepsilon 
+	$$
+	
+    \subsubsection*{Q6}
+	
+	\subsubsection*{(1)}
+	
+	From the graphic we can know:
+	
+	$$
+	Nf\left( v \right) =\begin{cases}
+		\dfrac{a}{v_0}v\qquad 0\leqslant v\leqslant v_0\\
+		a\qquad \,\,   v_0\leqslant v\leqslant 2v_0\\
+		0\qquad \,\, 2v_0<v\leqslant +\infty\\
+	\end{cases}
+	$$
+	
+	And normalizing condition:
+	
+	$$
+	\int_{\mathbb{R} ^+}{f\left( v \right) \mathrm{d}v=\left( \int_0^{v_0}{+\int_{v_0}^{2v_0}} \right)}f\left( v \right) \mathrm{d}v=1
+	$$
+	
+	According to the equation we have
+	
+	$$
+	a=\dfrac{2N}{3v_0}
+	$$
+	
+	\subsubsection*{(2)}
+	
+	$$
+	N(1.5v_0\sim2v_0)=\int_{1.5v_0}^{2v_0}f(v)\mathrm{d}v=\dfrac{1}{3}N
+	$$
+	
+	\subsubsection*{(3)}
+	
+	$$
+	v_{\mathrm{mean}}=\int_{\mathbb{R} ^+}{vf\left( v \right) \mathrm{d}v=}\int_0^{v_0}{\frac{a}{Nv_0}v^2\mathrm{d}v+\int_{v_0}^{2v_0}{\frac{a}{N}v\mathrm{d}v=}}\frac{11}{9}v_0
+	$$
+	
+    \subsubsection*{Q7}
+
+	\subsubsection*{(1)}
+	
+	Without thinking about it we just do the integral:
+	
+	\begin{align}
+		\Delta N&=N\cdot \int_{0}^{v_{\max}}{f_{\mathrm{M}}\left( v_x \right) \mathrm{d}v_x=}N\cdot \sqrt{\frac{m}{2\pi kT}}\int_0^{v_{\max}}{\exp \left( -\frac{mv_{x}^{2}}{2kT} \right) \mathrm{d}v_x}=\frac{N}{\sqrt{\pi}}\cdot v_{\max}\int_0^{v_{\max}}{\exp \left( -\frac{v_{x}^{2}}{v_{\max}^{2}} \right) \mathrm{d}v_x}\\
+		&=\frac{N}{\sqrt{\pi}}\cdot \int_0^1{\exp \left( -\frac{v_{x}^{2}}{v_{\max}^{2}} \right) \mathrm{d}\frac{v_x}{v_{\max}}}=\frac{N}{\sqrt{\pi}}\int_0^1{\exp \left( -x^2 \right) \mathrm{d}x}=\frac{N}{2}\mathrm{erf}\left( 1 \right) 
+	\end{align}
+	
+	\subsubsection*{(2)}
+	
+	Do as same as above:
+	
+	\begin{align}
+		\int_{v_0}^{+\infty}{f_{\mathrm{M}}\left( v_x \right) \mathrm{d}v_x}&=\dfrac{1}{2}-\int_0^{v_0}{f_{\mathrm{M}}\left( v_x \right) \mathrm{d}v_x}=\dfrac{1}{2}-\frac{1}{\sqrt{\pi}}\frac{1}{v_{\max}}\int_0^{v_0}{\exp \left( -\frac{v_{x}^{2}}{v_{\max}^{2}} \right) \mathrm{d}v_x}\\
+		&=\dfrac{1}{2}-\frac{1}{\sqrt{\pi}}\int_0^{\frac{v_0}{v_{\max}}}{\exp \left( -\frac{v_{x}^{2}}{v_{\max}^{2}} \right) \mathrm{d}\left( \frac{v_x}{v_{\max}} \right)}=\dfrac{1}{2}-\frac{1}{\sqrt{\pi}}\int_0^{x_0}{\exp \left( -x \right) \mathrm{d}x}\\
+		&=\dfrac{1}{2}-\dfrac{1}{2}\mathrm{erf}\left( x_0 \right) 
+	\end{align}
+	
+	As a result $\displaystyle \Delta N=\dfrac{N}{2}(1-\mathrm{erf}(x_0))$.
+	
+	\subsubsection*{(3)}
+	
+	According to $\displaystyle\mathrm{d}\left( x\mathrm{e}^{-x^2} \right) =\mathrm{e}^{-x^2}\mathrm{d}x-2x^2\mathrm{e}^{-x^2}\mathrm{d}x$ we can conclude
+	
+	$$
+	\int_0^{x_0}{x^2\mathrm{e}^{-x^2}\mathrm{d}x=\frac{1}{2}\int_0^{x_0}{\mathrm{e}^{-x^2}\mathrm{d}x-\frac{1}{2}\int_0^{x_0}{\mathrm{d}\left( x\mathrm{e}^{-x^2} \right) =}}}\frac{\sqrt{\pi}}{4}\mathrm{erf}\left( x_0 \right) -\frac{1}{2}x_0\mathrm{e}^{-x_{0}^{2}}	
+	$$
+	
+	Base on this
+	
+	\begin{align}
+		\int_0^{v_0}{f_{\mathrm{M}}\left( v \right) \mathrm{d}v}&=4\pi \left( \frac{m}{2\pi kT} \right) ^{\tfrac{3}{2}}\int_0^{v_0}{v^2\exp \left( -\frac{mv^2}{2kT} \right) \mathrm{d}v}=\frac{4}{\sqrt{\pi}}\frac{1}{v_{\max}^{3}}\int_0^{v_0}{v^2\exp \left( -\frac{v^2}{v_{\max}^{2}} \right) \mathrm{d}v}\\
+		&=\frac{4}{\sqrt{\pi}}\int_0^{\frac{v_0}{v_{\max}}}{\frac{v^2}{v_{\max}^{2}}\exp \left( -\frac{v^2}{v_{\max}^{2}} \right) \mathrm{d}\left( \frac{v}{v_{\max}} \right)}=\frac{4}{\sqrt{\pi}}\int_0^{x_0}{x^2\exp \left( -x^2 \right) \mathrm{d}x}\\
+		&=\mathrm{erf}\left( x_0 \right) -\frac{2}{\sqrt{\pi}}x_0\mathrm{e}^{-x_{0}^{2}}
+	\end{align}
+	
+	As a result $\displaystyle\Delta N=N\left( \mathrm{erf}\left( x_0 \right) -\frac{2}{\sqrt{\pi}}x_0\mathrm{e}^{-x_{0}^{2}}\right) $.
+	
+\end{document}
+

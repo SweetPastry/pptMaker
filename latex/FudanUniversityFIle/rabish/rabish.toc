@@ -1,0 +1,6 @@
+\beamer@sectionintoc {1}{引言}{3}{0}{1}
+\beamer@sectionintoc {2}{正文}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{论述感觉的直观性}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{反驳——感觉的意义可能并非完全不证自明}{5}{0}{2}
+\beamer@subsectionintoc {2}{3}{从其他领域的视角阐释感觉}{6}{0}{2}
+\beamer@sectionintoc {3}{总结}{7}{0}{3}

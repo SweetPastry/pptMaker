@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{前言}{3}{0}{1}
+\beamer@sectionintoc {2}{假设、约定与符号}{7}{0}{2}
+\beamer@sectionintoc {3}{方程推导}{12}{0}{3}
+\beamer@sectionintoc {4}{Python代码实现}{22}{0}{4}

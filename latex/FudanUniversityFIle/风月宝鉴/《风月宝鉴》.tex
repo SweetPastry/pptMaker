@@ -1,0 +1,1108 @@
+\documentclass[10pt,a4paper]{book}
+
+
+\title{\Huge 风月宝鉴}
+\author{香饽饽}
+\newcommand{\publisher}{} % 定义出版社名称
+\date{}
+
+
+
+\usepackage{ctex} 
+\usepackage{geometry,graphicx,xcolor,color}
+\usepackage{amssymb,amsmath,amsthm}                             % 数学字体
+%\usepackage{newpxtext,mathpazo}                                % 采用 Palatino 风格字体
+\usepackage{newclude,ulem}
+\definecolor{winered}{rgb}{0.5,0,0}
+\definecolor{structurecolor}{RGB}{122,122,142}
+\definecolor{main}{rgb}{0.5,0,0}
+\definecolor{second}{RGB}{115,45,2}
+\definecolor{third}{RGB}{0,80,80}
+\usepackage[colorlinks,linkcolor = winered]{hyperref}           % 定义引用的颜色
+
+
+% ------------------------------------------------------------%
+% 定义定理环境
+\usepackage{amsthm}
+\newtheoremstyle{defstyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{main}}{}{0.5em}{\indent 【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+\newtheoremstyle{thmstyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{second}}{}{0.5em}{\indent【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+\newtheoremstyle{prostyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{third}}{}{0.5em}{\indent【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+
+\theoremstyle{thmstyle} %theorem style
+\newtheorem{theorem}{定理}[chapter]
+\theoremstyle{defstyle} % definition style
+\newtheorem{definition}{定义}[chapter]
+\newtheorem{lemma}{引理}[chapter]
+\newtheorem{corollary}{推论}[chapter]
+\theoremstyle{prostyle} % proposition style
+\newtheorem{proposition}{命题}[chapter]
+\newtheorem{example}{例题}[chapter]
+
+\renewenvironment{proof}[1][证明]{\par{\kaishu \uline{\textbf{#1.}}} \;\fangsong}{\qed\par}
+\newenvironment{solution}{\par\underline{\textbf{解.}} \;\kaishu}{\par}
+\newenvironment{remark}{\par\underline{\textbf{注.}} \;\fangsong}{\par}
+\newcommand{\intro}[1]{\rightline{\parbox[t]{5cm}{\footnotesize \fangsong\quad\quad #1 }}}
+% ------------------------------------------------------------%
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\color{structurecolor}\arabic*.}
+\setlist[enumerate,2]{label=\color{structurecolor}(\arabic*).}
+\setlist[enumerate,3]{label=\color{structurecolor}\Roman*.}
+\setlist[enumerate,4]{label=\color{structurecolor}\Alph*.}
+
+
+% 设置章形式
+% ---------------------------------- %
+\setlength{\parindent}{0pt}  	
+\usepackage{titlesec, titletoc}
+\linespread{1.2} 				
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\fancyhead[RO]{\thepage} % 奇数页页码在右上角
+	\fancyfoot[C]{\publisher} % 出版社名称显示在页底中间
+}
+
+\titlecontents{chapter}[0em]{}{\large \fangsong{第 \thecontentslabel\ 回\quad}}{}{\hfill\contentspage}
+\titlecontents{section}[2em]{}{\thecontentslabel\quad\textcolor{blue}}{}{\titlerule*{ .} \contentspage}
+
+\titleformat{\chapter}[display]{\Large}
+{\color{structurecolor}\centering\small \color{structurecolor}第 \zhnumber{\arabic{chapter}}\ 回 }{0.5ex}
+{\color{structurecolor}{\titlerule[1pt]}\Large \kaishu \centering \bfseries}
+
+\titleformat{\section}[frame]
+{\normalfont\color{structurecolor}}
+{\footnotesize \enspace \large \textcolor{structurecolor}{\S \,\thesection}\enspace}{6pt}
+{\Large\filcenter \bf \kaishu }
+
+\titlespacing*{\section}{1pc}{*7}{*2.3}[1pc]
+\titleformat{\subsection}[hang]{\bfseries}{
+	\large\bfseries\color{structurecolor}\thesubsection\enspace}{1pt}{%
+	\color{structurecolor}\large\bfseries\filright}
+\titleformat{\subsubsection}[hang]{\bfseries}{
+	\large\bfseries\color{structurecolor}\thesubsubsection\enspace}{1pt}{%
+	\color{structurecolor}\large\bfseries\filright}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{bm}
+\renewcommand{\qedsymbol}{}
+\usepackage{pdfpages}
+\usepackage{times}% 英文使用Times New Roman
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\DeclareRobustCommand\bigop[1]{%
+	\mathop{\vphantom{\sum}\mathpalette\bigop@{#1}}\slimits@
+}
+\newcommand{\bigop@}[2]{%
+	\vcenter{%
+		\sbox\z@{$#1\sum$}%
+		\hbox{\resizebox{\ifx#1\displaystyle.9\fi\dimexpr\ht\z@+\dp\z@}{!}{$\m@th#2$}}%
+	}%
+}
+\makeatother
+
+\newcommand{\bigK}{\DOTSB\bigop{\mathrm{K}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{colorlinks=false,linkbordercolor=white,allcolors=white,citebordercolor=white,runcolor=white,allcolors=white,filecolor=white,linkcolor=white}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	\pagenumbering{gobble} % 禁用页码计数
+	\begin{titlepage}	
+		% 封面信息
+		\includepdf[pages={1}]{"../EarlyPic/FYBJ"} %曲线救国的思路，外界自建封面，然后调用
+	\end{titlepage}
+
+	\maketitle
+	
+	\pagenumbering{gobble} % 禁用页码计数
+	
+	\frontmatter
+	\begin{center}
+		{\Huge 前言} \\
+	\end{center}
+	\paragraph{}
+	\paragraph{}\quad 本卷为笔者练习使用\LaTeX 、记录大学本科数学学习过程中的所思所学所想而作. 笔者在此提醒读者, \textbf{本卷不是正经的数学读物}, 书中涉及的解题技巧不一定严谨, 请读者自有判断能力.
+	\paragraph{}\quad 笔者只是一名末流985在读的大一新生, 无论是\LaTeX 写作技巧还是数学水平都极其有限, 书中难免有科学性错误, 欢迎各位读者斧正.
+	\paragraph{}\quad 本卷大多数内容非笔者原创, 但都是笔者学习中认为十分精彩的部分, 在此我十分感谢知乎的各位大佬提供的各种天秀命题. 笔者在学习高等数学的时参考的书籍是谢慧民老师的《数学分析习题课讲义》, 本卷中将有很多习题或结论改编自此书.
+	
+	\paragraph{}\quad 安全声明（允许我叠个甲）, 任何人使用此书内容造成的不利情形, 笔者\textbf{概不负责}！
+	
+	\paragraph{}
+	
+	\paragraph{}
+	
+	\hfill \textbf{香饽饽}\quad\quad\enspace\:
+	
+	\hfill \textbf{2023年——2024年}
+	
+	
+	\tableofcontents
+	
+	\clearpage
+	
+	\mainmatter
+	\pagenumbering{arabic} % 开始新的页码计数
+	\setcounter{page}{1} % 设置页码计数为1
+	
+	\chapter{繁计算慎始慎终, 琐化简胆大心细}
+	\section{三角函数与双曲函数}
+	\begin{theorem}
+		(反正切两角和差)设 $0<u,v<1$, 则
+		\begin{equation}
+			\arctan u\pm \arctan v=\arctan\frac{u\pm v}{1\mp uv}
+		\end{equation}
+	\end{theorem}
+	\begin{proof}
+		证明留给读者作为习题.
+	\end{proof}
+	\begin{example}
+		计算
+		$$
+		\pi -\arcsin \frac{2}{\sqrt{17}}-\arctan 4
+		$$
+	\end{example}
+	\begin{solution}
+		由简单的三角函数知识得
+		$$
+		\arcsin \frac{3}{\sqrt{17}}= \arctan \frac{3}{2\sqrt{2}}
+		$$
+		所以
+		\begin{align*}
+			&\pi - \arcsin \frac{2}{\sqrt{17}}- \arctan 4 \\
+			&=\pi -\frac{\pi}{2}+ \arctan \frac{3}{2\sqrt{2}}-\frac{\pi}{2}+ \arctan \frac{1}{4} 
+			= \arctan \frac{\cfrac{3}{2\sqrt{2}}+\cfrac{1}{4}}{1-\cfrac{3}{2\sqrt{2}}\cfrac{1}{4}} \\
+			&= \arctan \frac{51\sqrt{2}+34}{68}
+		\end{align*}
+	\end{solution}
+	    \begin{theorem}
+		\begin{align*}
+			&\arcsin'x=\frac{1}{\sqrt{1-x^2}}&&\arccos'x=-\frac{1}{\sqrt{1-x^2}}&& \arctan'x=\frac{1}{1+x^2} && \mathrm{arccot} 'x=-\frac{1}{1+x^2} \\\\
+			&\mathrm{arsinh}\thinspace x=\ln \left( x+\sqrt{x^2+1} \right)  &&\mathrm{arcosh}\thinspace x=\ln \left( x\pm\sqrt{x^2-1} \right)  &&\mathrm{artanh}\thinspace x=\frac{1}{2}\ln \frac{1+x}{1-x} &&\mathrm{arcoth}\thinspace x=\frac{1}{2}\ln \frac{x+1}{x-1}\\\\
+			&\mathrm{arsinh}' x=\frac{1}{\sqrt{x^2+1}}&&\mathrm{arcosh}' x=\frac{1}{\sqrt{x^2-1}}&&\mathrm{artanh}' x=\frac{1}{1-x^2}&&\mathrm{arcoth}' x=\frac{1}{1-x^2}
+		\end{align*}
+	\end{theorem}
+	\begin{proof}
+		证明留给读者作为习题.
+	\end{proof}
+	\begin{theorem}三角函数与反三角函数通过虚数单位 $\mathrm{i}$ 来构建联系：
+		\begin{align*}
+			\sin \mathrm{i}x&=\mathrm{i}\sinh x\\
+			\cos \mathrm{i}x&=\cosh x
+		\end{align*}
+	\end{theorem}
+	\begin{proof}
+		证明留给读者作为习题.
+	\end{proof}
+	\begin{theorem}
+		(等差角求和公式)
+		\begin{align*}
+			\sum_{N=0}^{n}\sin(\alpha+N\beta)&=\cfrac{\sin\cfrac{n+1}{2}\beta}{\sin\cfrac{\beta}{2}}\sin(\alpha+\frac{n}{2}\beta)\\
+			\sum_{N=0}^{n}\cos(\alpha+N\beta)&=\cfrac{\sin\cfrac{n+1}{2}\beta}{\sin\cfrac{\beta}{2}}\cos(\alpha+\frac{n}{2}\beta)
+		\end{align*}
+	\end{theorem}
+	\begin{proof}
+		证明留给读者作为习题.
+	\end{proof}
+	\section{连分式展开\textsuperscript{\cite{T}}}
+	\begin{definition}
+		称形如
+		$$
+		b_0+\cfrac{a_1}{b_1+\cfrac{a_2}{b_2+\cfrac{a_3}{b_3+\cfrac{a_4}{b_4+\cdots}}}}
+		$$
+		的式子为连分式, 简记为
+	    $$
+	    a_0+\bigK\limits_{N=1}^{n}\dfrac{a_N}{b_N}
+	    $$
+	    
+	\end{definition}
+	\begin{proposition}
+		任何实数可以写作连分式.
+	\end{proposition}
+	\begin{solution}
+		命题是正确的. 注意到
+		$$
+		\sqrt{x}=1+\frac{x-1}{1+\sqrt{x}}
+		$$
+		所以
+		$$
+		\sqrt{x}=1+\cfrac{x-1}{2+\cfrac{x-1}{2+\cfrac{x-1}{2+\cdots}}}
+		$$
+		
+		
+	\end{solution}
+	
+	函数也可以写成连分式的形式, 例如：
+	\begin{align*}
+		\ln \left( x+1 \right) &=x-\cfrac{x^2}{2}+\cfrac{x^3}{3}-\cdots 
+		\\
+		&=\cfrac{x}{1+\cfrac{1}{1-\cfrac{x}{2}+\cfrac{x^2}{3}-\cfrac{x^3}{4}+\cdots}-1}
+		\\
+		&=\cfrac{x}{1+\cfrac{\cfrac{x}{2}-\cfrac{x^2}{3}+\cfrac{x^3}{4}-\cdots}{1-\cfrac{x}{2}+\cfrac{x^2}{3}-\cfrac{x^3}{4}+\cdots}}
+		\\
+		&=\cfrac{x}{1+\cfrac{x}{2+\cfrac{2-x+\cfrac{2x^2}{3}-\cfrac{2x^3}{4}-\cdots}{1-\cfrac{2x}{3}+\cfrac{2x^2}{4}+\cdots}-2}}\\\\
+		&=\dotsb\\\\
+	    &=\cfrac{x}{1+\cfrac{1^2x}{2+\cfrac{1^2x}{3+\cfrac{2^2x}{4+\cfrac{2^2x}{5+\cfrac{3^2x}{6+\cfrac{3^2x}{7+\cdots}}}}}}}
+	\end{align*}
+	连分式展开的强大在于, 其有时可以推出\textbf{\thinspace Pade\thinspace 逼近}, 比如取截断为 $2$, 有
+	$$
+	\ln \left( 1+x \right) \sim \frac{2x}{2+x}
+	$$
+	这就是让高中生爱不释手的\textbf{飘带拟合}, 也就是 $\ln(1+x)$ 的 $[1,1]$ Pade 逼近. 再比如取截断为 $4$ , 得到
+	$$
+	\ln \left( 1+x \right) \sim \frac{3\left( x^2+2x \right)}{x^2+6x+6}
+	$$
+	这就是大名鼎鼎的\textbf{\thinspace Heron\thinspace 平均}.
+	下面给出一些已经被证明了的函数的连分式展开：
+	\begin{itemize}
+		\item Lambert, 1766年得\footnote{逼近度十分高的好公式, 而且不只拟合 $\tan x$ 的第一支}
+		$$
+		\tan x=\cfrac{1}{\cfrac{1}{x}-\cfrac{1}{\cfrac{3}{x}-\cfrac{1}{\cfrac{5}{x}-\cfrac{1}{\cfrac{7}{x}-\cdots}}}}
+		$$
+		\item Lambert, 1770年得
+		$$
+		\tan x=\cfrac{x}{1-\cfrac{x^2}{3-\cfrac{x^2}{5-\cfrac{x^2}{7-\cdots}}}}
+		$$
+		\item Stern, 1833年得\footnote{误差很大而且形式丑陋}
+		$$
+		\sin x=\cfrac{x}{1+\cfrac{x^2}{\left( 2\cdot 3-x^2 \right) +\cfrac{2\cdot 3x^2}{\left( 4\cdot 5-x^2 \right) +\cfrac{4\cdot 5x^2}{\left( 6\cdot 7-x^2 \right) +\cdots}}}}
+		$$
+		\item Gauss, 1812年得
+		$$
+		\tanh x=\cfrac{x}{1+\cfrac{x^2}{3+\cfrac{x^2}{5+\cfrac{x^2}{7+\cdots}}}}
+		$$
+		\item Lambert, 1770年, Lagrange, 1776年, 分别得
+		$$
+		\ln(1+x)=\cfrac{x}{1+\cfrac{1^2x}{2+\cfrac{1^2x}{3+\cfrac{2^2x}{4+\cfrac{2^2x}{5+\cfrac{3^2x}{6+\cfrac{3^2x}{7+\cdots}}}}}}}\quad\quad |x|<1
+		$$
+		\item Lagrange, 1813年得
+		$$
+		\ln \cfrac{1+x}{1-x}=\cfrac{2x}{1-\cfrac{1^2x^2}{3-\cfrac{2^2x^2}{5-\cfrac{3^2x^2}{7-\cfrac{4^2x^2}{9-\cdots}}}}}\quad\quad |x|<1
+		$$
+		\item Lambert, 1770年, Lagrange, 1776年, 分别得
+		$$
+		\mathrm{arc}\tan x=\cfrac{x}{1+\cfrac{1^2x^2}{3+\cfrac{2^2x^2}{5+\cfrac{3^2x^2}{7+\cfrac{4^2x^2}{9+\cdots}}}}}\quad\quad |x|<1
+		$$
+		\item Lagrange, 1776年得
+		$$
+		\left( 1+x \right) ^n=\cfrac{1}{1-\cfrac{nx}{1+\cfrac{\cfrac{1\left( 1+n \right)}{1\cdot 2}x}{1+\cfrac{\cfrac{1\left( 1-n \right)}{2\cdot 3}x}{1+\cfrac{\cfrac{2\left( 2+n \right)}{3\cdot 4}x}{1+\cfrac{\cfrac{2\left( 2-n \right)}{4\cdot 5}x}{1+\cfrac{\cfrac{3\left( 3+n \right)}{5\cdot 6}x}{1+\cdots}}}}}}}\quad\quad |x|<1
+		$$
+		\item Laplace, 1805年, Legendre, 1846年, 分别得\footnote{概率与统计中会用到}
+		$$
+		\int_0^x{e^{-t^2}\mathrm{d}t=\cfrac{\sqrt{\pi}}{2}-\cfrac{\cfrac{1}{2}e^{-x^2}}{x+\cfrac{1}{2x+\cfrac{2}{x+\cfrac{3}{2x+\cfrac{4}{x+\cdots}}}}}}\quad\quad x>0
+		$$
+		\end{itemize}
+		\begin{theorem}
+			常规连分式(偏分子都是 $1$ ) $\displaystyle a_0+\bigK_{n=1}^{\infty}\frac{1}{a_n}\ (a_n>0)$ 收敛的充要条件是:正项级数
+			$$
+			\sum_{n=1}^{\infty}a_n<\infty
+			$$
+		\end{theorem}
+		\begin{proof}
+			证明留给读者作为习题.
+		\end{proof}
+		\begin{theorem}
+			正规连分式(偏分母都是整数的常规连分式)是有理数的充要条件是式子最终截断有限.
+		\end{theorem}
+		\begin{proof}
+			证明留给读者作为习题.
+		\end{proof}
+		\section{母函数}
+		\begin{definition}
+			对数列 $\{a_n\}$ 而言, 用其每一项作为一个幂函数的系数构成的函数
+			$$
+			f\left( x \right) =\sum_{N=0}^n{a_Nx^N}=a_0x^0+a_1x^1+a_2x^2+\cdots +a_nx^n
+			$$
+			成为该数列的母函数.
+		\end{definition}
+		\begin{theorem}
+			\textbf{(\,Abel\,第一定理)}\ 若复变级数 $\displaystyle\sum_{N=0}^{\infty}c_n(z-a)^N$ 在某点 $z_0$ 收敛, 则在以 $a$ 为圆心, $|z_0-a|$ 为半径的圆内此级数都绝对收敛, 在圆 $|z_0-a|\leqslant r\ (r<|z_0-a|)$ 中一致收敛.
+		\end{theorem}
+		\begin{proof}
+			证明留给读者作为习题.
+		\end{proof}
+		\begin{example}
+			计算级数求和
+			$$
+			S=\sum\limits_{n=1}^{\infty}\frac{n^2}{2^n}
+			$$
+			
+		\end{example}
+		\begin{solution}
+			$$
+			f\left( x \right) =\frac{1}{1-x}=\sum_{n=1}^{\infty}{x^n}
+			$$
+			$$
+			x\left( xf\left( x \right) \right) ^{\prime}=\sum_{n=1}^{\infty}{n^2x^n}
+			$$
+			代入 $\displaystyle x=\frac{1}{2}$, 得 $S=6$.
+		\end{solution}
+		\begin{example}
+			计算级数求和
+			$$
+			S=\sum_{n=1}^{\infty}{\frac{1}{n\left( 3n+1 \right)}}
+			$$
+		\end{example}
+		\begin{solution}
+			构造母函数
+			$$
+			M\left( x \right) =\sum_{n=1}^{\infty}{\left( \frac{x^{3n}}{3n}-\frac{x^{3n+1}}{3n+1} \right)}\quad\quad 0<x<1
+			$$
+			那么有
+			$$
+			M'\left( x \right) =\sum_{n=1}^{\infty}{\left( x^{3n-1}-x^{3n} \right)}=\frac{x^2}{1-x^3}-\frac{x^3}{1-x^3}
+			$$
+			$$
+			M\left( x \right) =\int{M^{\prime}\left( x \right) \mathrm{d}x=x-\frac{1}{2}\ln \left( 1+x+x^2 \right) -\frac{1}{\sqrt{3}}\mathrm{arctan} \left( \frac{2}{\sqrt{3}}x+\frac{1}{2} \right) +C}
+			$$
+			考虑到 $M(0)=0$, 因此 $\displaystyle C=\frac{\pi}{6\sqrt{3}}$. 所以
+			$$
+			S=3\lim_{x\to 1^-}M(x)=9-\frac{9}{2}\ln3-\frac{\sqrt{3}}{2}\pi
+			$$
+			值得注意的是, 不构造母函数 $S(x)=\displaystyle\sum_{n=1}^{\infty}(\frac{x^{n}}{n}-\frac{x^{3n+1}}{3n+1})$ 是因为两部分分子的幂的公差不同, 会导致收敛域的问题. 读者可以自行尝试.
+		\end{solution}
+		\section{离散微积分}
+			\begin{definition}
+				(前向差分)\ 对于数列 $f(x_n)$ 定义算符 $\Delta$ 的作用为
+				$$
+				\Delta f(x_n)=f(x_{n+1})-f(x_n)
+				$$
+				当 $\Delta$ 作用的表达式有多个变量时, 仿造偏微分的记号规定
+				$$
+				\Delta_nf(x_{n,m,\cdots})=f(x_{n+1,m,\cdots})-f(x_{n,m,\cdots})
+				$$
+			\end{definition}
+			\begin{definition}
+				归纳地定义高阶差分
+				$$
+				\Delta^ka_n=\Delta(\Delta^{k-1}a_n)
+				$$
+			\end{definition}
+			\begin{theorem}\textbf{(\,Leibniz\,公式)}
+				$$
+				\Delta^ka_n=\sum_{N=0}^{k}C_k^N(-1)^{k-N}a_{n+N}
+				$$
+			\end{theorem}
+			\begin{theorem}
+				$$
+				\Delta \left( \alpha a_n+\beta b_n \right) =\alpha \Delta a_n+\beta \Delta b_n
+				$$
+				$$
+				\Delta \left( a_nb_n \right) =\Delta a_nb_{n+1}+a_n\Delta b_n=\Delta a_nb_n+a_{n+1}\Delta b_n
+				$$
+				$$
+				\Delta \left( \frac{a_n}{b_n} \right) =\frac{\Delta a_nb_n-a_n\Delta b_n}{b_{n+1}b_n}
+				$$
+			\end{theorem}
+			值得注意的是, 没有类似复合函数求导公式的差分公式.
+			\begin{definition}
+				(不定求和)\quad
+				$$
+				\Delta_n\left( \sum_{n}a_n\right)=a_n 
+				$$
+				不至于混淆的时候下标 $n$ 可以省略, 为了凑得和不定积分像一点, 做一个等价变形
+				$$
+				\Delta\left( \sum_{} a_n\Delta n\right)=a_n
+				$$
+			\end{definition}
+			\begin{corollary}
+				$$
+				\sum_{f(n)}\Delta_{f(n)}a_n=a_n+C
+				$$
+				注意 $C$ 不一定是常数, 只要差分为 0 就行. 读者试着自己举一个例子.
+			\end{corollary}
+			\begin{corollary}
+				$$
+				\sum a_{n+1}-\sum a_n=a_n\Longleftrightarrow\sum a_{n+1}=\sum a_n+a_n
+				$$
+			\end{corollary}
+			\begin{definition}
+				(原数列)\ 若 $\Delta F(n)=f(n)$ 在所考究区间内总是成立的, 就称 $F(n)$ 为 $f(n)$ 的原数列.
+			\end{definition}
+	\chapter{求极限誓破妖魔, 察秋毫奇手回春}
+	\intro{
+		香饽饽同学终于开始写书了, 他很开心, 这是他学习使用\LaTeX 的大进步.
+		
+		\rightline{——香饽饽}
+	}
+	
+	\section{离散化连续——一类递推数列估阶通法\textsuperscript{\cite{QLN2021}}}
+	
+	\begin{definition}
+		数列是\textbf{整标函数}, 定义域是离散的.
+	\end{definition}
+	
+	\begin{theorem}
+		数列对应的整标函数可以通过如下构造延拓成可导函数：\\
+		$\forall a_n=f(n)$, 用分段多项式 $g(x)$ 进行分段拟合, 保证所有自然数点可导.让 $g(x)$ 在 $[2k-1, 2k]$ 上取次数大于 $1$ 的多项式函数, 在 $(2k,2k+1)$ 上取一次函数, 区间 $[n, n+1]$ 满足：
+		\begin{align*}
+			g(n)&=a_n \\
+			g(n+1)&=a_{n+1} \\
+			g^\prime(n)&=a_n-a_{n-1} \\
+			g^\prime(n+1)&=a_{n+2}-a_{n+1}
+		\end{align*}
+	\end{theorem}
+	
+	\begin{proposition}
+		若行列式
+		$$
+		\det \left. \left( \begin{matrix}
+			\left( t+1 \right) ^3&		\left( t+1 \right) ^2&		\left( t+1 \right)&		1\\
+			t^3&		t^2&		t&		1\\
+			3\left( t+1 \right) ^2&		2\left( t+1 \right)&		1&		0\\
+			3t^2&		2t&		1&		0\\
+		\end{matrix} \right. \right) 
+		$$
+		的值不为 $0$, 则下面式子是一个符合要求的构造：
+		\begin{align*}
+			g\left( x \right) &=g_{2k}\left( x \right) , &2k<x<2k+1, k\in N^* \\
+			g\left( x \right) &=\left( a_{2k}-a_{2k-1} \right) x+a_{2k-1}, &2k-1\leqslant x\leqslant 2k, k\in N^*
+		\end{align*}
+		
+	\end{proposition}    
+	
+	\begin{proof}
+		将上式代回原方程组, 可以验证符合题意. 
+	\end{proof}
+	\begin{example}
+		设 ${a_n}$ 满足$$a_{n+1}=a_n+\frac{1}{a_n}$$估计 $a_n$ 的主阶.
+	\end{example}
+	\begin{solution}
+		通常有两种方法：
+		\begin{itemize}
+			\item 法一 (待定表达式法)\footnote{一般情况下, $g(n)$ 只考虑三种形式：$\alpha\beta^n,\alpha n^\beta,\alpha \ln^\beta n$}: 设$$a_n\sim \alpha \beta ^n$$则$$\alpha \beta ^{n+1}=\alpha \beta ^n+\frac{1}{\alpha \beta ^n}$$整理得$$\beta ^{2n}=\frac{1}{\alpha ^2\left( \beta -1 \right)}$$不可能
+			
+			设$$a_n\sim \alpha \ln ^{\beta}\beta$$则有$$\alpha \ln ^{\beta}\left( n+1 \right) =\alpha \ln ^{\beta}n+\frac{1}{\alpha \ln ^{\beta}n}$$整理得$$\ln ^{\beta}n\left[ \ln ^{\beta}\left( n+1 \right) -\ln ^{\beta}n \right] =\frac{1}{\alpha ^2}$$利用 $n\rightarrow\infty$$$\frac{1}{\alpha ^2}=\ln ^{\beta}n\ln ^{\beta}\left( 1+\frac{1}{n} \right) =\left( \frac{\ln n}{n} \right) ^{\beta}\rightarrow 0$$不可能. 
+		
+			设$$a_n\sim \alpha n^{\beta}$$则有$$\alpha \left( n+1 \right)^{\beta}=an^{\beta}+\frac{1}{an^{\beta}}$$利用等价无穷小展开$$\beta n^{2\beta -1}=\frac{1}{\alpha ^2}$$所以$$\beta =\frac{1}{2},\alpha =\sqrt{2}$$因此$$a_n\sim \sqrt{2n}$$
+			
+			
+			\item 法二：微分方程法：当 $n\rightarrow \infty$ 时
+			$$
+			a_{n+1}-a_n=\Delta a_n\sim \frac{\mathrm{d} a_n}{\mathrm{d} n}
+			$$
+			而
+			$$
+			\Delta a_n=\frac{1}{a_n}
+			$$
+			解这个微分方程就能得到$$a_n\sim \sqrt{2n}$$当然解的形式需要是脚注中的那三种之一, 否则解可能不符合题意.
+			
+		\end{itemize}
+	\end{solution} 
+	\paragraph{微分方程法为什么可以这样使用, 正是因为离散化连续与中值定理的搭配使用, 这也解释了为什么 $g(n)$ 一般只有这三种形式.}
+	\begin{proposition}
+		设 $g\left( x \right)$ 是脚注给出的三种函数, $\xi \in \left( x-1, x+1 \right)$, 则$$\lim\limits _{x\rightarrow +\infty}\frac{g^{\left( k \right)}\left( \xi \right)}{g^{\left( k \right)}\left( x \right)}=c, k\geqslant 1$$.
+	\end{proposition}
+	\begin{proof}
+		留给读者作为习题.
+	\end{proof}
+	
+	\section{证明通法\textsuperscript{\cite{QLN2021}}}
+	\begin{example}
+		证明：若 ${a_n}$ 满足$$a_{n+1}=a_n+\frac{1}{a_n}$$ 则$$\lim\limits_{n\rightarrow+\infty}\frac{a_n}{\sqrt{2n}}=1$$
+	\end{example}
+	\begin{proof}
+		设$$a_n=f\left( n \right) =\sqrt{2n+h\left( n \right)}$$只需证$$\lim\limits _{n\rightarrow +\infty}\frac{h\left( n \right)}{n}=0$$用前文给出的通法延拓 $h\left( n \right)$ 至 $H\left( x \right)$ 由 L' Hospital 法则, 只需证$$\lim\limits_{x\rightarrow +\infty} H\left( x \right) =0$$根据递推式
+		$$
+		f\left( n+1 \right) =f\left( n \right) +\frac{1}{f\left( n \right)}
+		$$
+		由 Lagrange 中值定理得
+		$$
+		f^{\prime}\left( \xi \right) =\frac{1}{f\left( n \right)}\quad\xi \in \left( n,n+1 \right) 
+		$$
+		而
+		$$
+		f^{\prime}\left( \xi \right) =\frac{2+H^\prime\left( x \right)}{2f\left( \xi \right)}
+		$$
+		所以
+		$$
+		H^{\prime}\left( x \right) =2\frac{f\left( \xi \right)}{f\left( x \right)}-2
+		$$
+		只需证
+		$$
+		\lim\limits_{n\rightarrow\infty}\frac{f(\xi)}{f(n)}=1
+		$$	
+		根据夹逼定理
+		$$
+		\frac{f\left( n \right)}{f\left( n \right)}\leqslant \frac{f(\xi )}{f(n)}\leqslant \frac{f\left( n+1 \right)}{f\left( n \right)}
+		$$
+		就可以证明了.
+	\end{proof}
+	\section{$\mathcal{O}$和$o$\ \textemdash \ Landau\,记号\textsuperscript{\cite{PCD}}}
+	\begin{definition}
+		若
+		$$
+		\lim_{x\rightarrow x_0} \frac{f\left( x \right)}{g\left( x \right)}=0\quad\quad(-\infty\leqslant x_0\leqslant+\infty)
+		$$
+		记\footnote{若求取极限的时候 $\varepsilon$ 依赖某一参数(比如 $m$ ),常用 $o_m(\dotsb)$ 代替 $o(\dotsb)$ }
+		$$
+		f(x)=o(g(x))\quad\quad x\rightarrow x_0
+		$$
+		若
+		$$
+		\lim_{x\rightarrow x_0} \frac{f\left( x \right)}{g\left( x \right)}=1\quad\quad(-\infty\leqslant x_0\leqslant+\infty)
+		$$
+		记
+		$$
+		f(x)\sim g(x)\quad\quad x\rightarrow x_0
+		$$
+		设 $g(x)>0$, 若 $\exists A\in R^+,\ s.t.$
+		$$
+		|f\left( x \right) |\leqslant Ag\left( x \right) \quad\quad x\in(a,b)\quad\quad(-\infty\leqslant a,b\leqslant+\infty)
+		$$
+		记\footnote{记 $A$ 叫做“ $\mathcal{O}$ 常数”,若 $A$ 与某一参数(比如 $m$ )有关, 常用 $\mathcal{O}_m(\dotsb)$ 代替 $\mathcal{O}(\dotsb)$ }
+		$$
+		f(x)=\mathcal{O}(g(x))\quad\quad x\in(a,b)\quad\quad(-\infty\leqslant a,b\leqslant+\infty)
+		$$
+		$f,g$ 可以离散化为 $a_n,b_n$, 上述定义依旧可以使用.
+	\end{definition}
+	\begin{proposition}
+		$n$ 个 $\mathcal{O}\left(\frac{1}{n}\right)$ 的和是 $\mathcal{O}(1)$.
+	\end{proposition}
+	\begin{solution}
+		这个命题是错误的. 最致命的错误在于这个命题描述的构造要求数列的个数随下标 $n$ 的改变而改变. 一个反例\footnote{笔者在这里存在疑问,这种构造当参数 $m$ 取依赖自变量 $n$ 的值时不一定是 $\mathcal{O}(\frac{1}{n})$, 比如 $m=n$, 当然这就是所谓的数列个数随下标变化带来的问题, 因为构造的时候就认为 $m$ 是独立于 $n$ 的参数.}就是
+		$$
+		a_{n}^{\left( m \right)}=\frac{m}{n}
+		$$
+	\end{solution}
+	\begin{proposition}
+		若 $a_n=\mathcal{O}(\frac{1}{n})$, 则$$S_n=\sum\limits_{N=1}^n{a_n=a_1+a_2+\dotsb+a_n=\mathcal{O} \left( 1 \right)}$$
+	\end{proposition}
+	\begin{solution}
+		这个命题也是错误的. 一个显然的反例是 $a_n=\ln n$
+	\end{solution}
+	\begin{proposition}
+		$N$ 个 $\mathcal{O}(\frac{1}{n})$ 的和是 $\mathcal{O}(1)$.
+	\end{proposition}
+	\begin{solution}
+		这个命题是正确的, 而且是显然的, 证明留给读者作为习题.
+	\end{solution}
+	\begin{theorem}
+		(运算法则)\begin{itemize}
+			\item \textbf{法则1\quad (有界量是无穷大的低阶)}\quad$f(x)=\infty,\varphi(x)=\mathcal{O}(1),x\rightarrow x_0,-\infty\leqslant x_0 \leqslant+\infty\Longrightarrow \varphi(x)=o(f(x))$
+			\item \textbf{法则2\quad ($\mathcal{O}$吸收$\mathcal{O}$)}\quad$f(x)=\mathcal{O}(\varphi),\varphi=\mathcal{O}(\psi)\Longrightarrow f(x)=\mathcal{O}(\psi)$
+			\item \textbf{法则3\quad($o$吸收$\mathcal{O}$)}\quad$f(x)=\mathcal{O}(\varphi),\varphi=o(\psi)\Longrightarrow f(x)=o(\psi)$
+			\item \textbf{法则4\quad ($\mathcal{O}$乘法结合律)}\quad$\mathcal{O}(f)+\mathcal{O}(g)=\mathcal{O}(f+g)$
+			\item \textbf{法则5\quad ($o$乘法结合律)}\quad$o(f)+o(g)=o(|f|+|g|)$
+			\item \textbf{法则6\quad ($\mathcal{O}$加法吸收率)}\quad$\mathcal{O}(f)+o(f)=\mathcal{O}(f)$
+			\item \textbf{法则7\quad ($o$乘法吸收律)}\quad$o(1)\mathcal{O}(f)=\mathcal{O}(1)o(f)=o(f)$
+			\item \textbf{法则8\quad (高阶小的积等于积的高阶小)}\quad$o(f)\cdot o(g)=o(fg)$
+			\item \textbf{法则9\quad (控制的积等于积的控制)}\quad$\mathcal{O}(f)\cdot \mathcal{O}(g)=\mathcal{O}(fg)$
+			\item \textbf{法则10\quad (控制的幂等于幂的控制)}\quad$[\mathcal{O}(f)]^k=\mathcal{O}_k(f^k)$
+			\item \textbf{法则11\quad (高阶小的 Riemann 积分等于 Riemann 积分的高阶小)}\quad 若 $f(x)$,$g(x)>0$, $f(x)=o(g(x)),\  x\rightarrow\infty$, 则
+			$$
+			\int_A^B{f\left( x \right) \mathrm{d}x=o\left( \int_A^B{g\left( x \right)}\mathrm{d}x \right)}\quad\quad B>A\rightarrow\infty
+			$$
+			特别的, 若 $\exists A_0, \ s.t.\displaystyle\int_{A_0}^{\infty}g(x)\mathrm{d}x<\infty$, 则 
+			$$
+			\int_A^\infty{f\left( x \right) \mathrm{d}x=o\left( \int_A^\infty{g\left( x \right)}\mathrm{d}x \right)}\quad\quad B>A\rightarrow\infty
+			$$
+			将 $f,g$ 离散化为 $a_n,b_n$ 结论依旧成立.
+		\end{itemize}
+	\end{theorem}
+	\begin{proof}
+		留给读者作为习题.
+	\end{proof}
+	\begin{corollary}
+		\textbf{(传递性)}\quad$\mathcal{O}(\mathcal{O}(f))=\mathcal{O}(1)\mathcal{O}(f)=\mathcal{O}(f),o(o(f))=o(1)o(f)=o(f)$
+	\end{corollary}
+	\begin{corollary}
+		\textbf{(有限可加乘性)}
+		\begin{align*}
+			\sum_{N=1}^n{\mathcal{O} \left( f_N \right)}&=\mathcal{O} _n\left( \sum_{N=1}^n{f_N} \right) 
+			\\
+			\prod_{N=1}^n{\mathcal{O} \left( f_N \right)}&=\mathcal{O} _n\left( \prod_{N=1}^n{f_N} \right) 
+			\\
+			\sum_{N=1}^n{o\left( f_N \right)}&=o_n\left( \sum_{N=1}^n{|f_N|} \right) 
+			\\
+			\prod_{N=1}^n{o\left( f_N \right)}&=o_n\left( \prod_{N=1}^n{|f_N|} \right) \quad\quad n<\infty
+		\end{align*}
+	\end{corollary}
+	\begin{proposition}
+		$$
+		f\left( x \right) =o\left( g\left( x \right) \right) \Longrightarrow \int_a^b{f\left( x \right) \mathrm{d}x=o}\left( \int_a^b{g\left( x \right) \mathrm{d}x} \right) 
+		$$
+	\end{proposition}
+	\begin{solution}
+		这个命题是错误的. $o$ 是局部性质, 积分是正测度区间运算.
+	\end{solution}
+	\begin{proposition}
+		$$
+		f\left( x \right) =\mathcal{O} \left( g\left( x \right) \right) \Longrightarrow \int_a^b{f\left( x \right) \mathrm{d}x=\mathcal{O}}\left( \int_a^b{g\left( x \right) \mathrm{d}x} \right) 
+		$$
+	\end{proposition}
+	\begin{solution}
+		这个命题可能是错误的. 积分区间如果满足 $\mathcal{O}$ 定义时候的不等式命题才是正确的.
+	\end{solution}
+	\begin{proposition}
+		$$
+		a_n=\mathcal{O} \left( b_n \right) \Longrightarrow \sum_{N=1}^n{a_N=\mathcal{O} \left( \sum_{N=1}^n{b_N} \right)}
+		$$
+	\end{proposition}
+	\begin{solution}
+		这个命题是正确的.
+	\end{solution}
+	\begin{example}
+		判断反常积分
+		$$
+		\int_1^{\infty}{\frac{x^m\mathrm{arctan} x}{2+x^n}\mathrm{d}x}\quad\quad n>0
+		$$
+		的敛散性.
+	\end{example}
+	\begin{solution}
+		因为
+		$$
+		\int_1^{\infty}{\frac{x^m\arctan x}{2+x^n}\mathrm{d}x}\sim \frac{\pi}{2}x^{m-n}\left( 1+o\left( 1 \right) \right) \quad\quad n>0\quad\quad x\rightarrow\infty
+		$$
+		所以当 $n-m>1$ 时收敛, $n-m\leqslant1$ 时发散.
+	\end{solution}
+	\begin{theorem}
+		\textbf{(高阶小的反常积分等于反常积分的高阶小)}\ 设 $g(x)>0$, $f(x)=o(g(x))$, $x\rightarrow\infty$，且 $\displaystyle\int_{a}^{\infty }g(x)\mathrm{d}x$ 发散, 则
+		$$
+		\int_a^x{f\left( t \right) \mathrm{d}t=o\left( \int_a^x{g\left( t \right) \mathrm{d}t} \right)}\quad\quad x\rightarrow\infty
+		$$
+		将 $f$,$g$ 离散化为 $a_n$,$b_n$ 结论依旧成立.
+	\end{theorem}
+	\begin{proof}
+		此处给出潘承洞老师书上的证明:
+		
+		先严格表述离散化情形：设 $b_n>0$, $\sum\limits_{n=1}^{\infty}b_n=\infty$ 且 $a_n=o(b_n)$, $n\rightarrow\infty$, 则
+		$$
+		\sum_{n=1}^N{a_n=o\left( \sum_{n=1}^N{b_n} \right)}\quad\quad N\rightarrow\infty
+		$$
+		
+		再给出离散情形的证明：
+		
+		用$K_n$表示使
+		$$
+		\sum_{n=1}^k{b_n<\sqrt{\sum_{N=1}^n{b_N}}}
+		$$
+		成立的最大整数 $k$, 则
+		$$
+		K_n\rightarrow\infty\quad\quad n\rightarrow\infty
+		$$
+		于是
+		\begin{align*}
+			|\sum_{N=1}^n{a_N}|&=\mathcal{O} \left( 1 \right) \sum_{N=1}^{K_n}{b_N}+o\left( 1 \right) \sum_{N=K_n}^n{b_N}
+			\\
+			&=\mathcal{O} \left( 1 \right) \sqrt{\sum_{N=1}^n{b_N}}+o\left( 1 \right) \sum_{N=1}^n{b_N}
+			\\
+			&=o\left( 1 \right) \sum_{N=1}^n{b_N}
+		\end{align*}
+	\end{proof}
+	\begin{corollary}
+		设 ${b_n}$ 是正数数列, $a_n=o(b_n)$，
+		$$
+		f\left( x \right) =\sum_{n=0}^{\infty}{a_nx^n\quad \quad g\left( x \right) =}\sum_{n=0}^{\infty}{b_nx^n}
+		$$
+		又设当 $0\leqslant x<1$ 时, 级数
+		$$
+		\sum_{n=0}^{\infty}{b_nx^n}<\infty 
+		$$
+		并且
+		$$
+		\lim\limits_{x\rightarrow 1^-}\sum_{n=0}^{\infty}{b_nx^n}\rightarrow\infty 
+		$$
+		那么就有
+		$$
+		f(x)=o(g(x))
+		$$
+	\end{corollary}
+	\section{级数求和的敛散性问题}
+	\begin{theorem}
+		\textbf{(\,Kummer\,判别法)}\ 设 $c_1,c_2,\cdots,c_n,\cdots$ 是使级数 $\displaystyle\sum_{n=1}^{\infty}\dfrac{1}{c_n}$ 发散的正数序列. 考虑序列
+$$
+\mathcal{K} _n=\frac{a_n}{a_{n+1}}c_n-c_{n+1}
+$$
+		那么当 $n\rightarrow\infty$ 时有以下等价关系:
+		\begin{align*}
+			\mathcal{K} _n\geqslant \delta >0&\Longleftrightarrow \sum_{n=1}^{\infty}{a_n}\text{收敛}
+			\\
+			\mathcal{K} _n\leqslant 0&\Longleftrightarrow \sum_{n=1}^{\infty}{a_n}\text{发散}
+		\end{align*}
+	\end{theorem}
+	\begin{proof}
+		设 $\displaystyle\lim_{n\rightarrow\infty}\left(\frac{a_n}{a_{n+1}}c_n-c_{n+1} \right)=2\delta>\delta>0$, 则 $\exists N\in\mathbb{N_+}$, $\forall n\geqslant N$, s.t.
+		$$
+		\frac{a_n}{a_{n+1}}c_n-c_{n+1}>\delta \Longrightarrow a_{n+1}<\frac{1}{\delta}\left( a_nc_n-a_{n+1}c_{n+1} \right) 
+		$$
+		于是: $\displaystyle\sum_{n=N}^{m}a_{n+1}\leqslant\dfrac{1}{\delta}\displaystyle\sum_{n=N}^{m}\left(a_nc_n-a_{n+1}c_{n+1} \right)\leqslant\dfrac{1}{\delta}a_Nc_N$, 所以 $\displaystyle\sum_{n=1}^{\infty}a_n$ 的部分和有上界, 从而收敛.
+	\end{proof}
+	\section{反常积分的敛散性问题}
+	\begin{definition}
+		设 $f$ 是可积函数，如下概念各自有定义：
+		\begin{enumerate}
+			\item 绝对收敛：若 $\displaystyle\int_{a}^{+\infty}|f(x)|\mathrm{d}x$ 收敛, 则称 $\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x$ 绝对收敛. 绝对收敛一定收敛.
+			\item 条件收敛：若 $\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x$ 收敛, $\displaystyle\int_{a}^{+\infty}|f(x)|\mathrm{d}x$ 发散, 则称 $\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x$ 条件收敛.
+		\end{enumerate}
+		
+	\end{definition}
+	\begin{theorem}
+		\textbf{(\,Chauchy\,收敛准则)}\ $\displaystyle{\int_a^{+\infty}{f\left( x \right) \mathrm{d}x}}$ 收敛等价于：$\forall \varepsilon>0,\ \exists A>0,\ \forall A_1,A_2>A,\ s.t.$
+		$$
+		\displaystyle\left|\int_{A_1}^{A_2}f(x)\mathrm{d}x\right|<\varepsilon
+		$$
+	\end{theorem}
+	\begin{proof}
+		证明留给读者作为习题.
+	\end{proof}
+	\begin{theorem}
+		(比较判别法)\ 设 $f,g$ 均是可积函数, 且
+		$$
+		|f(x)|<g(x)
+		$$
+		那么有\begin{itemize}
+			\item 当 $\displaystyle\int_{a}^{+\infty}g(x)\mathrm{d}x$ 收敛时 $\displaystyle\int_{a}^{+\infty}|f(x)|\mathrm{d}x$ 收敛, 进一步有 $\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x$ 绝对收敛.
+			\item 当 $\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x$ 发散时, $\displaystyle\int_{a}^{+\infty}|f(x)|\mathrm{d}x$ 和 $\displaystyle\int_{a}^{+\infty}g(x)\mathrm{d}x$ 均发散.
+		\end{itemize}
+	\end{theorem}
+	\begin{proof}
+		证明留给读者作为习题.
+	\end{proof}
+	\begin{theorem}
+		\textbf{(\,Cauchy\,判别法)}\ 设 $f$ 是可积函数, 若 $\exists p\in R, s.t.$
+		$$
+		\lim\limits_{x\rightarrow+\infty}x^p|f(x)|=l\quad\quad 0\leqslant l \leqslant+\infty
+		$$
+		则
+		\begin{itemize}
+			\item 若 $l\ne+\infty$ 且 $p>1$, 则 $|f(x)|=\mathcal{O}\left(\dfrac{1}{x^p}\right)=o\left(\dfrac{1}{x}\right)$, 则 $\displaystyle\int_{a}^{+\infty}|f(x)|\mathrm{d}x$ 收敛, 进一步地 $\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x$ 绝对收敛.
+			\item 若 $l\ne0$ 且 $p\leqslant 1$, 则 $f(x)$ 是 $\dfrac{1}{x}$ 的高阶大, 则$\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x$ 发散.
+		\end{itemize}
+	\end{theorem}
+	\begin{proof}
+		证明留给读者作为习题.
+	\end{proof}
+	\begin{example}
+		证明：$\displaystyle\int_1^{+\infty}\frac{\sin x}{x}\mathrm{d}x$ 收敛但是 $\displaystyle\int_1^{+\infty}{\left|\frac{\sin x}{x}\right|}\mathrm{d}x$ 发散.
+	\end{example}
+	\begin{proof}
+		\begin{align*}
+			 \int_1^{+\infty}{\frac{\sin x}{x}}\mathrm{d}x&=-\int_1^{+\infty}{\frac{\mathrm{d}\cos x}{x}}\\
+			 	&=\left. -\lim_{A\rightarrow +\infty} \frac{\cos x}{x} \right|_{1}^{A}-\int_1^{+\infty}{\frac{\cos x}{x^2}\mathrm{d}x}
+		\end{align*}
+		注意到第一项是有限数, 而
+		$$
+		\int_{1}^{+\infty}\left|\frac{\cos x}{x^2}\right|\mathrm{d}x<\int_{1}^{+\infty}\frac{1}{x^2}\mathrm{d}x
+		$$
+		所以第二项绝对收敛, 故原积分收敛.
+		又
+		$$
+		\int_{1}^{+\infty}\left|\frac{\sin x}{x}\right|\mathrm{d}x>\int_{1}^{+\infty}\left|\frac{\sin^2 x}{x}\right|\mathrm{d}x=\int_{1}^{+\infty}\left|\frac{1-\cos^2x}{x}\right|\mathrm{d}x=\int_{1}^{+\infty}
+		\frac{1}{x}\mathrm{d}x-\int_{1}^{+\infty}\frac{\cos^2x}{x}\mathrm{d}x
+		$$
+		第一项发散, 第二项收敛. 所以原积分发散.
+	\end{proof}
+	\begin{theorem}
+		满足以下条件之一可使得 $\displaystyle\int_{a}^{+\infty}f(x)g(x)\mathrm{d}x$ 收敛:
+		\begin{enumerate}
+			\item \textbf{(\thinspace Dirichlet\thinspace 判别法)}\ 函数 $F(A)=\displaystyle\int_{a}^{A}f(x)\mathrm{d}x$ 在区间 $[a,+\infty)$ 上有界, $g(x)$ 在 $[a,+\infty)$ 上单调地趋于 $0$.
+			\item \textbf{(\thinspace Abel\thinspace 判别法)}\ 积分 $\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x$ 收敛, $g(x)$ 在 $[a,+\infty)$ 上单调有界.
+		\end{enumerate}
+	\end{theorem}
+	\section{极限与其他运算的换序问题}
+	\begin{theorem}
+		(\textbf{函数与数列极限间的换序})\ 设函数 $f(x)$ 在 $x_0$ 的某个领域内有定义且在 $x_0$ 处连续, 则 $\forall x_n \rightarrow x_0,\ n\rightarrow\infty$, 恒有
+		$$
+		\lim_{n\rightarrow \infty} f\left( x_n \right) =f\left( \lim_{n\rightarrow \infty} x_n \right) =f\left( x_0 \right) 
+		$$
+	\end{theorem}
+	\begin{proof}
+		根据 $f(x)$ 在 $x_0$ 处连续, 有
+		$$
+		\forall \varepsilon >0,\ \exists \delta _{\varepsilon}>0,\ \forall x:|x-x_0|<\delta _{\varepsilon},\ |f\left( x \right) -f\left( x_0 \right) |<\varepsilon 
+		$$
+		又因为 $x_n\rightarrow x_0$, 所以
+		$$
+		\exists N\in N_+,\ \forall n>N,\ |x_n-x_0|<\delta _{\varepsilon}
+		$$
+		这就证明了定理.
+	\end{proof}
+	\begin{theorem}
+		(\textbf{控制收敛定理})\ 设 $a_n(s), n=1,2,3...$ 满足
+		$$
+		|a_n(s)|\leqslant c_n\qquad \sum_{n=1}^{\infty}{c_n<}\infty 
+		$$
+		以及 $\lim\limits_s a_n(s)=b_n\in \mathbb{R}$, 则就有
+		$$
+		\lim_s \sum_{n=1}^{\infty}{a_n(s)=\sum_{n=1}^{\infty}{b_n}}
+		$$
+		其中 $\lim\limits_s$ 表示 $s$ 趋向于某数 $s_0$
+		$$
+		s_0\in \mathbb{R} \bigcup{\left\{ -\infty ,+\infty \right\}}
+		$$
+	\end{theorem}
+	\begin{proof}
+		根据极限的保号性, 有 $|b_n|\leqslant c_n$, 那么 $\displaystyle\sum_{n=1}^{\infty}b_n$ 绝对收敛
+		\begin{align*}
+			\left| \sum_{n=1}^{\infty}{a_n\left( s \right) -\sum_{n=1}^{\infty}{b_n}} \right|&\leqslant \left| \sum_{n=1}^m{a_n\left( s \right) -\sum_{n=1}^m{b_n}} \right|+\left| \sum_{n=m+1}^{\infty}{a_n\left( s \right) -\sum_{n=m+1}^{\infty}{b_n}} \right|\\
+			&\leqslant \left| \sum_{n=1}^m{a_n(s)-\sum_{n=1}^m{b_n}} \right|+\sum_{n=m+1}^{\infty}{\left| a_n(s) \right|+\sum_{n=m+1}^{\infty}{\left| b_n \right|}}
+			\\
+			&\leqslant \left| \sum_{n=1}^m{a_n(s)-\sum_{n=1}^m{b_n}} \right|+2\sum_{n=m+1}^{\infty}{c_n}
+		\end{align*}
+		其中 $m$ 是任取的正整数, 上式对 $s$ 取极限, 由于第一项是有穷的求和, 所以第一项是趋于 0 的
+		$$
+		\lim_s \left| \sum_{n=1}^{\infty}{a_n(s)-\sum_{n=1}^{\infty}{b_n}} \right|\leqslant 2\sum_{n=m+1}^{\infty}{c_n}
+		$$
+		根据 $m$ 的任意性, 右侧那项可以任意小, 据此得证.
+	\end{proof}
+	\begin{theorem}
+		 (\textbf{ Levi 定理})\ 若 $a_n(s)\geqslant0, n=1,2,3...$ 满足 $a_n(s)$ 是 $s$ 的关于趋近方向的递增函数且
+		 $$
+		 \lim_s a_n(s)=b_n\in \mathbb{R} \bigcup{\left\{ +\infty \right\}}
+		 $$
+		 则
+		 $$
+		 \lim_s \sum_{n=1}^{\infty}{a_n(s)=\sum_{n=1}^{\infty}{b_n}}
+		 $$
+	\end{theorem}
+	\begin{proof}
+		若 $\displaystyle\sum_{n=1}^{\infty}b_n$ 收敛, 就以其为控制级数, 由控制收敛定理得到
+		$$
+		\lim_s \sum_{n=1}^{\infty}{a_n(s)=\sum_{n=1}^{\infty}{b_n}}
+		$$
+		若 $\displaystyle\sum_{n=1}^{\infty}b_n$ 不收敛且
+		$$
+		\lim_s \sum_{n=1}^{\infty}{a_n(s)}=m<\infty
+		$$
+		则对于 $\forall N\in\mathbb{N}$, 都有
+		$$
+		\sum_{n=1}^N{b_n=\lim_s \sum_{n=1}^N{a_n(s)}\leqslant \lim_s \sum_{n=1}^\infty{a_n(s)=m<\infty}}
+		$$
+		矛盾！
+	\end{proof}
+	
+	\chapter{中值构造本天成, 浑然妙手偶得之}
+	\intro{很多无用但奇妙的构造在这里诞生.\\
+		\rightline{——香饽饽}}
+	\section{ Rolle 中值定理}
+	\begin{theorem}
+		\textbf{(无穷区间的\,Rolle\,定理)}\ 设函数 $f(x)$ 在区间 $(a,b)\ (-\infty\leqslant\!a\!<\!b\!\leqslant+\infty)$ 中的任意一点有导数 $f^\prime (x)$, 且$$\lim\limits_{x\rightarrow +a^+}f(x)=\lim\limits_{x\rightarrow b^-}f(x)$$则 $\exists \xi\in (a,b)$, $s.t.f^\prime(\xi)=0$.
+	\end{theorem}
+	\begin{proof}
+		留给读者作为习题.
+	\end{proof}
+	\begin{example}
+		已知函数 $y=f(x)$ 在 $R$ 上 $2$ 阶可导, 且 $x_0\ne0:f(x_0)=0$, 证明：\\
+		(1)$\exists\eta\in R$, $s.t.$
+		$$
+		\eta f^\prime(\eta)+f(\eta)=0
+		$$
+		\\
+		(2)若 $f^{\prime\prime}$ 在 $R$ 上有界, 则 $\exists\xi\in R$, $s.t.$
+		$$
+		\xi f^{\prime\prime}(\xi)+(2+\xi)f^\prime(\xi)+f(\xi)=0
+		$$
+	\end{example}
+	\begin{solution}
+		(1)略\\
+		(2)注意到题目所述方程对应的原函数是
+		$$
+		F\left( x \right) ={\left( xf\left( x \right) \right) ^{\prime\prime}}+\left( xf\left( x \right) \right) ^{\prime}
+		$$
+		令
+		$$
+		G\left( x \right) =e^x\cdot xf\left( x \right) 
+		$$
+		那么有
+		$$
+		G\left( 0 \right) =G\left( x_0 \right) =0
+		$$
+		由 Rolle 中值定理, $\exists\eta\text{ 介于 }0\text{ 与 }x_0,\ s.t.G^\prime(\eta)=0$, 而
+		\begin{align*}
+			\lim\limits_{x\rightarrow-\infty}G^\prime(x)&=	\lim\limits_{x\rightarrow-\infty}e^x(f(x)+xf^\prime(x)+xf(x))\\
+			&=\lim\limits_{x\rightarrow-\infty}\frac{f(x)}{e^{-x}}+\lim\limits_{x\rightarrow-\infty}\frac{xf^\prime(x)}{e^{-x}}+\lim\limits_{x\rightarrow-\infty}\frac{xf(x)}{e^{-x}}
+		\end{align*}
+		\quad\quad 等式右侧第一项, 若 $f(x)$ 的极限为有限数, 则该项等于 $0$, 若极限为无穷大, 根据 L'Hospital 法则, 该项的值涉及一阶导的阶. 第二、三项同理.
+		
+		\quad\quad 经过几次 L'Hospital 法则运算, 最后总能转换为二阶导阶数的问题, 而二阶导是有界量, $x$ 相比 $e^x$ 远低阶, 所以原极限的值为 $0$.
+		
+		\quad\quad 根据无穷区间的 Rolle 中值定理, $\exists\xi<\eta,\ s.t.G^{\prime\prime}(\xi)=0$.
+	\end{solution}
+	\chapter{取真经道高一尺, 定积分乾坤未定}
+	\section{三角函数积分技巧}
+	\begin{theorem}
+		\textbf{(\,Wallis\,公式)}
+		$$
+		\int_0^{\frac{\pi}{2}}{\sin ^nx\mathrm{d}x=\int_0^{\frac{\pi}{2}}{\cos ^nx\mathrm{d}x}}=
+		\left\{
+			\begin{aligned}
+			&\frac{n-1}{n}\frac{n-3}{n-2}\cdot\cdot\cdot\frac{3}{4}\frac{1}{2}\frac{\pi}{2}\quad\text{$n$ 为偶数}\\
+			&\\
+			&\frac{n-1}{n}\frac{n-3}{n-2}\cdot\cdot\cdot\frac{4}{5}\frac{2}{3}\frac{1}{1}\quad \text{$n$ 为大于 $1$ 的奇数}
+		    \end{aligned}
+			\right
+			.
+		$$
+	\end{theorem}
+	\begin{proof}
+		留给读者作为习题.
+	\end{proof}
+	\begin{example}
+		设
+		$$
+		a_n=\left[ \frac{\left( 2n \right) !!}{\left( 2n-1 \right) !!} \right] ^2\cdot \frac{1}{2n+1}
+		$$
+		证明 ${a_n}$ 收敛, 并求其极限.
+	\end{example}
+	\begin{proof}
+		设
+		$$
+		I_{2n}=\int_0^{\frac{\pi}{2}}{\sin ^{2n}x}\mathrm{d}x
+		$$
+		那么
+		$$
+		I_{2n+2}<I_{2n+1}<I_{2n}
+		$$
+		而
+		$$
+		I_{2n+2}=\frac{2n+1}{2n+2}I_{2n}<I_{2n+1}<I_{2n}
+		$$
+		根据夹逼定理
+		$$
+		\lim\limits_{n\rightarrow +\infty}\frac{I_{2n+1}}{I_{2n}}=1
+		$$
+		把Wallis公式代入
+		$$
+		\lim _{n\rightarrow \infty}\frac{1}{2n+1}\left( \frac{\left( 2n \right) !!}{\left( 2n-1 \right) !!} \right) ^2\frac{2}{\pi}=1
+		$$
+		得证.
+	\end{proof}
+	\begin{corollary}
+		$$
+		\int_0^{\frac{\pi}{2}}{\sin ^nx\mathrm{d}x=\int_0^{\frac{\pi}{2}}{\cos ^nx\mathrm{d}x}}\sim\sqrt{\frac{\pi}{2n}}\quad\quad n\rightarrow\infty
+		$$
+	\end{corollary}
+	\begin{theorem}
+		(区间再现)\ 设 $f$ 是连续函数,则
+		$$
+		\int_0^{\pi}{xf\left( \sin x \right)}\mathrm{d}x=\frac{\pi}{2}\int_0^{\pi}{f\left( \sin x \right) \mathrm{d}x}
+		$$
+	\end{theorem}
+	\begin{proof}
+		证明留给读者作为习题.
+	\end{proof}
+	\section{级数与定积分}
+	\begin{theorem}
+		单调函数 $f\in C[0,+\infty)$, 且反常积分 $\displaystyle\int_{0}^{+\infty}f(x)\mathrm{d}x$ 存在, 则
+		$$
+		\lim\limits_{h\rightarrow 0^+}h\sum_{n=1}^{\infty}f(nh)=\int_{0}^{+\infty}f(x)\mathrm{d}x
+		$$
+	\end{theorem}
+	\begin{proof}
+		不妨设 $f$ 是单调递增的, $\forall h>0$, 有
+		$$
+		h\sum_{n=1}^{\infty}f(nh)=\sum_{n=1}^{\infty}\int_{(n-1)h}^{nh}f(nh)\mathrm{d}x\geqslant\sum_{n=1}^{\infty}\int_{(n-1)h}^{nh}f(x)\mathrm{d}x=\int_{0}^{+\infty}f(x)\mathrm{d}x
+		$$
+		又有
+		$$
+		h\sum_{n=1}^{\infty}f(nh)=\sum_{n=1}^{\infty}\int_{nh}^{(n+1)h}f(nh)\mathrm{d}x\leqslant\sum_{n=1}^{\infty}\int_{nh}^{(n+1)h}f(x)\mathrm{d}x=\int_{h}^{+\infty}f(x)\mathrm{d}x
+		$$
+		令 $h\rightarrow 0^+$, 有夹逼定理就可以得到.
+	\end{proof}
+	\begin{example}
+		求极限
+		$$
+		\lim\limits_{t\rightarrow 1^-}\sqrt{1-t}\sum_{n=0}^{\infty}t^{n^2}
+		$$
+	\end{example}
+	\begin{solution}
+		令 $t=e^{-h^2}$, 则
+		\begin{align*}
+			\lim\limits_{t\rightarrow 1^-}\sqrt{1-t}\sum_{n=0}^{\infty}t^{n^2}&=\lim_{h\rightarrow 0^+} \sqrt{1-e^{-h^2}}\sum_{n=0}^{\infty}{e^{-\left( nh \right) ^2}}\\
+			&=\lim_{h\rightarrow 0^+} \frac{\sqrt{1-e^{-h^2}}}{h}\lim_{h\rightarrow 0^+} h\sum_{n=0}^{\infty}{e^{-\left( nh \right) ^2}}\\
+			&=\int_{0}^{+\infty}e^{-x^2}\mathrm{d}x\\
+			&=\frac{\sqrt{\pi}}{2}			
+		\end{align*}
+		
+	\end{solution}
+	\section{积分与其他运算换序问题}
+	\begin{theorem}
+		(含参常限定积分的积分求导换序问题\textsuperscript{\cite{GDJ}})\ 设 $f\left( t,x \right)$, ${f_x^{\prime}}\left( t,x \right)\in C[a,b]\times C[c,d]$, 定义
+		$$
+		F\left( x \right) =\int_a^b{f\left( t,x \right) \mathrm{d}t}
+		$$
+		则 $F(x)\in C^1[c,d]$, 且
+		$$
+		\frac{\mathrm{d}}{\mathrm{d}x}F\left( x \right) =\int_a^b{f_x^{\prime}\left( t,x \right) \mathrm{d}t}
+		$$
+	\end{theorem}
+	\begin{proof}
+		设 $x_0$ 是 $[c, d]$ 中任一点, 我们证明 $F(x)$ 在点 $x_0$ 处连续. 我们有
+		$$
+		F\left(x_0+\Delta x\right)-F\left(x_0\right)=\int_a^b\left[f\left(t, x_0+\Delta x\right)-f\left(t, x_0\right)\right]\mathrm{d}t
+		$$
+		任给 $\varepsilon>0$, 由假定 $f(t,x)$ 在闭矩形 $a \leqslant t \leqslant b,\ c \leqslant x \leqslant d$ 上连续, 从而一致连续. 因此, 必有 $\delta>0$ 存在, 使当 $|\Delta y|<\delta$ 时, 对一切 $x\ (a \leqslant t \leqslant b)$ 都有
+		$$
+		\left|f\left(t, x_0+\Delta x\right)-f\left(t, x_0\right)\right|<\frac{\varepsilon}{b-a}
+		$$
+		当 $|\Delta y|<\delta$ 时, 必有
+		$$
+		\left|F\left(x_0+\Delta x\right)-F\left(x_0\right)\right|<\int_a^b \frac{\varepsilon}{b-a}\mathrm{d}x=\varepsilon 
+		$$
+		由此可知 $\lim\limits_{\Delta x \rightarrow 0}F\left(x_0+\Delta x\right)=F\left(x_0\right)$, 即 $F(x)$ 在点 $x_0$ 处连续.这就证明了 $F(x)$ 的连续性.
+		\footnote{注: $F(x)$ 在点 $x_0$ 连续又可写为
+			$$
+			\lim _{x \rightarrow x_0} \int_a^b f(t,x)\mathrm{d}x=\int_a^b\left[\lim _{x \rightarrow x_0} f(t,x)\right]\mathrm{d}x
+			$$
+			即, 可以在积分号下取极限.}\\
+		
+		$\forall x \in [c,d]$, 由 Lagrange 中值定理
+		$$
+		F\left( x+\Delta x \right) -F\left( x \right) =\int_a^b{\left( f\left( t,x+\Delta x \right) -f\left( t,x \right) \right) \mathrm{d}t=\int_a^b{f_x^{\prime}\left( t,x+\theta \Delta x \right)\Delta x\mathrm{d}t}}\quad\quad (0<\theta<1)
+		$$		
+		所以有
+		$$
+		\frac{F\left( x+\Delta x \right) -F\left( x \right)}{\Delta x}=\int_a^b{f_{x}^{\prime}\left( t,x+\theta \Delta x \right) \mathrm{d}t}
+		$$
+		$\forall \varepsilon>0$, 根据 ${f_x^{\prime}}\left( t,x \right)\in C[a,b]\times C[c,d]$, 由 Cantor 定理, 其在矩形区域上一致连续, 从而 $\exists \delta>0,\ \forall \Delta x:|\Delta x|<\delta,\ \forall t\in[a,b],\ s.t.$
+		$$
+		\left|f_{x}^{\prime}\left( t,x+\theta \Delta x \right) -f_{x}^{\prime}\left( t,x \right) \right|<\frac{\varepsilon}{b-a}
+		$$
+		即
+		$$
+		\left| \frac{F\left( x+\Delta x \right) -F\left( x \right)}{\Delta x}-\int_a^b{f_{x}^{\prime}\left( t,x \right)} \mathrm{d}x\right|<\int_a^b{\frac{\varepsilon}{b-a}}\mathrm{d}t=\varepsilon 
+		$$	
+		得证
+	\end{proof}
+		\begin{theorem}
+			(含参变限定积分的积分求导换序问题\textsuperscript{\cite{GDJ}})\ 设 $f\left( t,x \right) ,f_{x}^{\prime}\left( t,x \right)\in C[a,b]\times C[c,d]$, 又设 $\alpha(x),\beta(x)\in C^1[c,d]$, 且满足
+			$$
+			a\leqslant \alpha \left( x \right) ,\beta \left( x \right) \leqslant b\quad \quad \left( \forall x:c\leqslant x\leqslant d \right) 
+			$$
+			定义
+			$$
+			F\left( x \right) =\int_{\alpha(x)}^{\beta(x)}{f\left( t,x \right) \mathrm{d}t}
+			$$
+			则 $F(x)\in C^1[c,d]$, 并且有
+			$$
+			F^{\prime}\left( x \right) =\int_{\alpha \left( x \right)}^{\beta \left( x \right)}{f_{x}^{\prime}\left( t,x \right) \mathrm{d}t+\beta ^\prime\left( x \right) f\left( \beta \left( x \right) ,x \right) -\alpha ^{\prime}\left( x \right) f\left( \alpha \left( x \right) ,x \right)}
+			$$
+		\end{theorem}
+	\begin{proof}
+		更严谨地, 本次证明先证明 $F(x)$ 的连续性：\\
+		设 $x_0\in[c,d]$ 为所考察区间上任取的一点, 现在证的是
+		$$
+		\lim\limits_{x\rightarrow x_0}F(x)=F(x_0)
+		$$
+		显然
+		\begin{align*}
+				F\left( x \right) &=\int_{\alpha \left( x \right)}^{\alpha \left( x_0 \right)}{f\left( t,x \right) \mathrm{d}t+}\int_{\alpha \left( x_0 \right)}^{\beta \left( x_0 \right)}{f\left( t,x \right) \mathrm{d}t+}\int_{\beta \left( x_0 \right)}^{\beta \left( x \right)}{f\left( t,x \right) \mathrm{d}t}\\
+				&=\int_{\alpha \left( x_0 \right)}^{\beta \left( x_0 \right)}{f\left( t,x \right) \mathrm{d}t+}\int_{\beta \left( x_0 \right)}^{\beta \left( x \right)}{f\left( t,x \right) \mathrm{d}t-}\int_{\alpha \left( x_0 \right)}^{\alpha \left( x \right)}{f\left( t,x \right) \mathrm{d}t}
+		\end{align*}
+		令 $F_i(x)(i=1,2,3)$ 分别表示上面等式右侧的三个积分, 根据上面的定理
+	\end{proof}
+	
+	
+	\bibliographystyle{plain}
+	\bibliography{example.bib}
+\end{document}

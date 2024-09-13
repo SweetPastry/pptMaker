@@ -1,0 +1,154 @@
+
+\documentclass[10pt,a4paper]{book}
+
+\title{标题}
+\author{}
+\date{\today}
+
+\usepackage{ctex} 
+\usepackage{geometry,graphicx,xcolor,color}
+\usepackage{amssymb,amsmath,amsthm}                             % 数学字体
+\usepackage{newpxtext,mathpazo}                                % 采用 Palatino 风格字体
+\usepackage{newclude,ulem}
+\definecolor{winered}{rgb}{0.5,0,0}
+\definecolor{structurecolor}{RGB}{122,122,142}
+\definecolor{main}{rgb}{0.5,0,0}
+\definecolor{second}{RGB}{115,45,2}
+\definecolor{third}{RGB}{0,80,80}
+\usepackage[colorlinks,linkcolor = winered]{hyperref}           % 定义引用的颜色
+
+
+% ------------------------------------------------------------%
+% 定义定理环境
+\usepackage{amsthm}
+\newtheoremstyle{defstyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{main}}{}{0.5em}{\indent 【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+\newtheoremstyle{thmstyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{second}}{}{0.5em}{\indent【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+\newtheoremstyle{prostyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{third}}{}{0.5em}{\indent【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+
+\theoremstyle{thmstyle} %theorem style
+\newtheorem{theorem}{定理}[chapter]
+\theoremstyle{defstyle} % definition style
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{prostyle} % proposition style
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{example}[theorem]{例题}
+
+\renewenvironment{proof}[1][证明]{\par{\kaishu \uline{\textbf{#1.}}} \;\fangsong}{\qed\par}
+\newenvironment{solution}{\par\underline{\textbf{解.}} \;\kaishu}{\par}
+\newenvironment{remark}{\par\underline{\textbf{注.}} \;\fangsong}{\par}
+\newcommand{\intro}[1]{\rightline{\parbox[t]{5cm}{\footnotesize \fangsong\quad\quad #1 }}}
+% ------------------------------------------------------------%
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\color{structurecolor}\arabic*.}
+\setlist[enumerate,2]{label=\color{structurecolor}(\arabic*).}
+\setlist[enumerate,3]{label=\color{structurecolor}\Roman*.}
+\setlist[enumerate,4]{label=\color{structurecolor}\Alph*.}
+
+
+% 设置章形式
+% ---------------------------------- %
+% \setlength{\parindent}{0pt}  	
+\usepackage{titlesec, titletoc}
+\linespread{1.2} 				
+
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+\titlecontents{chapter}[0em]{}{\large \fangsong{第 \thecontentslabel 章\quad}}{}{\hfill\contentspage}
+\titlecontents{section}[2em]{}{\thecontentslabel\quad\textcolor{blue}}{}{\titlerule*{ .} \contentspage}
+
+\titleformat{\chapter}[display]{\Large}
+{\color{structurecolor}\centering\small \color{structurecolor}第 \zhnumber{\arabic{chapter}} \ 章 }{0.5ex}
+{\color{structurecolor}{\titlerule[1pt]}\Large \kaishu \centering \bfseries}
+
+\titleformat{\section}[frame]
+{\normalfont\color{structurecolor}}
+{\footnotesize \enspace \large \textcolor{structurecolor}{\S \,\thesection}\enspace}{6pt}
+{\Large\filcenter \bf \kaishu }
+
+\titlespacing*{\section}{1pc}{*7}{*2.3}[1pc]
+\titleformat{\subsection}[hang]{\bfseries}{
+	\large\bfseries\color{structurecolor}\thesubsection\enspace}{1pt}{%
+	\color{structurecolor}\large\bfseries\filright}
+\titleformat{\subsubsection}[hang]{\bfseries}{
+	\large\bfseries\color{structurecolor}\thesubsubsection\enspace}{1pt}{%
+	\color{structurecolor}\large\bfseries\filright}
+
+
+
+\begin{document}
+	
+	\maketitle
+	
+	\newpage
+	
+	\tableofcontents
+	
+	\setcounter{page}{0}
+	\thispagestyle{empty}
+	\newpage
+	\chapter{集合与映射}
+	
+	\intro{
+		在数学中，严格性不是一切，但是没有它便没有一切。不严格的证明微不足道。
+		
+		\rightline{——H.Poincar$\mathrm{\acute{e}}$}
+	}
+	
+	\section{集合}
+	
+	\begin{definition}
+		设\(A, B\)是两个集合，若\(A\)中元素均属于\(B\)，则称\(A\)为\(B\)的\uline{子集}，记作\(A \subseteq B\)或者\(B \supseteq A\)。此时也称\uline{\(A\)包含于\(B\)}，或\uline{\(B\)包含于\(A\)}。若\(A \subseteq B\)且存在\(B\)中的元素不属于\(A\)，则称\(A\)为\(B\)的\uline{真子集}，记作\(A \subset B\)或者\( B \supset A\)。
+	\end{definition}
+	
+	\begin{theorem}
+		
+	\end{theorem}
+	
+	\begin{proposition}
+		\(( a, b) = (c, d)\)当且仅当\(a = c\) 且\(b = d\)。
+	\end{proposition}    
+	
+	\begin{proof}
+		充分性是显然的。下证明必要性。如果\((a, b) = (c, d)\)，那么$$\{\{a\}, \{a, b\} = \{\{c\}, \{c, d\}\}$$
+		\begin{enumerate}
+			\item 若\(a = b\)，则有$$\{\{a \}\} = \{\{c\}, \{c, d\}\}$$那么\(c = d\)否则上式右侧有两个元素。
+			\item 若\(a \neq b\)，则必有\(c \neq d\)，否则左侧有两个元素而右侧有一个元素。而且必有$$\{a\} = \{c\} \qquad \text{且}\qquad \{a, b\} = \{ c, d\}$$进而\(a = c\)且\(b = d\)。
+		\end{enumerate}
+	\end{proof}
+	
+	\begin{solution}
+		\begin{itemize}
+			\item 	
+		
+			\item 
+			法一：待定表达式法\footnote{一般情况下，$g(n)$只考虑三种形式：$\alpha\beta^n, \alpha n^\beta, \alpha ln^\beta n$}: \\
+			$
+			\text{设}a_n\sim \alpha \beta ^n, \text{则}\alpha \beta ^{n+1}=\alpha \beta ^n+\frac{1}{\alpha \beta ^n}, \text{整理得}\beta ^{2n}=\frac{1}{\alpha ^2\left( \beta -1 \right)}, \text{不可能}. 
+			$
+			\\
+			$
+			\text{设}a_n\sim \alpha \ln ^{\beta}\beta , \text{则有}\alpha \ln ^{\beta}\left( n+1 \right) =\alpha \ln ^{\beta}n+\frac{1}{\alpha \ln ^{\beta}n}, \text{整理得}\ln ^{\beta}n\left[ \ln ^{\beta}\left( n+1 \right) -\ln ^{\beta}n \right] =\frac{1}{\alpha ^2}, \text{利用}n\rightarrow\infty , \frac{1}{\alpha ^2}=\ln ^{\beta}n\ln ^{\beta}\left( 1+\frac{1}{n} \right) =\left( \frac{\ln n}{n} \right) ^{\beta}\rightarrow 0, \text{不可能}. 
+			$\\
+			$
+			\text{设}a_n\sim \alpha n^{\beta}, \text{则有}\alpha \left( n+1 \right) ^{\beta}=an^{\beta}+\frac{1}{an^{\beta}}, \text{利用等价无穷小展开}, \beta n^{2\beta -1}=\frac{1}{\alpha ^2}, \text{所以}\beta =\frac{1}{2}, \alpha =\sqrt{2}.\ \text{因此}a_n\sim \sqrt{2n}
+			$
+			$
+			\text{当}n\rightarrow \infty \text{时},a_{n+1}-a_n=\Delta a_n\sim \frac{da_n}{dn},\text{而}\Delta a_n=\frac{1}{a_n},\text{解这个微分方程就能得到}a_n\sim \sqrt{2n}.\text{当然解的形式需要是脚注中的那三种之一,否则解可能不符合题意}.
+			$
+			\item 
+		\end{itemize}
+	\end{solution}
+	
+\end{document}

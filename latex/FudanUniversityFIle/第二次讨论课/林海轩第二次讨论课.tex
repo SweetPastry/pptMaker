@@ -1,0 +1,67 @@
+%-*- coding: UTF-8 -*-
+% paper.tex
+\documentclass[twocolumn]{ctexart}
+\usepackage{lipsum,mwe,cuted}
+\usepackage{float}%%%%提供浮动体的[H]选项，进而取消浮动
+\usepackage{caption}%%提供\captionof命令
+\usepackage{geometry}
+
+\pagestyle{plain}
+% \geometry{a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm}
+
+\geometry{a4paper,scale=0.8}
+
+\title{从杜威的《艺术即经验》出发\\给出
+	关于柏拉图观点的的个人看法}
+\author{ 林海轩\ 学号:23307110267 \\\ （复旦大学 \ 物理学系）}
+\date{\vspace{-2em}}
+
+\stripsep 8pt
+\pagestyle{plain}
+\newtheorem{thm}{定理}
+\bibliographystyle{unsrt}
+\CTEXsetup[format={\Large\bfseries}]{section}
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+\usepackage{amsthm}%引理无序号，\newtheorem*{theorem}{定理}这样定义的定理是没有编号的
+\usepackage{indentfirst}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{strip}
+		
+		\noindent  \textbf{摘要} .\ 基于杜威《艺术即经验》中的观点完成第二次讨论课的个人论文，以下是助教给出的题目：
+		\newtheorem*{lemma}{问题}
+		\begin{lemma}
+			柏拉图说音乐由多利安向吕底亚式风格的转变，明显是希腊民风堕落的先兆（第1章第11自然段），请结合实例，谈谈你的看法。
+		\end{lemma}
+		
+		\leavevmode\\
+	\end{strip}
+	
+	
+	\section*{1  正文}
+	
+	在柏拉图的时代，音乐作为文化和社会的重要组成部分，对社会氛围的塑造具有重大影响，这也是柏拉图认为音乐是社会风气、经济面貌等重要体现的原因。
+	杜威在《艺术即经验》中强调，艺术源自经验、基于经验。显然，音乐是艺术的一个重要体现，根据此观点，音乐可以视作社会经验的射影，对社会意识、群众观念具有一定的代表性。希腊音乐风格的转变，暗示着希腊社会风气转变的过程，这也是柏拉图观点的由来。
+	至于为什么柏拉图身为这种转变是消极的、堕落的，我们可以通过比较两种音乐风格的内涵获得答案。
+	多利安音乐被柏拉图视为刚健、质朴、严峻的象征。它强调理智、秩序和公正，这正符合柏拉图对于理想社会的观念。柏拉图认为，这种音乐风格反映了希腊社会中的秩序、理性和公正的价值观念。然而柏拉图却认为吕底亚式风格浮华与柔弱，与强调理性与严谨的希腊文化底蕴是格格不入的。这种落差，使得柏拉图开始思考希腊民风的转变，这引起了他的担忧：他认为，这种转变意味着希腊人民内心变得更加浮躁、肤浅，音乐失去了应有的教化作用。
+	但是柏拉图或许忽略了一点，那便是发展为音乐的经验来源于多个方面，而不是单是社会意识、群众观念的缩影。事实上，最早的希腊本土诞生的吕底亚式音乐风格很可能来自于吟游诗人的说唱，群众也不一定是带着批判视角或社会责任等政治元素进行的相关创作，说白了吕底亚式音乐能传播开来很可能只是因为其悦耳动听。
+	历史证明，我们不能决断地认为希腊在那个时候是走向堕落的，我认为柏拉图的理解虽有一定道理，但观点存在过度解读的成分。
+	
+	
+	
+	
+	\section*{2 总结}
+艺术即经验，没错，但这种经验不单单来自社会意识、政治思想的宏大层次，更多的，艺术可能来源艺术家的个人情愫，来自普通群众生理上的愉悦。不可否认，艺术带有批判的责任，但更多的，艺术带有审美的责任，过度夸大任何一方，忽视另一方而做出的解读，都是有失妥当的。
+
+
+
+
+	
+	\begin{thebibliography}{99}% 参考文献，{}内表示序号最大位数（两位）
+		\bibitem{ref1}Dewey. Art as Experience[J]. 高等教育出版社，11.4(2022):1-4.
+		\bibitem{ref2}Plato. Utopia[M]. 高等教育出版社, 01(2333):-2-4.
+	\end{thebibliography}
+\end{document}

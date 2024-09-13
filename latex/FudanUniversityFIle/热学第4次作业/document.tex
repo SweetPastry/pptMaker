@@ -1,0 +1,332 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{caption}
+%\usepackage{newtxmath}
+%\usepackage{txfonts}
+\usepackage{times}
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amssymb, amsgen, amsthm, amscd, amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+%\usepackage{pxfonts}
+\usepackage{bm}
+%\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{Thermodynamics Assignment For The Forth Time}
+
+\author{Haixuan Lin - 23307110267}
+\email{23307110267@m.fudan.edu.cn}
+
+
+\address{Fudan University, Physics Department, China}
+
+\begin{document}
+	
+	\begin{abstract}
+		Here is the thermodynamics assignment for the Forth time which is for the course given by professor Yuanbo Zhang. In order to practise the expertise in scientific film of physics, students need to practise using \LaTeX to composing their own work, even if this is only a ordinary homework.
+	\end{abstract}
+	
+	\maketitle
+	
+	\section*{Main Text}
+
+	\subsection*{Q1}
+
+	\subsubsection*{(1)}
+
+	The number of molecules per unit time per unit area of the impactor wall is.
+
+	$$
+	\varGamma =\frac{1}{4}n\bar{v}
+	$$
+	
+	The relationship between pressure and temperature is established by the mean kinetic energy of the molecules.
+
+	$$
+	p=\frac{1}{3}nm\overline{v^2}
+	$$
+
+	Both work together to eliminate the molecular number density $n$:
+
+	$$
+	\varGamma =\frac{3}{4}\frac{p\bar{v}}{m\overline{v^2}}
+	$$
+
+	Plug in concrete expressions for the two speeds.
+
+	$$
+	\varGamma =\dfrac{3}{4}\dfrac{p\bar{v}}{m\overline{v^2}}=\dfrac{3}{4}\dfrac{p\sqrt{\dfrac{\pi}{8}\frac{kT}{m}}}{m\dfrac{3kT}{m}}=\dfrac{p}{\sqrt{2\pi mkT}}
+	$$
+
+	As a result $\displaystyle\Delta S\varGamma=\frac{p}{\sqrt{2\pi mkT}}.$
+
+	\subsubsection*{(2)}
+
+	By the expression for pressure, since we know that the temperature doesn't change, that is, $\overline{v^2}$ doesn't change, then a reduction in pressure by half is equivalent to a reduction in the number of molecules by half.
+
+	$$
+	\mathrm{d}n=-\frac{1}{V}\Delta S\varGamma \mathrm{d}t=-\frac{1}{V}\frac{p}{\sqrt{2\pi mkT}}\mathrm{d}t=-\frac{1}{V}\frac{\frac{1}{3}nm\overline{v^2}}{\sqrt{2\pi mkT}}\mathrm{d}t=-\frac{\bar{v}\Delta S}{4V}n\mathrm{d}t
+	$$
+
+	$$
+	\frac{\mathrm{d}n}{n}=-\frac{\bar{v}\Delta S}{4V}\mathrm{d}t
+	$$
+
+	$$
+	\ln 2=-\frac{\bar{v}\Delta S}{4V}t_{1/2}
+	$$
+
+	As a result $\displaystyle t_{1/2}=\frac{4V\ln 2}{\bar{v}\Delta S}$.
+
+	\subsection*{Q2}
+
+	Borrowing from the conclusion of the previous question, the theoretical expression of the answer to this question is as follows:
+
+	$$
+	\Delta t=\frac{4V}{\bar{v}\Delta S}\ln \frac{p_0}{p^{\prime}}
+	$$
+
+	Take into the number we get $t=20.78\,\mathrm{s}$.
+
+	\subsection*{Q3}
+
+	\subsubsection*{(1)}
+	
+	We need to borrow a little mathematical skill in order to do this gracefully. As follows, we directly give the volume of the n-dimensional hypersphere:
+
+	$$
+	V_n=\frac{\pi ^{\tfrac{n}{2}}}{\Gamma \left( \dfrac{n}{2}-1 \right)}r^n
+	$$
+
+	The surface area of the N-dimensional hypersphere can be obtained by taking the derivative of the volume.
+
+	$$
+	S_n=\frac{\partial}{\partial r}V_n=\frac{\pi ^{\tfrac{n}{2}}}{\Gamma \left( \dfrac{n}{2}-1 \right)}r^n=\frac{n\pi ^{\tfrac{n}{2}}}{\Gamma \left( \dfrac{n}{2}-1 \right)}r^{n-1}
+	$$
+
+	So we can write down the Maxwell velocity distribution for an n-dimensional ideal gas:
+
+	$$
+	f_{\mathrm{M}}^{n}\left( v \right) =S_n\left( v \right) \cdot \prod_{i=1}^n{f_M\left( v_i \right)}=\frac{n\pi ^{\tfrac{n}{2}}}{\Gamma \left( \dfrac{n}{2}+1 \right)}v^{n-1}\left( \frac{m}{2\pi kT} \right) ^{\tfrac{n}{2}}\exp \left( -\frac{mv^2}{2kT} \right) 
+	$$
+
+	It is physically proved that the velocity distribution of the outflow molecules is the Maxwell velocity distribution of a higher dimensional ideal gas.
+
+	$$
+	f_{\mathrm{run}\,\mathrm{out}}\left( v \right) =f_{\mathrm{M}}^{4}\left( v \right) =2\pi ^2v^3\left( \frac{m}{2\pi kT} \right) ^2\exp \left( -\frac{mv^2}{2kT} \right) 
+	$$
+
+	In order to find the most probable velocity we try to take the derivative of the distribution law.
+
+	$$
+	\frac{\mathrm{d}\ln}{\mathrm{d}v}f_{\mathrm{run}\,\mathrm{out}}\left( v \right) =\frac{3}{v}-\frac{mv}{kT}
+	$$
+
+	As a result
+
+	$$
+	v_p=\sqrt{\dfrac{3kT}{m}}
+	$$
+	
+	Consider the modules belong to $v\sim v+\mathrm{d}v$. First we have some relation between $v$ and $\epsilon$.
+	
+	$$
+	v=\sqrt{\dfrac{2\varepsilon}{m}}
+	$$
+	
+	$$
+	\mathrm{d}v=\sqrt{\dfrac{m}{2\varepsilon}}\mathrm{d}\varepsilon
+	$$
+	
+	And accoring to the equation $N(v\sim v+\mathrm{d}v)=N(\varepsilon\sim\varepsilon+\mathrm{d}\varepsilon)$.
+	
+	$$
+	2\pi ^2v^3\left( \frac{m}{2\pi kT} \right) ^2\exp \left( -\frac{mv^2}{2kT} \right) \mathrm{d}v=f\left( \varepsilon \right) \mathrm{d}\varepsilon 
+	$$
+	
+	Take the relation into this func we get
+	
+	$$
+	f\left( \varepsilon \right) =\frac{4\pi ^2\varepsilon}{m}\left( \frac{m}{2\pi kT} \right) ^2\exp \left( -\frac{\varepsilon}{kT} \right) 
+	$$
+	
+	To find the most likely kinetic energy, we take the derivative of the distribution law.
+	
+	$$
+	\frac{\mathrm{d}\ln}{\mathrm{d}\varepsilon}f\left( \varepsilon \right) =\frac{1}{\varepsilon}-\frac{1}{kT}
+	$$
+	
+	As a result $\varepsilon_p=kT$.
+	
+	\subsubsection*{(2)}
+	
+	Not the same. It can be understood that faster molecules are more likely to escape, so the distribution of escaped molecules tends to be in the direction of faster speeds.
+	
+	\subsubsection*{(3)}
+	
+	They are not identical, and their solution involves mathematical operations that are not commutable.
+	
+	\subsection*{Q4}
+	
+	It can be solved quickly by some simple thermodynamic quantity relations.
+	
+	$$
+	n=\frac{p}{kT}=3.217\times 10^{17}\,\mathrm{m}^{-3}
+	$$
+	
+	$$
+	\bar{\lambda}=\frac{1}{\sqrt{2}n\pi d^2}=7.77\,\mathrm{m}
+	$$
+	
+	$$
+	\bar{Z}=\frac{\bar{v}}{\bar{\lambda}}=\frac{1}{\bar{\lambda}}\sqrt{\frac{8RT}{\pi M}}=61.3\,\mathrm{s}^{-1}
+	$$
+	
+	$$
+	d_{\mathrm{H}_2}=\sqrt{\frac{kT}{\sqrt{2}p\pi \bar{\lambda}}}=2.74\times 10^{-10}\,\mathrm{m}
+	$$
+	
+	\subsection*{Q5}
+	
+	According to Fourier's law of heat conduction.
+	
+	$$
+	\frac{\mathrm{d}Q}{\mathrm{d}t}=-2\pi \kappa Lr\frac{\mathrm{d}T}{\mathrm{d}r}
+	$$
+	
+	The amount of heat flowing through each interface is always equal.
+	
+	$$
+	\dfrac{\mathrm{d}Q}{\mathrm{d}t}=\text{Const}
+	$$
+	
+	So
+	
+	$$
+	2\pi \kappa L\mathrm{d}T=-\frac{\mathrm{d}Q}{\mathrm{d}T}\frac{\mathrm{d}r}{r}
+	$$
+	
+	$$
+	2\pi \kappa L\left( T\left( r \right) -T_1 \right) =-\frac{\mathrm{d}Q}{\mathrm{d}T}\ln \frac{r}{R_1}
+	$$
+	
+	$$
+	\frac{\mathrm{d}Q}{\mathrm{d}T}=\frac{2\pi \kappa L\left( T_1-T\left( r \right) \right)}{\ln \dfrac{r}{R_1}}
+	$$
+	
+	The above formula is always true for any $r$, so let's say $r=R_2$.
+	
+	$$
+	\frac{\mathrm{d}Q}{\mathrm{d}T}=\frac{2\pi \kappa L\left( T_1-T_2 \right)}{\ln \dfrac{R_2}{R_1}}
+	$$
+	
+	\subsection*{Q6}
+	
+	The force due to pressure is equal to the viscous resistance.
+	
+	$$
+	\rho g\Delta h\pi r^2=2\pi rl\eta v
+	$$
+	
+	The difference between flow and height is satisfied.
+	
+	$$
+	\pi r^2v\mathrm{d}t=-\pi a^22\mathrm{d}\left( \Delta h \right) 
+	$$
+	
+	So
+	$$
+	\frac{\mathrm{d}\left( \Delta h \right)}{\Delta h}=\frac{\rho gr^4}{4a^2l\eta}\mathrm{d}t
+	$$
+	
+	The solution is
+	$$
+	t=\frac{4a^2\eta L\ln 2}{r^4\rho g}
+	$$
+	
+	\subsection*{Q7}
+	
+	When the system is stable, there is no relative sliding between the fluid and the inner and outer cylinders.
+	
+	$$
+	\omega_R=0\qquad\omega_{R+\delta R}=\omega(R+\delta R)
+	$$
+	
+	Because $\delta$ is extrmely small so 
+	
+	$$
+	\dfrac{\mathrm{d}v}{\mathrm{d}t}=\dfrac{\omega(R+\delta R)}{\delta}
+	$$
+	
+	For the inner cylinder, the force is balanced.
+	
+	$$
+	\frac{M}{R}=\eta 2\pi RL\cdot \frac{\omega \left( R+\delta R \right)}{\delta}
+	$$
+	
+	$$
+	\eta =\frac{\delta M}{2\pi R^2\left( R+\delta R \right) L\omega}
+	$$
+	
+	\subsection*{Q8}
+	
+	If the molecules collide with the wall without considering the Angle distribution：
+	
+	$$
+	\varGamma =\frac{1}{6}n\bar{v}
+	$$
+	
+	At the same time there is a relation $\displaystyle c_V=\frac{N/N_{\mathrm{A}}}{m}c_{v}^{\mathrm{mol}}=\frac{N/N_{\mathrm{A}}}{\rho V}c_{v}^{\mathrm{mol}}=\frac{n}{\rho N_{\mathrm{A}}}c_{v}^{\mathrm{mol}}$.
+	
+	$$
+	Q=\varGamma \frac{i}{2}k\left( T_A-T_B \right) =\varGamma \frac{c_{v}^{\mathrm{mol}}}{N_{\mathrm{A}}}\left( T_A-T_B \right) =\frac{1}{6}n\bar{v}\frac{c_{v}^{\mathrm{mol}}}{N_{\mathrm{A}}}\left( T_A-T_B \right) =\frac{1}{6}\rho \bar{v}c_V\left( T_A-T_B \right) 
+	
+	$$
+	
+\end{document}
+

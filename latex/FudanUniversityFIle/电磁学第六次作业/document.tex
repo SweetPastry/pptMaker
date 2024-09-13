@@ -1,0 +1,233 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{caption}
+%\usepackage{newtxmath}
+%\usepackage{txfonts}
+\usepackage{times}
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amssymb, amsgen, amsthm, amscd, amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+%\usepackage{pxfonts}
+\usepackage{bm}
+%\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{Electromagnetism Assignment For The Sixth Time}
+
+\author{Haixuan Lin - 23307110267}
+\email{23307110267@m.fudan.edu.cn}
+
+
+\address{Fudan University, Physics Department, China}
+
+\begin{document}
+	
+	\begin{abstract}
+		Here is the electromagnetism assignment for the sixth time which is for the corse given by professor Weichao Liu. In order to practise the expertise in scientific film of physics, students need to practise using \LaTeX to composing their own work, even if this is only a ordinary homework.
+	\end{abstract}
+	
+	\maketitle
+	
+	\section*{Main Text}
+	
+	\subsection*{5-33}
+	
+	To solve this electrical system, we introduce complex numbers.
+	
+	$$
+	\tilde{X}_C=\frac{1}{\mathrm{i}\omega C}
+	$$
+	
+	$$
+	\tilde{U}=U_m\exp \left( \mathrm{i}\omega t \right) 
+	$$
+	
+	$$
+	\tilde{I}=\mathrm{i}\omega CU_m\exp \left( \mathrm{i}\omega t \right) 
+	$$
+	
+	In this way, Ohm's law can be used normally, and the final result can be taken as the real part.
+	
+	$$
+	I=\mathrm{Re}\tilde{I}=-\omega CU_m\sin \omega t
+	$$
+	
+	The total current is the true conserved quantity that satisfies the continuous return of charge.
+	
+	$$
+	I+S\frac{\partial}{\partial t}D=0
+	$$
+	
+	And cylindrical capacitors meet
+	
+	$$
+	C=\dfrac{2\pi \varepsilon _0l}{\ln \dfrac{b}{a}}
+	$$
+	
+	As a result.
+	
+	$$
+	\displaystyle \frac{\partial}{\partial t}D=\omega CU_m\sin \omega t=\frac{2\pi \varepsilon _0l\omega U_m\sin \omega t}{\ln \dfrac{b}{a}}
+	$$
+	
+	\subsection*{5-36}
+	
+	\subsubsection*{(1)}
+	
+	Find by formula
+	
+	$$
+	f=\frac{c}{\lambda}=1.0\times 10^8\,\mathrm{Hz}
+	$$
+	
+	\subsubsection*{(2)}
+	
+	We know:
+	
+	$$
+	\bm{E}\times\bm{B}\parallel\bm{k}
+	$$
+	
+	So $\bm{B}\parallel\bm{z}$.
+	
+	And we have relation
+	
+	$$
+	\sqrt{\varepsilon _0\varepsilon _r}E=\sqrt{\mu _0\mu _r}H\qquad \mathrm{When}\ \mathrm{the}\ \mathrm{medium}\ \mathrm{is}\ \mathrm{uniformly}\ \mathrm{linear}
+	$$
+	
+	So $\displaystyle B=\mu _0H=\sqrt{\varepsilon _0\mu _0}E=\frac{E}{c}=1.0\times 10^{-6}\,\mathrm{T}
+	.$
+	
+	\subsubsection*{(3)}
+	
+	Through simple relationships.
+	
+	$$
+	k=\frac{2\pi}{\lambda}=\frac{2}{3}\pi \,\mathrm{m}^{-1}
+	$$
+	
+	$$
+	\omega =\frac{2\pi}{T}=\frac{2\pi c}{\lambda}=2\pi \times 10^8\,\mathrm{s}^{-1}
+	$$
+	
+	\subsubsection*{(4)}
+	
+	Poynting vector is used to describe the energy flow of an electromagnetic wave.
+	
+	
+	$$
+	\boldsymbol{S}=\boldsymbol{E}\times \boldsymbol{B}
+	$$
+	
+	$$
+	\bar{S}=\frac{1}{2\mu _0}EB=119.37\,\mathrm{W}/\mathrm{m}^2
+	$$
+	
+	\subsection*{5-37}
+	
+	\subsubsection*{(1)}
+	
+	According to the magnetic field energy density formula.
+	
+	$$
+	w_m=\frac{1}{2}\frac{1}{\mu _0}B^2=3.98\times 10^{-15}\,\mathrm{J}/\mathrm{m}^{-3}
+	$$
+	
+	\subsubsection*{(2)}
+	
+	Find the full magnetic flux, and then apply Faraday's law of electromagnetic induction.
+	
+	$$
+	\varPsi _m=NBS\cdot \sqrt{2}B\cos \omega t
+	$$
+	
+	$$
+	E=-\frac{\mathrm{d}\varPsi _m}{\mathrm{d}t}=\omega NBS\cdot \sqrt{2}B\sin \omega t
+	$$
+	
+	$$
+	E_{\mathrm{eff}}=\omega NBSB=4.15\times 10^{-6}\,\mathrm{V}
+	$$
+	
+	\subsection*{5-40}
+	
+	\subsubsection*{(1)}
+	
+	According to conservation of energy, the flux of the Poynting vector is conserved.
+	
+	$$
+	\bar{S}=\frac{W}{2\pi r^2}=1.59\times 10^{-5}\,\mathrm{J}/\mathrm{m}^2
+	$$
+	
+	\subsubsection*{(2)}
+	
+	The Poynting vector satisfied
+	
+	$$
+	\bar{S}=\frac{1}{2\mu _0}E_mB_m
+	$$
+	
+	Electromagnetic fields matter
+	
+	$$
+	E_m=cB_m
+	$$
+	
+	As a result
+	
+	$$
+	E_m=0.11\,\mathrm{V}
+	$$
+	
+	$$
+	B_m=3.65\times 10^{-10}\,\mathrm{T}
+	$$
+	
+\end{document}
+

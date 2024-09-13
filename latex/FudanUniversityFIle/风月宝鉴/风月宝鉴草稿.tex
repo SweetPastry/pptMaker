@@ -1,0 +1,161 @@
+\documentclass[10pt,a5paper]{book}
+\usepackage[width=196.75mm, height=480mm, margin=15mm]{geometry}
+
+\title{\Huge 风月宝鉴}
+\author{香饽饽}
+\newcommand{\publisher}{} % 定义出版社名称
+\date{}
+
+
+
+\usepackage{ctex} 
+\usepackage{graphicx,xcolor,color}
+
+
+
+\usepackage{amssymb,amsmath,amsthm}                             % 数学字体
+%\usepackage{newpxtext,mathpazo}                                % 采用 Palatino 风格字体
+\usepackage{newclude,ulem}
+\definecolor{winered}{rgb}{0.5,0,0}
+\definecolor{structurecolor}{RGB}{122,122,142}
+\definecolor{main}{rgb}{0.5,0,0}
+\definecolor{second}{RGB}{115,45,2}
+\definecolor{third}{RGB}{0,80,80}
+\usepackage[colorlinks,linkcolor = winered]{hyperref}           % 定义引用的颜色
+
+
+% ------------------------------------------------------------%
+% 定义定理环境
+\usepackage{amsthm}
+\newtheoremstyle{defstyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{main}}{}{0.5em}{\indent 【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+\newtheoremstyle{thmstyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{second}}{}{0.5em}{\indent【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+\newtheoremstyle{prostyle}{3pt}{3pt}{\kaishu}{-3pt}{
+	\bfseries\color{third}}{}{0.5em}{\indent【\thmname{#1} \thmnumber{#2}】 \thmnote{(#3)}}
+
+\theoremstyle{thmstyle} %theorem style
+\newtheorem{theorem}{定理}[chapter]
+\theoremstyle{defstyle} % definition style
+\newtheorem{definition}{定义}[chapter]
+\newtheorem{lemma}{引理}[chapter]
+\newtheorem{corollary}{推论}[chapter]
+\theoremstyle{prostyle} % proposition style
+\newtheorem{proposition}{命题}[chapter]
+\newtheorem{example}{例题}[chapter]
+
+\renewenvironment{proof}[1][证明]{\par{\kaishu \uline{\textbf{#1.}}} \;\fangsong}{\qed\par}
+\newenvironment{solution}{\par\underline{\textbf{解.}} \;\kaishu}{\par}
+\newenvironment{remark}{\par\underline{\textbf{注.}} \;\fangsong}{\par}
+\newcommand{\intro}[1]{\rightline{\parbox[t]{5cm}{\footnotesize \fangsong\quad\quad #1 }}}
+% ------------------------------------------------------------%
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setlist[enumerate,1]{label=\color{structurecolor}\arabic*.}
+\setlist[enumerate,2]{label=\color{structurecolor}(\arabic*).}
+\setlist[enumerate,3]{label=\color{structurecolor}\Roman*.}
+\setlist[enumerate,4]{label=\color{structurecolor}\Alph*.}
+
+
+% 设置章形式
+% ---------------------------------- %
+\setlength{\parindent}{0pt}  	
+\usepackage{titlesec, titletoc}
+\linespread{1.2} 				
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\fancypagestyle{plain}{%
+	\fancyhf{} % clear all header and footer fields
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\fancyhead[RO]{\thepage} % 奇数页页码在右上角
+	\fancyfoot[C]{\publisher} % 出版社名称显示在页底中间
+}
+
+\titlecontents{chapter}[0em]{}{\large \fangsong{第 \thecontentslabel\ 回\quad}}{}{\hfill\contentspage}
+\titlecontents{section}[2em]{}{\thecontentslabel\quad\textcolor{blue}}{}{\titlerule*{ .} \contentspage}
+
+\titleformat{\chapter}[display]{\Large}
+{\color{structurecolor}\centering\small \color{structurecolor}第 \zhnumber{\arabic{chapter}}\ 回 }{0.5ex}
+{\color{structurecolor}{\titlerule[1pt]}\Large \kaishu \centering \bfseries}
+
+\titleformat{\section}[frame]
+{\normalfont\color{structurecolor}}
+{\footnotesize \enspace \large \textcolor{structurecolor}{\S \,\thesection}\enspace}{6pt}
+{\Large\filcenter \bf \kaishu }
+
+\titlespacing*{\section}{1pc}{*7}{*2.3}[1pc]
+\titleformat{\subsection}[hang]{\bfseries}{
+	\large\bfseries\color{structurecolor}\thesubsection\enspace}{1pt}{%
+	\color{structurecolor}\large\bfseries\filright}
+\titleformat{\subsubsection}[hang]{\bfseries}{
+	\large\bfseries\color{structurecolor}\thesubsubsection\enspace}{1pt}{%
+	\color{structurecolor}\large\bfseries\filright}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{bm}
+\renewcommand{\qedsymbol}{}
+\usepackage{pdfpages}
+\usepackage{times}% 英文使用Times New Roman
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\DeclareRobustCommand\bigop[1]{%
+	\mathop{\vphantom{\sum}\mathpalette\bigop@{#1}}\slimits@
+}
+\newcommand{\bigop@}[2]{%
+	\vcenter{%
+		\sbox\z@{$#1\sum$}%
+		\hbox{\resizebox{\ifx#1\displaystyle.9\fi\dimexpr\ht\z@+\dp\z@}{!}{$\m@th#2$}}%
+	}%
+}
+\makeatother
+
+\newcommand{\bigK}{\DOTSB\bigop{\mathrm{K}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{colorlinks=false,linkbordercolor=white,allcolors=white,citebordercolor=white,runcolor=white,allcolors=white,filecolor=white,linkcolor=white}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	\pagenumbering{gobble} % 禁用页码计数
+	\begin{titlepage}	
+		% 封面信息
+		\includepdf[pages={1}]{"../EarlyPic/FYBJ"} %曲线救国的思路，外界自建封面，然后调用
+	\end{titlepage}
+	
+	\maketitle
+	
+	\pagenumbering{gobble} % 禁用页码计数
+	
+	\frontmatter
+	\begin{center}
+		{\Huge 前言} \\
+	\end{center}
+	\paragraph{}
+	\paragraph{}\quad 本卷为笔者练习使用\LaTeX 、记录大学本科数学学习过程中的所思所学所想而作. 笔者在此提醒读者, \textbf{本卷不是正经的数学读物}, 书中涉及的解题技巧不一定严谨, 请读者自有判断能力.
+	\paragraph{}\quad 笔者只是一名末流985在读的大一新生, 无论是\LaTeX 写作技巧还是数学水平都极其有限, 书中难免有科学性错误, 欢迎各位读者斧正.
+	\paragraph{}\quad 本卷大多数内容非笔者原创, 但都是笔者学习中认为十分精彩的部分, 在此我十分感谢知乎的各位大佬提供的各种天秀命题. 笔者在学习高等数学的时参考的书籍是谢慧民老师的《数学分析习题课讲义》, 本卷中将有很多习题或结论改编自此书.
+	
+	\paragraph{}\quad 安全声明（允许我叠个甲）, 任何人使用此书内容造成的不利情形, 笔者\textbf{概不负责}！
+	
+	\paragraph{}
+	
+	\paragraph{}
+	
+	\hfill \textbf{香饽饽}\quad\quad\enspace\:
+	
+	\hfill \textbf{2023年——2024年}
+	
+	
+	\tableofcontents
+	
+	\clearpage
+	
+	\mainmatter
+	\pagenumbering{arabic} % 开始新的页码计数
+	\setcounter{page}{1} % 设置页码计数为1
+	
+	
+\end{document}

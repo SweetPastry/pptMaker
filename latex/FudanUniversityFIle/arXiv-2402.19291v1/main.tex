@@ -1,0 +1,399 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amsmath, amssymb, amsgen, amsthm, amscd}
+
+\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{A Dold-Kan Equivalence for Crossed Simplicial Groups}
+
+\author{Haydar Can Kaya}
+\email{kayah17@itu.edu.tr}
+\author{Atabey Kaygun}
+\email{kaygun@itu.edu.tr}
+
+\address{Istanbul Technical University, Turkey}
+
+\begin{document}
+
+\begin{abstract}
+  Using coinduction and restriction functors, we construct a Dold-Kan type equivalence for crossed simplicial groups.  We first show that the original Dold-Kan equivalence is given by an adjoint pair of coinduction and restriction functors. Then we show that the category of simplicial vector spaces and the category of representations of a crossed simplicial group are similarly equivalent as model categories.
+\end{abstract}
+
+\maketitle
+\section*{Introduction}
+
+The Dold-Kan correspondence is an equivalence between the categories of simplicial objects and chain complexes in an abelian category~\cite{dold1958homology, kan1958functors, dold1961homologie}. We extend this equivalence for arbitrary crossed simplicial objects in a $\Bbbk$-linear abelian category. We show that the original Dold-Kan equivalence is given by an adjoint pair of coinduction and restriction functors. Then we show that the category of simplicial $\Bbbk$-vector spaces and the category of $\Bbbk$-representations of a crossed simplicial group are similarly equivalent after inverting homotopy equivalences. One can then obtain a Dold-Kan type equivalence for crossed simplicial groups after composing with the classical Dold-Kan equivalence. Finally, we rewrite our equivalence for crossed simplicial objects as a model categorical equivalence.
+
+Simplicial sets have a long history going back to Eilenberg and Zilber~\cite{eilenberg1950semi}. However, the first extension of the simplicial category $\Delta$ to include group actions compatible with the simplicial structure maps is Connes' cyclic category $\Delta C $~\cite{connes1983cohomologie, quillen1984cyclic}.  Connes considered the action of cyclic groups on the simplicial category to define cyclic homology in a more invariant way. One can replace cyclic groups with other interesting groups, such as the additive group of integers $\B{Z}$~to construct the paracyclic category $\Delta\B{Z}$~\cite{GetzlerJones:CyclicHomologyOfCrossedProductAlgebras}, and with symmetric groups to construct the symmetric category~$\Delta S$~\cite{Ault:SymmetricHomology}.  There are many such examples: for dihedral groups, hyperoctahedral groups, or even braid groups~\cite{Aboughazi:CrossedSimplicialGroups, Loday:CyclicHomology}. In the most general form, one can replace these groups with a suitable simplicial group $G_\bullet$ to obtain a \emph{crossed simplicial group} $\Simp G$~\cite{Krasauskas:SkewSimplicialGroups,fiedorowicz1991crossed}. 
+
+There are few extensions of the Dold-Kan equivalence to crossed simplicial objects~\cite{dwyer1985normalizing,dwyer1987three,antokoletz2010nonabelian}, including a significant attempt to extend to the paracyclic category $\Delta\B{Z}$~\cite{ponge2020periodicity}. Then there are numerous other extensions of the equivalence: One can replace abelian categories with suitable categories such as semi-abelian categories~\cite{bourn-moore}, idempotent complete additive categories~\cite{lyubashenko-doldkanrevisited}, categories with suitable factorization systems~\cite{lack-street, LackStreet20}, or certain functor categories~\cite{pirashvili,slominska}. One can sheafify the whole equivalence~\cite{banarjee-nearbycycles}, or even extend it to planar dendroidal abelian groups and planar dendroidal chain complexes~\cite{gutierrez-weiss-dendroidal}.  There is also a similar but dual equivalence between cochains and cosimplicial objects provided one works with monoid objects in both categories~\cite{castiglioni-cortinas} similar to the case with simplicial algebras and crossed complexes of commutative algebras~\cite{garynantie-doldkancrossed, arvasi-kocak-simp,akca-arvasi}. 
+
+Even though the ideas behind and the methods supporting simplicial sets are largely algebraic and combinatorial in nature~\cite{May:SimplicialObjects}, Kan observed that there is an intimate connection with the homotopy theory of topological spaces~\cite{kan1955abstract,kan1956abstract}. This point of view was later effectively encoded by Quillen in the notion of (closed) model categories~\cite{quillen1967homotopical}. As such, the proper context for our extension of the Dold-Kan equivalence for crossed simplicial groups is a model categorical equivalence between simplicial objects and chain complexes similar to the (monoidal) model categorical (weak) equivalence between these categories as shown by Schwede and Shipley~\cite{SchwedeShipley00,SchwedeShipley03} after a suitable localization~\cite{Hinich16, chorny2023variant}. Many contemporary extensions of the equivalence have already moved in that direction~\cite{richter-symmpropDold, shoikhet2011bialgebra, sore-coalgebraDold, SoreHermann17, Lurie:HigherAlgebra, dyckerhoff-categorified, peroux22, walde-homotopycoherent, peroux2023monoidal, truong2023operadic}. 
+
+There is a cofibrantly generated model category structure on $\rmod{\Simp}$~\cite{jardine_2003,SchwedeShipley03}. Since we can write the coinduction and the restriction functor as an adjoint pair $(\Res^{\Simp}_{\Simp G}, \CoInd^{\Simp}_{\Simp G})$
+\begin{equation}\label{eq:adjunction}
+ \xymatrix{
+   \rmod{\Simp} \ar@/^{2ex}/[rrr]^{\Res_{\Simp G}^\Simp} &&&
+   \ar@/^{2ex}/[lll]^{\CoInd_{\Simp G}^\Simp} \rmod{\Simp G} 
+ }
+\end{equation}
+we can lift the model structure on $\rmod{\Simp}$ to a model structure on $\rmod{\Simp G}$ along the right adjoint using~\cite{hirschhorn2009model} or using~\cite[Thm.7.44]{heuts_simplicial_2022} without appealing to~\cite{hess2015, hess2017necessary}. Then using the lifted model category structure on $\rmod{\Simp G}$, we prove that $\rmod{\Simp G}$ and $\rmod{\Simp}$ are equivalent as model categories. Since $\rmod{\Simp}$ and the category of differential graded $\Bbbk$-vector spaces are already equivalent as model categories~\cite{SchwedeShipley03}, we get a Dold-Kan type equivalence for $\rmod{\Simp G}$.
+
+\subsection*{Notation and conventions}
+
+We fix a ground field $\Bbbk$. We make no assumptions on the characteristic of $\Bbbk$.  For a $\Bbbk$-vector space $V$, we will use $V^\vee$ to denote its $\Bbbk$-vector space dual. We consider $\B{N}$ as a discrete category on the set of objects $\B{N}$ with nothing but the identity morphisms on objects. For a small category $\C{C}$ we use $\C{C}_{\Bbbk}$ for the algebra generated by the arrows of $\C{C}$ (called \emph{the categorical algebra of $\C{C}$}), or just $\C{C}$, by abuse of notation. However, for the categorical algebra of the discrete category $\B{N}$, we use $\Bbbk_\bullet$. All modules are assumed to be right modules unless otherwise stated. All $\Bbbk_\bullet$-modules are assumed to be locally finite in the sense that $X_\bullet = \bigoplus_{n\in\B{N}} X_n$ where $X_n$ is defined as $X_\bullet\cdot id_n$.
+
+\section{Preliminaries}
+
+\subsection{Simplicial and cosimplicial modules}
+
+We consider the skeletal category of finite well-ordered sets $\Delta$. We consider the generators
+$[n+1]\xla{\partial^n_i}[n]$ and $[n]\xla{\sigma^n_i}[n+1]$ where
+$[n]=\{0<\cdots<n\}$ and
+\[ \partial^n_i(j) =
+  \begin{cases}
+    j   & \text{ if } j\leq i\\
+    j+1 & \text{ if } j> i
+  \end{cases}
+  \qquad
+  \sigma^n_i(j) =
+  \begin{cases}
+    j   & \text{ if } j\leq i\\
+    j-1 & \text{ if } j> i
+  \end{cases}
+\]
+With this notation, right and left $\Simp $-modules respectively are simplicial and cosimplicial $\Bbbk$-modules.
+
+\subsection{Differential graded modules}
+
+Consider the subring $\Diff$ of $\Simp $ generated by
+\[ d_n := \sum_{i=0}^n (-1)^i \partial^n_i \] With this notation, $\Diff$-modules are differential
+graded $\Bbbk$-modules where differentials decrease the degree by 1 for right $\Diff$-modules while
+for left $\Diff$-modules the differentials increase the degree by 1.
+
+\subsection{Crossed simplicial modules} \cite[1.1. Definition]{fiedorowicz1991crossed} We are interested in any sequence of groups $\{G_n\}_{n\in\B{N}}$ that allows us to define a new category $\Simp G$ that extends the simplicial category $\Simp$ so that 
+\begin{enumerate}[(a)]
+    \item the category $\Simp G$ and $\Simp$ share the same set of objects,
+    \item the automorphism group of each object $[n]$ in $\Simp G$ is $G_n^{op}$, and
+    \item any morphism in $\Simp G$ can be uniquely written in the form of a composite $\phi \cdot g$ of an element $\phi \in \Hom_{\Delta}([m],[n])$ and $g \in G_m^{op}$.
+\end{enumerate}
+The extension category $\Simp G$ is called \emph{a crossed simplicial group}. The notable examples include Connes' cyclic category $\Simp C$ constructed out of cyclic groups $\{\B{Z}/(n+1)\B{Z}\}_{n\in\B{Z}}$, the symmetric category $\Simp S$ constructed out of symmetric groups $\{S_{n+1}\}_{n\in\B{N}}$, and the paracyclic category $\Simp \B{Z}$ constructed out of infinite cyclic group $\{\B{Z}\}_{n\in\B{N}}$.
+
+\subsection{Segal's category $\Gamma$}
+
+
+Segal's category $\Gamma$, as defined in~\cite{Segal:CategoriesCohomologyTheories}, is the opposite category of the skeletal category of finite sets with all functions. So, let us denote the skeletal category of finite sets with functions by $\Gamma^{op}$. Then $\Simp$ is a subcategory of $\Gamma^{op}$.
+
+\begin{proposition}
+ $\Gamma^{op}$ is isomorphic to $\Simp S$.    
+\end{proposition}
+
+\begin{proof}
+    Assume $[n]\xrightarrow{\alpha}[m]$ is an arbitrary set map. The set $[m] = \{0,\cdots,m\}$ has a natural order. Since the function $\alpha$ need not be an ordered function, each inverse image $\alpha^{-1}(i)$ need not be an interval in $[n]$. However, there is a unique permutation $\sigma\in Aut([n]) = S_{n+1}$ such that $\alpha\circ\sigma$ is an ordered map. 
+\end{proof}
+
+\section{Induction, Coinduction, and Restriction}
+
+\subsection{A change of basis}
+
+By looking at the relations in $\Simp$, we see that $\Simp$ has a natural $\Bbbk$-basis by monomials of the form $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}\partial^n_{i_n}\cdots \partial^m_{i_m}$ where $i_n>\cdots > i_m$ and $\ell_{n+1} >\cdots > \ell_r$. Now, let us define
+\begin{equation}
+    d_{i,n} = \sum_{j=i}^n (-1)^j \partial^n_j
+\end{equation}
+With this definition $\Diff$ is the unital subalgebra of $\Simp$ generated by $1_n$ and $d_{0,n}$ for every $n$.  Notice that $d_{i,n+1}d_{i,n} = 0$ for every $n$ and $0\leq i\leq n$. 
+
+\begin{lemma}
+  The algebra $\Simp$ has a basis by monomials of the form $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_m,m}$, again with $j_n>\cdots > j_m$ and  $\ell_{n+1} >\cdots > \ell_r$.
+\end{lemma}
+
+\begin{proof}
+  We show that one can replace monomials of the form $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}\partial^n_{i_n}\cdots \partial^m_{i_m}$ where $i_n>\cdots>i_m$ and $\ell_{n+1} >\cdots > \ell_r$ with monomials of the form $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_m,m}$ where $j_n>\cdots>j_m$, $\ell_{n+1} >\cdots > \ell_r$ and $j_m\geq i_m$. Let us prove this by induction on the length of the monomials. The statement is clear for monomials of length 1. So, assume we have the statement for all monomials of length $N$. Take a monomial of the form $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}\partial^n_{i_n}\cdots \partial^m_{i_m}$ where $n-m=N$ and $i_n>\cdots>i_{m+1}>i_m$ and $\ell_{n+1} >\cdots > \ell_r$. Since we replace the initial part of the monomial with the monomials of the correct type, we get a sum of the form
+  \begin{equation}
+      \sum _{j_n>\cdots>j_{m+1}>i_{m}} \lambda_{j_n,\ldots,j_{m+1}}\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_{m+1},m+1}\partial^{m}_{i_{m}}
+  \end{equation}
+  Then we get
+  \begin{align}
+    \sum _{j_n>\cdots>j_{m+1}>i_{m}} & \lambda_{j_n,\ldots,j_{m+1}}\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_{m+1},m+1}\partial^{m}_{i_{m}}\nonumber\\ 
+    = & \sum _{j_n>\cdots>j_{m+1}>i_{m}} \lambda_{j_n,\ldots,j_{m+1}}\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_{m+1},m+1}
+    (-1)^{i_{m}}(d_{i_{m},m}-d_{i_{m}+1,m+1})
+  \end{align}
+  The only part of the sum which does not conform to our statement is
+  \begin{equation}
+    \sum _{j_n>\cdots>j_{m+1}>i_{m}} \lambda_{j_n,\ldots,j_{m+1}}\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_{m+1},m+1} d_{i_{m},m}
+  \end{equation}
+  As long as $j_{m+1}\geq i_{m+1}>i_{m}$ the sum still conforms to the statement. The only case we must resolve is when $j_{m+1} = i_{m}+1$ in which case we use $d_{i,a+1}d_{i,a} = 0$. This proves that it is a spanning set. Since the monomials $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}\partial^n_{i_n}\cdots \partial^m_{i_m}$ and $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_m,m}$ are the same length, it implies that the set consisting of the monomials $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_m,m}$ where $j_n>\cdots>j_m$ and $\ell_{n+1} >\cdots > \ell_r$ is linearly independent. Then, the result follows.
+\end{proof}
+
+\begin{proposition}
+  $\Simp$ is a free right $\Diff$-module.
+\end{proposition}
+
+\begin{proof}
+  Since $\Simp$ has a basis by the monomials of the form $\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_m,m}$ with $j_n>\cdots>j_m\geq 0$ and $\ell_{n+1} >\cdots > \ell_r$ we write
+  \[ \Simp = \Span_{\Bbbk}(id_n,\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{i_n,n}\cdots d_{i_{m+1},m+1}\mid n\geq m+1,\ i_n>\cdots> i_{m+1})\otimes \Span_\Bbbk(1_m, d_{0,m}\mid m\geq 1)  \]
+  The result follows.
+\end{proof}
+
+\begin{proposition}
+    There is a split-epimorphism of unital algebras of the form $\eta\colon \Simp\to \Diff$ defined by
+    \[ \eta(\sigma^r_{\ell_r}\cdots \sigma^{n+1}_{\ell_{n+1}}d_{j_n,n}\cdots d_{j_m,m}) = 
+       \begin{cases}
+          d_{0,n} & \text{ if $r<n+1$, $n=m$, and $j_n=0$}\\
+          0 & \text{ otherwise.}
+       \end{cases}
+    \]
+    whose splitting is given by the inclusion $\Diff\to\Simp$.
+\end{proposition}
+
+\subsection{Induction, coinduction and restriction}
+
+For the inclusion of algebras $\Diff\to \Simp $ we have three functors: 
+\begin{enumerate}[(i)]
+    \item The induction functor $\Ind_{\Diff}^{\Simp }\colon \rmod{\Diff}\to\rmod{\Simp }$ given by $(\ \cdot\ )\otimes_{\Diff}\Simp $,
+    \item The coinduction functor $\CoInd_{\Diff}^{\Simp }\colon \rmod{\Diff}\to\rmod{\Simp }$ given by $\Hom_{\Diff}(\Simp,\ \cdot\ )$, and 
+    \item The restriction functor $\Res_{\Diff}^{\Simp}\colon \rmod{\Simp}\to\rmod{\Diff}$ given by considering a $\Simp$-module as a $\Diff$-module via the inclusion $\Diff\to \Simp$.
+\end{enumerate}
+For the epimorphism of algebras $\Simp\to \Diff$ we again have three functors: 
+\begin{enumerate}[(i)]
+    \item The induction functor $\Ind_{\Simp}^{\Diff}\colon \rmod{\Simp}\to\rmod{\Diff}$ given by $(\ \cdot\ )\otimes_{\Simp}\Diff$,
+    \item The coinduction functor $\CoInd_{\Simp}^{\Diff}\colon \rmod{\Simp}\to\rmod{\Diff}$ given by $\Hom_{\Simp}(\Diff,\ \cdot\ )$, and 
+    \item The restriction functor $\Res_{\Simp}^{\Diff}\colon \rmod{\Diff}\to\rmod{\Simp}$ given by considering a $\Diff$-module as a $\Simp$-module via the epimorphism $\Simp\to \Diff$.
+\end{enumerate}
+
+\section{Homology and Homotopy of crossed simplicial Algebras}
+
+\subsection{The point objects}
+
+We define the trivial left $\Simp$-module $\Bbbk_\bullet$ as $\Bbbk_n = \Bbbk$ where all generators of $\Delta$ act by identity.  Similarly, we define the trivial left $\Diff$-module $\Bbbk[0]$ as the $\Diff$-module which is $0$ everywhere except degree 0 where we have $\Bbbk$, and the generators of the subring $\Diff$ act by 0 except $1_0$ which acts as the identity on $\Bbbk$ in degree 0. Notice that we have $\Bbbk_\bullet = \Ind_{\Diff}^{\Simp}\Bbbk[0] = \CoInd_{\Diff}^{\Simp}\Bbbk[0]$. 
+
+\begin{proposition}\label{prop:quasi-equivalence}
+  We have
+  $\Res^{\Simp}_{\Diff} \Bbbk_\bullet$ is quasi-isomorphic to $\Bbbk[0]$. Thus we have
+  \[ \Tor^{\Simp}_*(X_\bullet,\Bbbk_\bullet)\cong 
+     \Tor^{\Diff}_*(\Res^{\Simp}_{\Diff}X_\bullet,\Bbbk[0])\cong 
+     H_*(\Res^{\Simp}_{\Diff}X_\bullet) 
+  \] and
+  \[ \Ext_{\Simp}^*(X_\bullet,\Bbbk_\bullet^\vee) 
+     \cong \Tor^{\Simp}_*(X_\bullet,\Bbbk_\bullet)^\vee
+     %\cong \Tor^{\Diff}_*(\Res^{\Simp}_{\Diff}X_\bullet,\Bbbk[0])^\vee
+     \cong H_*(\Res^{\Simp}_{\Diff}X_\bullet)^\vee
+  \]
+\end{proposition}
+
+\begin{proof}
+  Let $\Simp_n$ be the left $\Simp$-module given by
+  \[ \Simp_n = %\Span_{\Bbbk}(\partial^m_{i_m}\cdots \partial^{n+1}_{i_{n+1}}\mid i_m>\cdots>i_{n+1}, m>n) = 
+  \Span_{\Bbbk}(d_{i_m,m}\cdots d_{i_{n},n}\mid i_m>\cdots>i_{n}, m>n) 
+  \]
+  Notice that $\Simp_0 = \Bbbk_\bullet$. We define differentials $d_n\colon \Simp_n\to\Simp_{n-1}$
+  via right multiplication by $d_{0,n-1}$. Since $\Simp$ is a free $\Diff$-module, if
+  $\Psi\in ker(d_n)$ then $\Psi = \Psi' d_{0,n}$. Thus, we show that this chain complex is
+  exact. Deleting $\Simp_0$ at degree 0 and shifting the complex, we get that the remaining
+  complex becomes a resolution of $k_\bullet = \Simp_0$.
+\end{proof}
+
+\subsection{Quasi-isomorphisms and homotopy equivalences}
+
+Recall that a morphism $f_*\colon X_*\to Y_*$ of $\Diff$-modules is called \emph{a quasi-isomorphism} if the induced map in homology $H_n(f_*)\colon H_n(X_*)\to H_n(Y_*)$ is an isomorphism.  On the simplicial side, given a simplicial module $X_\bullet$, one can define \emph{combinatorial simplicial group} $\pi_n(X_\bullet)$ as follows. First, we define
+\[ Z_n = \{ x\in X_n\mid \partial_i(x)=0, \text{ for all } i=0,\ldots,n\} \] 
+Then we write an equivalence relation $\sim$ by letting $x\sim x'$ in $Z_n$ if there is an element $y\in X_{n+1}$ such that
+\[ \partial_i(y) =
+  \begin{cases}
+    0 & \text{ if } 0\leq i< n\\
+    x & \text{ if } i=n\\
+    x' & \text{ if } i=n+1
+  \end{cases}\] And finally, we define $\pi_n(X_\bullet) = Z_n/\!\!\sim$.  Now, a morphism
+$f_\bullet\colon X_\bullet\to Y_\bullet$ of $\Simp$-modules as a \emph{homotopy equivalence} if the induced morphisms on the homotopy groups $\pi_n(f_\bullet)\colon \pi_n(X_\bullet)\to \pi_n(Y_\bullet)$ are isomorphisms.
+
+\begin{theorem}\label{thm:TorExt}
+  Assume $f_\bullet\colon X_\bullet\to Y_\bullet$ is a morphism of simplicial $\Bbbk$-vector spaces. Then the following are equivalent:
+  \begin{enumerate}
+      \item $f_\bullet$ is a homotopy equivalence.
+      \item $\Res^{\Simp}_{\Diff}(f_\bullet)\colon \Res^{\Simp}_{\Diff}(X_\bullet)\to \Res^{\Simp}_{\Diff}(Y_\bullet)$  is a quasi-isomorphism.
+      \item $\Tor^{\Simp}_n(f_\bullet,\Bbbk_\bullet)\colon \Tor^{\Simp}_n(X_\bullet,\Bbbk_\bullet) \to \Tor^{\Simp}_n(Y_\bullet,\Bbbk_\bullet)$ is an isomorphism for every $n\geq 0$.
+      \item $\Ext_{\Simp}^n(f_\bullet,\Bbbk_\bullet^\vee)\colon \Ext_{\Simp}^n(Y_\bullet,\Bbbk_\bullet^\vee) \to \Ext_{\Simp}^n(X_\bullet,\Bbbk_\bullet^\vee)$ is an isomorphism for every $n\geq 0$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  By Proposition~\ref{prop:quasi-equivalence} we know that the induced morphisms are isomorphisms iff $Res^{\Simp}_{\Diff}(f_\bullet)$ is a quasi-isomorphism. By~\cite[Thm 8.3.8]{Weibel:HomologicalAlgebra} we know that   $\pi_n(X_\bullet)\cong H_n(Res^{\Simp}_{\Diff}(X_\bullet))$. This means $f_\bullet$ is a homotopy equivalence iff $Res^{\Simp}_{\Diff}(f_\bullet)$ is a quasi-isomorphism.  The result follows.
+\end{proof}
+
+\begin{corollary}
+  Let $\Bbbk[0]$ be the right $\Simp$-module $\Bbbk$ concentrated at degree 0, and where all generators act by 0 except for $1_0$.  Then the natural embedding $\Bbbk[0]\to \Bbbk_\bullet$ is a homotopy equivalence.
+\end{corollary}
+
+\subsection{The Moore functor}
+
+Let $X_\bullet$ be simplicial $\Bbbk$-module, i.e. a right $\Simp$-module. For every $n\in\B{N}$ let us define $N_n(X_\bullet)$ as
+\begin{equation}
+    N_n(X_\bullet) = \{ x\in X_n\mid x\partial_i = 0 \text{ for } 1\leq i\leq n \}
+\end{equation}
+together with the differentials $\partial_0^n$ acting on the right.
+
+\begin{lemma}
+  For every right $\Simp$-module $X_\bullet$, $N_*(X_\bullet)$ is exactly the vector subspace of $X_\bullet$ on which $ker(\eta)$ acts by 0. In other words, $N_*$ is the functor $\CoInd_{\Simp}^{\Diff}\colon \rmod{\Simp}\to \rmod{\Diff}$ associated with the epimorphism $\Simp\to \Diff$.
+\end{lemma}
+
+\begin{proof}
+  Let us consider the functor $\CoInd_{\Simp}^{\Diff}\colon \rmod{\Simp}\to\rmod{\Diff}$ on the objects:
+  \begin{align}
+    \CoInd_{\Simp}^{\Diff}X_\bullet 
+    = & \Hom_{\Diff}(\Simp,X_\bullet) \\
+    = & \{x\in X_n\mid x d_{i,n-1} = 0 \text{ for } n\geq 1, \text{ and } 1\leq i\}\\
+    = & \{x\in X_n\mid x \partial^{n-1}_i = 0 \text{ for } n\geq 1, \text{ and } 1\leq i\} 
+  \end{align}
+  Then when we reduce the $\Diff$-action  to an $\Simp$-action, we declare all $d_{i,n}$'s act by 0 for $i\geq 1$. Thus $\CoInd_{\Simp}^{\Diff}X_\bullet = N_*(X_\bullet)$.
+\end{proof}
+
+\begin{proposition}[{\cite[8.3.8]{Weibel:HomologicalAlgebra}}{\cite[Theorem III 2.1]{GoerssJardine:SimplicialHomotopy}}]\label{prop:equivalence}
+  The functors $\CoInd_{\Simp}^{\Diff}$ and $\Res^{\Simp}_{\Diff}$ are naturally isomorphic after we localize $\rmod{\Simp}$ with respect to homotopy equivalences and $\rmod{\Diff}$ with respect to quasi-isomorphisms.
+ \end{proposition}
+
+ \begin{proof}
+  The statement is equivalent to the fact that the natural inclusion $N_*(X_\bullet) \to \Res^{\Simp}_{\Diff} X_\bullet$ is a quasi-isomorphism for every simplicial module $X_\bullet$.
+ \end{proof}
+
+\section{The Dold-Kan Equivalence Re-imagined}
+
+\subsection{The classical Dold-Kan equivalence via coinduction and restriction}
+
+ \begin{theorem}\label{thm:adjoint-pair}
+  The categories $\rmod{\Simp}$ and $\rmod{\Diff}$ are equivalent via the functors $\CoInd_{\Simp}^{\Diff}$ and $\Res^{\Diff}_{\Simp}$ after we localize these categories with respect to homotopy equivalences and quasi-isomorphisms, respectively.
+ \end{theorem}
+
+ \begin{proof}
+  Let us take a differential graded module $Y_*$ and consider $\Res^{\Diff}_{\Simp}Y_*$.  This is the same graded module $Y_*$ considered as a simplicial $\Bbbk$-module on which every $d_{i,n}$ act by 0 for $i>0$, or equivalently every face map $\partial^n_i$ act by 0 for $i>0$.  Now, if we consider $\CoInd_{\Simp}^{\Diff}\Res^{\Diff}_{\Simp}Y_*$, we get the graded vector subspace of $Y_* = \Res^{\Diff}_{\Simp}Y_*$ given by the intersection of the kernels of the face maps $\partial^n_i$ for $i>0$. This is again $Y_*$ with the same differentials. Thus $\CoInd_{\Simp}^{\Diff}\Res^{\Diff}_{\Simp}$ is the identity functor. On the other hand, take a simplicial $\Bbbk$-module $X_\bullet$, and consider $\Res^{\Diff}_{\Simp}\CoInd_{\Simp}^{\Diff}X_\bullet$. This is the normalized Moore complex $N_*(X_\bullet)$ considered as a simplicial module where every face map $\partial^n_i$ acts by $0$ for $i>0$. However, since the homology groups of $\Res^{\Diff}_{\Simp}\CoInd_{\Simp}^{\Diff}X_\bullet$ and $N_*(X_\bullet)$ are isomorphic, and therefore, the natural embedding $\Res^{\Diff}_{\Simp}\CoInd_{\Simp}^{\Diff}X_\bullet \to X_\bullet$ is a homotopy equivalence.
+ \end{proof}
+
+\subsection{The Dold-Kan equivalence for crossed simplicial groups}~
+
+The following is an easy corollary of  Theorem~\ref{thm:TorExt}.
+\begin{corollary}\label{cor:EquivariantHomotopyEquivalence}
+   Let $f_\bullet\colon X_\bullet\to Y_\bullet$ be a morphism of $\Simp G$-modules. Then the induced morphism $\Tor_{\Simp G}^n(f_\bullet,\Bbbk_\bullet)$ is an isomorphism iff the induced morphism $\Ext_{\Simp G}^n(f_\bullet,\Bbbk_\bullet)$ is an isomorphism for every $n\geq 0$.
+\end{corollary}
+
+\begin{theorem}\label{thm:equivalence}
+   The categories $\rmod{\Simp G}$ and  $\rmod{\Simp}$ are equivalent after we localize underlying categories with respect to the corresponding homotopy equivalences.
+\end{theorem}
+
+\begin{proof}
+  Consider the simplicial group $G_\bullet$ within $\Simp G$. When we consider the co-induction functor $\CoInd_{\Simp G}^{\Simp}$ of the natural epimorphism $\Simp G \to \Simp$, and we follow this functor with the corresponding restriction functor $\Res^{\Simp}_{\Simp G}$ we get an endofunctor $\Res^{\Simp}_{\Simp G}\CoInd^{\Simp}_{\Simp G}$ of the category $\rmod{\Simp G}$ that sends a $\Simp G$-module $X_\bullet$ to the $\Simp G$-module $\Hom_{G_\bullet}(X_\bullet,\Bbbk_\bullet)$ where the action of $G_\bullet$ factors through the augmentation map $\Bbbk[G_\bullet]\to \Bbbk_\bullet$. Thus we have a natural transformation $\eta\colon \Res^{\Simp}_{\Simp G}\CoInd^{\Simp}_{\Simp G}\to id_{\Simp G}$ which is an monomorphism on each object. The homology of a $\Simp G$-module is calculated as the right derived functor of $\Hom_{\Simp G}(\ \cdot\ ,\Bbbk_\bullet)$. However, we have
+  \[\Hom_{\Simp G}(\ \cdot\ ,\Bbbk_\bullet) = \Hom_{\Simp G}(\Res^{\Simp}_{\Simp G}\CoInd^{\Simp}_{\Simp G}(\ \cdot\ ),\Bbbk_\bullet) \]
+  Then induced transformation on $\eta$ in homology is the identity. Thus their derived functors are the same. This means the endofunctor $\Res^{\Simp}_{\Simp G}\CoInd^{\Simp}_{\Simp G}$ is a self derived equivalence.
+\end{proof}
+
+\begin{corollary}[The Dold-Kan equivalence for crossed simplicial groups]\label{cor:main-result}
+We have the following equivalences
+\[ \xymatrix{
+\rmod{\Simp G} \ar@/^2ex/[rr]^{\CoInd_{\Simp G}^{\Simp}} 
+&& \ar@/^2ex/[ll]^{\Res_{\Simp G}^{\Simp}} \rmod{\Simp} \ar@/^2ex/[rr]^{\CoInd^{\Diff}_{\Simp}} 
+&& \ar@/^2ex/[ll]^{\Res_{\Simp}^{\Diff}} \rmod{\Diff}
+}\]
+after we localize each category with respect to the corresponding homotopy equivalences or quasi-isomorphisms.
+\end{corollary}
+
+\section{Model Categorical Reformulation}\label{sect:Quillen}
+
+\subsection{The cofibrantly generated Quillen model category structure on $\rmod{\Diff}$}~
+
+We start by describing the standard model structure on the category $\rmod{\Diff}$ of dg-$\Bbbk$-vector spaces. To define a model structure, we need to determine fibrations, cofibrations, and weak equivalences that satisfy the model structure axioms. 
+
+\begin{enumerate}[(i)]
+
+\item A \emph{cofibration} of dg-$\Bbbk$-vector spaces is a monomorphism $f_*\colon X_*\to Y_*$ of dg-$\Bbbk$-vector spaces.
+
+\item A \emph{weak equivalence} of dg-$\Bbbk$-vector spaces is a morphism $f_* \colon X_* \to Y_*$ of dg-$\Bbbk$-vector spaces that induces an isomorphism $H_n(f_*)\colon H_n(X_*)\to H_n(Y_*)$ on homology groups.
+
+\item Now, fibrations of dg-$\Bbbk$-vector spaces are completely determined by the class of weak equivalences and cofibrations. A morphism $f_*\colon X_*\to Y_*$ of dg-$\Bbbk$-vector spaces is called a \emph{fibration} if $f_*$ has the right lifting property with respect to all trivial cofibrations.
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    TRANSFERRING MODEL CATEGORY STRUCTURES     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Transferring the model category structure to $\rmod{\Simp}$}~
+
+We consider the algebra epimorphism $\Simp \to \Diff$, and the three functors $\Ind_{\Simp}^\Diff$, $\CoInd_{\Simp}^\Diff$, and $\Res_{\Simp}^\Diff$ associated with this epimorphism. The coinduction functor $\CoInd_{\Simp}^\Diff$ is given by a Hom functor as $\Hom_{\Simp}(\ \cdot\ ,\Diff)$.  The restriction functor $\Res_{\Simp}^\Diff$, on the other hand, is given by a tensor functor as $(\ \cdot\ )\otimes_{\Diff}\Simp$ associated with the canonical epimorphism $\Simp\to \Diff$. As such we have an adjoint pair of functors $\left(\Res_{\Simp}^\Diff,\CoInd_{\Simp}^\Diff\right)$. We would like to lift the model category structure on $\rmod{\Diff}$ to a model category structure on $\rmod{\Simp}$.  Since we lift along $\CoInd_{\Simp}^\Diff$ which is a right adjoint, we can use~\cite[Theorems 11.3.1 and 11.3.2]{hirschhorn2009model} or~\cite[Thm.7.44]{heuts_simplicial_2022}.
+
+Note that since we deal with $\Bbbk$-vector spaces, all monomorphisms are split. Thus the lifted cofibrations are still the class of monomorphisms. On the other hand, the lifted weak equivalences are those morphisms $f_\bullet\colon X_\bullet\to Y_\bullet$ which are sent to quasi-isomorphisms under the coinduction functor $\CoInd_{\Simp}^\Diff$ which is quasi-isomorphic to the restriction functor $\Res^{\Simp}_\Diff$. Thus the lifted weak equivalences are exactly the class of homotopy equivalence of simplicial vector spaces. 
+
+The class of fibrations, cofibrations, and weak equivalences we defined above yield a cofibrantly generated Quillen model category structure on $\rmod{\Simp}$ the category of simplicial $\Bbbk$-vector spaces as defined in~\cite{jardine_2003,SchwedeShipley03}.
+
+\begin{theorem}
+    The Dold-Kan equivalence is a Quillen model categorical equivalence.
+\end{theorem}
+
+\begin{proof}
+Observe that $\CoInd_{\Simp}^\Diff\Res_{\Simp}^\Diff$ is the identity functor of $\rmod{\Diff}$. On the other hand, the reverse composition $\Res_{\Simp}^\Diff\CoInd_{\Simp}^\Diff$ is the Moore functor which is quasi-isomorphic to the identity functor of $\rmod{\Simp}$. The result follows.
+\end{proof}
+
+\subsection{Transferring the model category structure to $\rmod{\Simp G}$}~
+
+We write the restriction functor $\Res_{\Simp G}^\Simp$ as a tensor product $(\ \cdot\ )\otimes_{\Simp} (\Simp G)$ associated with the epimorphism $\Simp G\to \Simp$.  Thus we have an adjoint pair of the form $(\Res_{\Simp G}^\Simp, \CoInd_{\Simp G}^\Simp)$
+\[ \xymatrix{
+    \rmod{\Simp} \ar@/^{2ex}/[rrr]^{\Res_{\Simp G}^\Simp} &&& 
+    \ar@/^{2ex}/[lll]^{\CoInd_{\Simp G}^\Simp} \rmod{\Simp G} 
+  }  \]  
+Now, we would like to lift the model category structure on $\rmod{\Simp}$ to a model category structure on $\rmod{\Simp G}$ along the \emph{right adjoint} $\CoInd_{\Simp G}^\Simp$. This can again be achieved easily by~\cite[Theorems 11.3.1 and 11.3.2]{hirschhorn2009model} or by~\cite[Thm.7.44]{heuts_simplicial_2022} without appealing to \cite{hess2015, hess2017necessary}. 
+
+In the cofibrantly generated model category structure on $\rmod{\Simp}$ above, a cofibration was a mono-morphism of simplicial  $\Bbbk$-vector spaces. Since every monomorphism is split in the category of $\Bbbk$-vector spaces, cofibrations of $\rmod{\Simp G} $ are still the class of split monomorphisms. Finally, Corollary~\ref{cor:EquivariantHomotopyEquivalence} indicates that a morphism $f_\bullet\colon X_\bullet\to Y_\bullet$ is a weak equivalence if the $G_\bullet$-coinvariants $(f_\bullet)_{G_\bullet}$ is an ordinary homotopy equivariance, which is equivalent to $\CoInd_{\Simp G}^\Simp(f_\bullet)$ being a homotopy equivalence of simplicial $\Bbbk$-vector spaces.
+
+\begin{theorem}\label{thm:quillen-equivalence}
+ The model categories $\rmod{\Simp G}$ and $\rmod{\Simp}$ are equivalent.   
+\end{theorem}
+\begin{proof}
+
+First, we observe that $\CoInd^{\Simp}_{\Simp G}\Res^{\Simp}_{\Simp G} = id_{\rmod{\Simp}}$.  On the opposite side, we have a natural transformation of the form $\eta\colon\Res^{\Simp}_{\Simp G}\CoInd^{\Simp}_{\Simp G}\to id_{\Simp G}$. In the induced model category a morphism $f_\bullet\colon X_\bullet\to Y_\bullet$ of $\Simp G$-modules is a weak equivalence if $\Ext_{\Simp G}^n(f_\bullet, \Bbbk_\bullet)\colon \Ext_{\Simp G}^n(Y_\bullet,\Bbbk_\bullet)\to \Ext_{\Simp G}^n(X_\bullet, \Bbbk_\bullet)$ is an isomorphism for every $n\geq 0$. Since
+\[ \Hom_{\Simp G}(\Res^{\Simp}_{\Simp G}\CoInd^{\Simp}_{\Simp G}(\ \cdot\ ), \Bbbk_\bullet) = \Hom_{\Simp G}(\ \cdot\ ,\Bbbk_\bullet) \]
+the natural transformation $\eta$  is a weak equivalence.
+\end{proof}
+
+\begin{corollary}
+    The equivalences given in Corollary~\ref{cor:main-result} are equivalences of Quillen model categories.
+\end{corollary}
+
+\bibliographystyle{siam}
+\bibliography{bibliography}
+
+\end{document}
+

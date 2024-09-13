@@ -1,0 +1,205 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{gensymb}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{caption}
+
+\usepackage{times}
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amssymb, amsgen, amsthm, amscd, amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+
+\usepackage{bm}
+%\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{Thermodynamics Assignment For The Sixth Time}
+
+\author{Haixuan Lin - 23307110267}
+\email{23307110267@m.fudan.edu.cn}
+
+
+\address{Fudan University, Physics Department, China}
+
+\begin{document}
+	
+	\begin{abstract}
+		Here is the thermodynamics assignment for the sixth time which is for the course given by professor Yuanbo Zhang. In order to practise the expertise in scientific film of physics, students need to practise using \LaTeX to composing their own work, even if this is only a ordinary homework.
+	\end{abstract}
+	
+	\maketitle
+	\section*{Main Text}
+	
+	\subsection*{Given an ideal gas in the initial state $p_0, V_0, S_0$, calculate the entropy of any final state	}
+	
+	Construct an invertible process: 
+	
+	First, isobaric expansin $(p_0, V_0)\rightarrow(p_0, V)$
+	
+	\begin{align}
+			\Delta S_1 &= \int_{\left( p_0,V_0 \right)}^{\left( p_0,V \right)}{\frac{\mathrm{d}Q_1}{T}} 
+			= \int_{\left( p_0,V_0 \right)}^{\left( p_0,V \right)}{\frac{\mathrm{d}A+\mathrm{d}U}{T}} 
+			= \int_{\left( p_0,V_0 \right)}^{\left( p_0,V \right)}{\frac{p\mathrm{d}V+\nu C_V\mathrm{d}T}{T}} 
+			= \int_{V_0}^V{\frac{p\mathrm{d}V}{\frac{pV}{\nu R}}}+\int_{T_0}^{T_1}{\frac{\nu C_V\mathrm{d}T}{T}} \\
+			&= \nu R\ln \frac{V}{V_0}+\nu C_V\ln \frac{T_1}{T_0}
+	\end{align}
+	
+	And, constant volume heating $(p_0, V)\rightarrow(p,V)$
+	
+	\begin{align}
+		\Delta S_2&=\int_{\left( p_0,V \right)}^{\left( p,V \right)}{\frac{\mathrm{d}Q_2}{T}}=\int_{\left( p_0,V \right)}^{\left( p,V \right)}{\frac{\mathrm{d}A+\mathrm{d}U}{T}=}\int_{\left( p_0,V \right)}^{\left( p,V \right)}{\frac{\mathrm{d}U}{T}}=\int_{\left( p_0,V \right)}^{\left( p,V \right)}{\frac{\nu C_V\mathrm{d}T}{T}}\\
+		&=\nu C_V\ln \frac{T}{T_1}
+	\end{align}
+	
+	As a result
+	
+	$$
+	S=S_0+\Delta S_1+\Delta S_2=\nu C_V\ln \frac{T}{T_0}+\nu R\ln \frac{V}{V_0}+S_0
+	$$
+	
+	\subsection*{5.3.4}
+	
+	\subsubsection*{(1)}
+	
+	By the first law of thermodynamics
+	
+	$$
+	\mathrm{d}U=\mathrm{d}W+\mathrm{d}Q
+	$$
+	
+	And $\mathrm{d}Q=0$, $W<0$, $U=C_{V,m}T$, we can conclude
+	
+	$$
+	T<T_0
+	$$
+	
+	\subsubsection*{(2)}
+	
+	Note that this process is actually irreversible, so there must be
+	
+	$$
+	\Delta S>0
+	$$
+	
+	\subsection*{(3)}
+	
+	We have some equation
+	
+	$$
+	W=-\frac{mg}{A}\left( V-V_0 \right) 
+	$$
+	
+	$$
+	\Delta U=C_{V,m}\left( T-T_0 \right) =W
+	$$
+	
+	$$
+	\frac{mg}{A}V=RT
+	$$
+	
+	As a result 
+	
+	$$
+	T=\frac{C_{V,m}T_0+\frac{mg}{A}V_0}{C_{V,m}+R}
+	$$
+	
+	
+	\subsection*{5.3.7}
+	
+	\subsubsection*{(1)}
+	
+	Gas 1 and gas 2 satisfy the ideal gas equation of state respectively, and gas 2 additionally satisfies the adiabatic equation.
+	
+	$$
+	\frac{p_0V_0}{T_0}=\frac{2p_0V_1}{T_1}
+	$$
+	
+	$$
+	\frac{p_0V_0}{T_0}=\frac{2p_0\left( 2V_0-V_1 \right)}{T_2}
+	$$
+	
+	$$
+	p_0V_{0}^{\gamma}=2p_0\left( 2V_0-V_1 \right) ^{\gamma}
+	$$
+	
+	$$
+	\gamma =\frac{i+2}{i}=\frac{7}{5}
+	$$
+	
+	As a result
+	
+	$$
+	T_1=(4-2^\tfrac{2}{7})T_0
+	$$
+	
+	$$
+	T_2=2^\tfrac{2}{7}T_0
+	$$
+	
+	\subsubsection*{(2)}
+	
+	By the first law of thermodynamics
+	
+	$$
+	W=\Delta U_2=C_{V,m}(T_2-T_0)=\dfrac{5}{2}(2^\tfrac{2}{7}-1)RT_0
+	$$
+	
+	\subsubsection*{(3)}
+	
+	By the first law of thermodynamics
+	
+	$$
+	Q=\Delta U=\Delta U_1+\Delta U_2=5RT_0
+	$$
+	
+	\subsubsection*{(4)}
+	
+	We use the express of $S$ we just get:
+	
+	$$
+	\Delta S=\Delta S_1+\Delta S_2=\Delta S_1=R\ln \frac{V_1}{V_0}+C_{V,m}\ln \frac{T_1}{T_0}=\left[ \ln \left( 2-2^{-\tfrac{5}{7}} \right) +\frac{5}{2}\ln \left( 4-2^{\tfrac{2}{7}} \right) \right] RT_0
+	$$
+	
+\end{document}
+

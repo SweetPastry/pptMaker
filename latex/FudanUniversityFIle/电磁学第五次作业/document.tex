@@ -1,0 +1,364 @@
+\documentclass[a4paper,11pt]{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{gensymb}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{caption}
+%\usepackage{newtxmath}
+%\usepackage{txfonts}
+\usepackage{times}
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amssymb, amsgen, amsthm, amscd, amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+%\usepackage{pxfonts}
+\usepackage{bm}
+%\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}}
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{Electromagnetism Assignment For The Fifth Time}
+
+\author{Haixuan Lin - 23307110267}
+\email{23307110267@m.fudan.edu.cn}
+
+
+\address{Fudan University, Physics Department, China}
+
+\begin{document}
+	
+	\begin{abstract}
+		Here is the electromagnetism assignment for the fifth time which is for the corse given by professor Weichao Liu. In order to practise the expertise in scientific film of physics, students need to practise using \LaTeX to composing their own work, even if this is only a ordinary homework.
+	\end{abstract}
+	
+	\maketitle
+	
+	\section*{Main Text}
+	
+	\subsection*{5-4}
+	
+	\subsubsection*{(1)}
+	
+	According to the Faraday disk we know that
+	
+	$$
+	E=\dfrac{1}{2}BR^2\omega=\pi NBR^2	
+	$$
+	
+	
+	\subsubsection*{(2)}
+	
+	Assuming that the direction of the magnetic field is perpendicular to the paper and the spokes are rotated clockwise, the direction of the current appears to the external circuit to be from b to a.
+	
+	If any factor be reversed, the direction of current will be reversed too.
+		
+	\subsubsection*{(3)}
+	
+	Let us do some integraty:
+	
+	$$
+	M=\int_0^R{BIr\mathrm{d}r=\frac{1}{2}IBR^2}
+	$$
+	
+	\subsubsection*{(4)}
+	
+	Yes, off course.
+	
+	\subsubsection*{(5)}
+	
+	As the same as above.
+	
+	\subsection*{5-7}
+	
+	\subsubsection*{(1)}
+	
+	When balance is reached, there is
+	
+	$$
+	F_A=mg\sin\theta
+	$$
+	
+	$$
+	F_A=B\cos\theta IL
+	$$
+	
+	$$
+	E=B\cos\theta Lv
+	$$
+	
+	$$
+	I=\dfrac{E}{R}
+	$$
+	
+	As a result $v=\dfrac{mgR\sin\theta}{B^2L^2\cos^2\theta}$.
+	
+	\subsubsection*{(2)}
+	
+	$$
+	P_\text{Gravity}=mg\sin\theta v=\dfrac{m^2g^2R\sin^2\theta}{B^2L^2\cos^2\theta}
+	$$
+	
+	$$
+	P_\text{Joule}=I^2R=\dfrac{E^2}{R}=\dfrac{B^2L^2}{R}v^2=\dfrac{B^2L^2}{R}\dfrac{m^2g^2R^2\sin^2\theta}{B^4L^4\cos^4\theta}=\dfrac{m^2g^2R\sin^2\theta}{B^2L^2\cos^2\theta}
+	$$
+	
+	As a result $P_\text{Gravity}=P_\text{Joule}$, so the result comes from (1) is compatible with the law of energy conservation.
+	
+	\subsection*{5-12}
+	
+	\subsubsection*{(1)}
+	
+	It's easy to know that $\bm{E}(0)=0$ by symmetry.
+	
+	\subsubsection*{(2)}
+	
+	Let us do Ampere loop theorm:
+	
+	$$
+	E\cdot2\Delta y=\dfrac{\mathrm{d}}{\mathrm{d}t}d\Delta yat
+	$$
+	
+	So it has no correlation with $\Delta y$ when $|x|\geqslant\dfrac{d}{2}.$
+	
+	As a result $\bm{E}\left(\dfrac{d}{2}\right)=\dfrac{1}{2}ad\bm{\hat{y}}$.
+	
+	\subsubsection*{(3)}
+	
+	According to the conclution of (2) we know As a result $\bm{E}(d)=\dfrac{1}{2}ad\bm{\hat{y}}$.
+	
+	\subsection*{5-15}
+	
+	\subsubsection*{(1)}
+	
+	We do calculate $E=\dfrac{\mathrm{d}B}{\mathrm{d}t}\pi R^2$, so $\dfrac{\mathrm{d}B}{\mathrm{d}t}=318\,\mathrm{V}.$
+	
+	\subsubsection*{(2)}
+	
+	We can know $N=\dfrac{16\,\mathrm{MeV}}{150\mathrm{eV}}=10^5$ and $S=N\cdot2\pi r=251\,\mathrm{km}.$
+	
+	\subsection*{5-7}
+	
+	This problem can be solved more conveniently by introducing the magnetic vector potential vector.
+	
+	$$
+	\varPhi _{12}=\iint_{S_2}{\boldsymbol{B}_1\cdot \mathrm{d}\boldsymbol{S}_2}=\iint_{S_2}{\left( \nabla \times \boldsymbol{A}_1 \right) \cdot \mathrm{d}\boldsymbol{S}_2}=\oint_{L_2=\partial S_2}{\boldsymbol{A}_1\cdot \mathrm{d}\boldsymbol{L}_2}=\int_0^{2\pi}{\frac{1}{2}B_1r_2\cdot r_2\mathrm{d}\theta}=\pi r_{2}^{2}B_2=\pi r_2^2\cdot\mu_0n_1I_1
+	$$
+	
+	The same method we can have $\displaystyle\varPhi _{21}=\pi r_{1}^{2}\cdot\mu_0n_2I_2.$
+	
+	So we have $\displaystyle M=\dfrac{N_1\varPhi_{21}}{I_2}=N_1\pi r_{1}^{2}\cdot\mu_0n_2$
+	
+	What' more 
+	
+	$$
+	L_1=\mu _0n_{1}^{2}V_1=\mu _0n_{1}^{2}\pi r_{1}^{2}l_1=\mu _0n_1N_1\pi r_{1}^{2}
+	$$
+	
+	$$
+	L_2=\mu _0n_{2}^{2}V_2=\mu _0n_{2}^{2}\pi r_{2}^{2}l_2=\mu _0n_2N_2\pi r_{2}^{2}
+	$$
+	
+	As a result
+	
+	$$
+	\sqrt{L_1L_2}=\mu_0\pi r_1r_2\sqrt{n_1n_2N_1N_2}=\mu_0\pi r_1r_2n_1n_2\sqrt{l_1l_2}=\mu_0\pi r_1r_2n_1n_2l
+	$$
+	
+	At the same time
+	
+	$$
+	\dfrac{r_2}{r_1}M=\dfrac{r_2}{r_1}\cdot \mu _0\pi r_1^2n_1n_2l_1=\mu_0\pi r_1r_2n_1n_2l
+	$$
+	
+	So we have ￥$\displaystyle M=k\sqrt{L_1L_2}$ with $k=\dfrac{r_1}{r_2}<1$.
+	
+	\subsection*{5-25}
+	
+	\subsubsection*{(1)}
+	
+	Consider the voltage situation of the whole circuit.
+	
+	$$
+	U=iR+L\frac{\mathrm{d}i}{\mathrm{d}t}
+	$$
+	
+	This simple differential equation has a solution with the initial condition $\displaystyle i(t=0)=0.$
+	
+	$$
+	i=\frac{U}{R}\left( 1-\exp \left( -\frac{R}{L}t \right) \right) 
+	$$
+	
+	Take it into:
+	
+	$$
+	\frac{\mathrm{d}}{\mathrm{d}t}W_B=\frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{1}{2}Li^2 \right) =Li\frac{\mathrm{d}}{\mathrm{d}t}i=\frac{U^2}{R}\exp \left( -\frac{R}{L}t \right) \left( 1-\exp \left( -\frac{R}{L}t \right) \right) 
+	$$
+	
+	By substituting the correlation values $\displaystyle \frac{\mathrm{d}}{\mathrm{d}t}W_B=46.392\,\mathrm{J}/\mathrm{s}.$
+	
+	\subsubsection*{(2)}
+	
+	According to Joule's law:
+	
+	$$
+	P_{\mathrm{Joule}}=i^2R=\frac{U^2}{R}\left( 1-\exp \left( -\frac{R}{L}t \right) \right) ^2
+	$$
+	
+	By substituting the correlation values $\displaystyle P_\mathrm{Joule}=2.379\,\mathrm{J/s}$.
+	
+	\subsubsection*{(3)}
+	
+	$$
+	P=Ui=\frac{U^2}{R}\left( 1-\exp \left( -\frac{R}{L}t \right) \right) 
+	$$
+	
+	By substituting the correlation values $\displaystyle P=48.77\,\mathrm{J/s}$.
+	
+	\subsection*{5-27}
+	
+	To solve this difficult problem, we're going to introduce a powerful mathematical tool called the Laplace transform. So $\mathscr{L} $ is the Laplace change operator, and its definition is
+	
+	$$
+	F\left( s \right) =\mathscr{L} \left[ f\left( t \right) \right] =\int_0^{\infty}{f\left( t \right) \exp \left( -st \right) \mathrm{d}t}
+	$$
+	
+	We can prove some excellent proporties:
+	
+	\begin{itemize}
+		
+		\item $\displaystyle \mathscr{L} \left[ \frac{\mathrm{d}}{\mathrm{d}t}f^{\left( n \right)}\left( t \right) \right] =s^nF\left( s \right) -\sum_{N=0}^{n-1}{s^Nf^{\left( n-1-N \right)}\left( 0 \right)}=s^nF\left( s \right) -s^{n-1}f\left( 0 \right) -s^{n-2}f^{\left( 1 \right)}\left( 0 \right) -\cdots -s^0f^{\left( n-1 \right)}\left( 0 \right)  $\\\\
+		
+		\item $\displaystyle \mathscr{L} \left[ \left( \int_0^t{\mathrm{d}t} \right) ^nf\left( t \right) \right] =\frac{1}{s^n}F\left( s \right) $\\\\
+	
+		
+		\item $\displaystyle \mathscr{L} \left[ t^2f\left( t \right) \right] =\left( -1 \right) ^n\frac{\mathrm{d}^n}{\mathrm{d}s^n}F\left( s \right) $\\\\
+		
+		\item $\displaystyle \mathscr{L} \left[ \frac{1}{t^n}f\left( t \right) \right] =\left( \int_s^{+\infty}{\mathrm{d}s} \right) ^nF\left( s \right) $\\\\
+		
+		\item $\displaystyle \lim_{t\longrightarrow 0} f\left( t \right) =\lim_{s\longrightarrow +\infty} sF\left( s \right) $\\\\
+		
+		\item $\displaystyle \lim_{t\longrightarrow +\infty} f\left( t \right) =\lim_{s\longrightarrow 0} sF\left( s \right) $\\\\
+		
+		\item $\displaystyle \mathscr{L} \left[ \left( f\ast g \right) \left( t \right) \right] =F\left( s \right) G\left( s \right) $
+		
+	\end{itemize}
+	
+	List the Kirchhoff voltage equation for this system:
+	
+	$$
+	i_1R_1+L_1\frac{\mathrm{d}i_1}{\mathrm{d}t}+M\frac{\mathrm{d}i_2}{\mathrm{d}t}=0
+	$$
+	
+	$$
+	i_2\left( R_2+R_g \right) +L_2\frac{\mathrm{d}i_2}{\mathrm{d}t}+M\frac{\mathrm{d}i_1}{\mathrm{d}t}=0
+	$$
+	
+	Define $I_i=\mathscr{L}[i]$ with $i=1,2$.
+	
+	$$
+	I_1R_1+sL_1-L_1i_1\left( t=0 \right) +sMI_2-Mi_2\left( t=0 \right) =0
+	$$
+	
+	$$
+	I_2\left( R_2+R_g \right) +sL_2I_2-L_2i_2\left( t=0 \right) +sMI_1-Mi_1\left( t=0 \right) =0
+	$$
+	
+	And with the inistial condition $\displaystyle i_1\left( t=0 \right) =\frac{E}{R_1}$ as well as $\displaystyle i_2\left( t=0 \right) =0$.
+
+	$$
+	\left( R_1+sL_1 \right) I_1+sMI_2=L_1\frac{E}{R_1}
+	$$
+	
+	$$
+	sMI_1+\left( R_2+R_g+sL_2 \right) I_2=M\frac{E}{R_1}
+	$$
+	
+	This is a linear equation groups and easy to solve so
+	
+	$$
+	I_2=\frac{ME}{\left( L_1L_2-M^2 \right) s^2+\left[ L_1\left( R_2+R_g \right) +L_2R \right] s+R_1\left( R_2+R_g \right)}
+	$$
+	
+	If there is no magnetic leakage in the system, then $\displaystyle M=\sqrt{L_1L_2}$, so
+	
+	$$
+	I_2=\frac{ME}{\left[ L_1\left( R_2+R_g \right) +L_2R \right] s+R_1\left( R_2+R_g \right)}=\frac{ME}{L_1\left( R_2+R_g \right) +L_2R_1}\frac{1}{s+\frac{R_1\left( R_2+R_g \right)}{L_1\left( R_2+R_g \right) +L_2R_1}}
+	$$
+	
+	And 
+	
+	$$
+	i_2=\mathscr{L}^{-1}[I_2]=\frac{ME}{L_1\left( R_2+R_g \right) +L_2R}\exp \left( -\frac{R_1\left( R_2+R_g \right)}{L_1\left( R_2+R_g \right) +L_2R_1}t \right) 
+	$$
+	
+	As a result
+	
+	$$
+	q_2=\int_0^{+\infty}{i_2\mathrm{d}t}=\frac{ME}{R_1\left( R_2+R_g \right)}
+	$$
+	
+	This is an interesting conclusion, when the system has no magnetic leakage, the amount of charge transfer caused by the mutual inductance of system 1 is independent of the self-inductance of system 2.
+	
+	\subsection*{5-30}
+	
+	Firstly, the Ampere-loop theorem is used to solve the field intensity distribution inside the wire.
+	
+	$$
+	2\pi rB(r)=\mu_0\dfrac{r^2}{R^2}I
+	$$
+	
+	As a result:
+	
+	$$
+	B(r)=\dfrac{\mu_0I}{2\pi R^2}r
+	$$
+	
+	Take a small piece of wire and examine the magnetic energy inside it.
+	
+	$$
+	\Delta W_B=\int_0^R{\Delta L\cdot 2\pi r\mathrm{d}r\cdot \frac{1}{2}\frac{1}{\mu _0}B^2\left( r \right)}=\dfrac{\mu_0I^2}{16\pi }\Delta L
+	$$
+	
+	As a result $\displaystyle \dfrac{\Delta W_B}{\Delta L}=\dfrac{\mu_0I^2}{16\pi }$.
+\end{document}
+

@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\makeatletter
+\DeclareRobustCommand\bigop[1]{%
+	\mathop{\vphantom{\sum}\mathpalette\bigop@{#1}}\slimits@
+}
+\newcommand{\bigop@}[2]{%
+	\vcenter{%
+		\sbox\z@{$#1\sum$}%
+		\hbox{\resizebox{\ifx#1\displaystyle.9\fi\dimexpr\ht\z@+\dp\z@}{!}{$\m@th#2$}}%
+	}%
+}
+\makeatother
+
+\newcommand{\bigK}{\DOTSB\bigop{\mathrm{K}}}
+
+\begin{document}
+	\[
+	\bigK_{N=1}^n \frac{a_N}{b_N}
+	\quad
+	\textstyle
+	\bigK_{N=1}^n \frac{a_N}{b_N}
+	\quad
+	\scriptstyle
+	\bigK_{N=1}^n \frac{a_N}{b_N}
+	\quad
+	\scriptscriptstyle
+	\bigK_{N=1}^n \frac{a_N}{b_N}
+	\]
+	A\ A
+	\\
+	A\;A
+	\\
+	A\:A
+	\\
+	A\,A
+	$$
+	\sin x =\sum_{n=1}^{\infty}(-1)^{n-1}\dfrac{x^{2n-1}}{(2n-1)!}
+	$$
+\end{document}

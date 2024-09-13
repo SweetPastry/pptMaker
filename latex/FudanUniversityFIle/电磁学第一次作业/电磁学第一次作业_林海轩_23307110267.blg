@@ -1,0 +1,106 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 电磁学第一次作业_林海轩_23307110267.aux
+The style file: siam.bst
+I couldn't open database file C:/Users/Administrator/Desktop/VScode/LaTeX/arXiv-2402.19291v1/main.bbl.bib
+---line 99 of file 电磁学第一次作业_林海轩_23307110267.aux
+ : \bibdata{C:/Users/Administrator/Desktop/VScode/LaTeX/arXiv-2402.19291v1/main.bbl
+ :                                                                                 }
+I'm skipping whatever remains of this command
+I found no database files---while reading file 电磁学第一次作业_林海轩_23307110267.aux
+Warning--I didn't find a database entry for "dold1958homology"
+Warning--I didn't find a database entry for "kan1958functors"
+Warning--I didn't find a database entry for "dold1961homologie"
+Warning--I didn't find a database entry for "eilenberg1950semi"
+Warning--I didn't find a database entry for "connes1983cohomologie"
+Warning--I didn't find a database entry for "quillen1984cyclic"
+Warning--I didn't find a database entry for "GetzlerJones:CyclicHomologyOfCrossedProductAlgebras"
+Warning--I didn't find a database entry for "Ault:SymmetricHomology"
+Warning--I didn't find a database entry for "Aboughazi:CrossedSimplicialGroups"
+Warning--I didn't find a database entry for "Loday:CyclicHomology"
+Warning--I didn't find a database entry for "Krasauskas:SkewSimplicialGroups"
+Warning--I didn't find a database entry for "fiedorowicz1991crossed"
+Warning--I didn't find a database entry for "dwyer1985normalizing"
+Warning--I didn't find a database entry for "dwyer1987three"
+Warning--I didn't find a database entry for "antokoletz2010nonabelian"
+Warning--I didn't find a database entry for "ponge2020periodicity"
+Warning--I didn't find a database entry for "bourn-moore"
+Warning--I didn't find a database entry for "lyubashenko-doldkanrevisited"
+Warning--I didn't find a database entry for "lack-street"
+Warning--I didn't find a database entry for "LackStreet20"
+Warning--I didn't find a database entry for "pirashvili"
+Warning--I didn't find a database entry for "slominska"
+Warning--I didn't find a database entry for "banarjee-nearbycycles"
+Warning--I didn't find a database entry for "gutierrez-weiss-dendroidal"
+Warning--I didn't find a database entry for "castiglioni-cortinas"
+Warning--I didn't find a database entry for "garynantie-doldkancrossed"
+Warning--I didn't find a database entry for "arvasi-kocak-simp"
+Warning--I didn't find a database entry for "akca-arvasi"
+Warning--I didn't find a database entry for "May:SimplicialObjects"
+Warning--I didn't find a database entry for "kan1955abstract"
+Warning--I didn't find a database entry for "kan1956abstract"
+Warning--I didn't find a database entry for "quillen1967homotopical"
+Warning--I didn't find a database entry for "SchwedeShipley00"
+Warning--I didn't find a database entry for "SchwedeShipley03"
+Warning--I didn't find a database entry for "Hinich16"
+Warning--I didn't find a database entry for "chorny2023variant"
+Warning--I didn't find a database entry for "richter-symmpropDold"
+Warning--I didn't find a database entry for "shoikhet2011bialgebra"
+Warning--I didn't find a database entry for "sore-coalgebraDold"
+Warning--I didn't find a database entry for "SoreHermann17"
+Warning--I didn't find a database entry for "Lurie:HigherAlgebra"
+Warning--I didn't find a database entry for "dyckerhoff-categorified"
+Warning--I didn't find a database entry for "peroux22"
+Warning--I didn't find a database entry for "walde-homotopycoherent"
+Warning--I didn't find a database entry for "peroux2023monoidal"
+Warning--I didn't find a database entry for "truong2023operadic"
+Warning--I didn't find a database entry for "jardine_2003"
+Warning--I didn't find a database entry for "hirschhorn2009model"
+Warning--I didn't find a database entry for "heuts_simplicial_2022"
+Warning--I didn't find a database entry for "hess2015"
+Warning--I didn't find a database entry for "hess2017necessary"
+Warning--I didn't find a database entry for "Segal:CategoriesCohomologyTheories"
+Warning--I didn't find a database entry for "Weibel:HomologicalAlgebra"
+Warning--I didn't find a database entry for "GoerssJardine:SimplicialHomotopy"
+You've used 0 entries,
+            2030 wiz_defined-function locations,
+            568 strings with 5273 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There were 2 error messages)

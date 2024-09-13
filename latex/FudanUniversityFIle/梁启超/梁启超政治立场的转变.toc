@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{晚清维新运动的积极推动者}{3}{0}{1}
+\beamer@sectionintoc {2}{民国初年的政治实践}{4}{0}{2}
+\beamer@sectionintoc {3}{晚年对文化传统的重视}{5}{0}{3}
+\beamer@sectionintoc {4}{对中国历史与文化的新解读}{6}{0}{4}
+\beamer@sectionintoc {5}{总结}{7}{0}{5}

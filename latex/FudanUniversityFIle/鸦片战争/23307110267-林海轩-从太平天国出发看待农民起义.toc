@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{回顾历史}{3}{0}{1}
+\beamer@sectionintoc {2}{分析}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{国内视角}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{国际视角}{7}{0}{2}

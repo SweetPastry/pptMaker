@@ -1,0 +1,352 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{article}% 文档格式
+\usepackage{ctex,hyperref}% 输出汉字
+\usepackage{times}% 英文使用Times New Roman
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\fontsize{18pt}{27pt}\selectfont% 小四字号，1.5倍行距
+	{\heiti% 黑体 
+		Physics Homework}}% 题目
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{\fontsize{12pt}{18pt}\selectfont% 小四字号，1.5倍行距
+	{\fangsong% 仿宋
+	Haixuan Lin}\\% 标题栏脚注
+	\fontsize{10.5pt}{15.75pt}\selectfont% 五号字号，1.5倍行距
+	{\fangsong% 仿宋
+		(Fudan University department of physics
+		)}}% 作者单位，“~”表示空格
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{}% 日期（这里避免生成日期）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amsfonts,amssymb}% 为公式输入创造条件的宏包
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}% 图片插入宏包
+\usepackage{subfigure}% 并排子图
+\usepackage{float}% 浮动环境，用于调整图片位置
+\usepackage[export]{adjustbox}% 防止过宽的图片
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{bibentry}
+\usepackage{natbib}% 以上2个为参考文献宏包
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{abstract}% 两栏文档，一栏摘要及关键字宏包
+\renewcommand{\abstracttextfont}{\fangsong}% 摘要内容字体为仿宋
+\renewcommand{\abstractname}{\textbf{摘\quad 要}}% 更改摘要二字的样式
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xcolor}% 字体颜色宏包
+\newcommand{\red}[1]{\textcolor[rgb]{1.00,0.00,0.00}{#1}}
+\newcommand{\blue}[1]{\textcolor[rgb]{0.00,0.00,1.00}{#1}}
+\newcommand{\green}[1]{\textcolor[rgb]{0.00,1.00,0.00}{#1}}
+\newcommand{\darkblue}[1]
+{\textcolor[rgb]{0.00,0.00,0.50}{#1}}
+\newcommand{\darkgreen}[1]
+{\textcolor[rgb]{0.00,0.37,0.00}{#1}}
+\newcommand{\darkred}[1]{\textcolor[rgb]{0.60,0.00,0.00}{#1}}
+\newcommand{\brown}[1]{\textcolor[rgb]{0.50,0.30,0.00}{#1}}
+\newcommand{\purple}[1]{\textcolor[rgb]{0.50,0.00,0.50}{#1}}% 为使用方便而编辑的新指令
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{url}% 超链接
+\usepackage{bm}% 加粗部分公式
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{longtable}% 长表格
+\usepackage{supertabular}% 跨页表格
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{changepage}% 换页
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{enumerate}% 短编号
+\usepackage{caption}% 设置标题
+\captionsetup[figure]{name=\fontsize{10pt}{15pt}\selectfont Figure}% 设置图片编号头
+\captionsetup[table]{name=\fontsize{10pt}{15pt}\selectfont Table}% 设置表格编号头
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{indentfirst}% 中文首行缩进
+\usepackage[left=2.50cm,right=2.50cm,top=2.80cm,bottom=2.50cm]{geometry}% 页边距设置
+\renewcommand{\baselinestretch}{1.5}% 定义行间距（1.5）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr} %设置全文页眉、页脚的格式
+\pagestyle{fancy}
+\hypersetup{colorlinks=true,linkcolor=black}% 去除引用红框，改变颜色
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption}%标题取消自动figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}% 以下为正文内容
+	\maketitle% 产生标题，没有它无法显示标题
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\lhead{}% 页眉左边设为空
+	\chead{}% 页眉中间设为空
+	\rhead{}% 页眉右边设为空
+	\lfoot{}% 页脚左边设为空
+	\cfoot{\thepage}% 页脚中间显示页码
+	\rfoot{}% 页脚右边设为空
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{center}% 居中处理
+		{\textbf{Abstract}}% 英文摘要
+	\end{center}
+	\begin{adjustwidth}{1.06cm}{1.06cm}% 英文摘要内容
+		\hspace{1.5em}In order to improve my computer and English skills, please allow me to complete this physics homework in English context with \LaTeX, so as to improve my professional level. Sorry for the inconvenience!
+	\end{adjustwidth}
+	\newpage% 从新的一页继续
+	
+	\section{Question 4-2}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{../Latex/plank}
+		\caption*{Figure for 4-2}
+		\label{fig:plank}
+	\end{figure}
+	
+	\subsection{}
+	\noindent For plank and small piece, by Newton's second law:
+	\begin{equation}
+		m_1a_1=\mu m_2g
+	\end{equation}
+	\begin{equation}
+		m_2a_2=\mu m_2g.
+	\end{equation}
+	Using the plank as the frame of reference, according to kinematic formula, we have:
+	\begin{equation}
+		{v_0}^2=2\left( a_1+a_2 \right) l
+	\end{equation}
+	Hence：
+	\begin{equation*}
+		\mu=\frac{m_1}{m_1+m_2}\frac{{v_0}^2}{2gl}
+	\end{equation*}
+	\subsection{}	
+	\noindent We can calculate the length of time they are in relative motion:
+	 \begin{equation}
+	 	t=\frac{v_0}{a_1+a_2}
+	 \end{equation}	
+	 The displacement of plank is
+	 \begin{equation}
+	 	x_1=\frac{1}{2}a_1t^2
+	 \end{equation}
+	That is
+	\begin{equation*}
+		x_1=\frac{m_2}{m_1+m_2}l
+	\end{equation*}
+	\newpage
+	\section{Question 4-7}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{"../Latex/slope spring"}
+		\caption*{Figure for 4-7}
+		\label{fig:slope-spring}
+	\end{figure}
+	\subsection{}
+	\noindent If the process of m from static motion to the highest point is regarded as a harmonic motion of half a period, the position of the origin of motion relative to the spring origin obtained by considering the friction force, gravity slope component and tension is:
+	\begin{equation}
+		k\Delta x=F-mg\sin \theta -\mu mg\cos \theta
+	\end{equation}
+	So the $W$ can calculate by the definition of work:
+	\begin{equation}
+		W=Fl=F\cdot2\Delta x
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		W=\frac{2F}{k}\left( F-mg\cos \theta -\mu mg\sin \theta \right) 
+	\end{equation*}
+	\subsection{}	
+	Obviously $m$ get $v_m$ when it is at the origin of motion. According to the Kinetic energy theorem:
+	\begin{equation}
+		\frac{1}{2}{mv_m}^2=\frac{1}{2}W-mg\sin \theta \Delta x-\mu mg\cos \theta \Delta x-\frac{1}{2}k\Delta x^2
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		v_m=\frac{F-mg\sin \theta -\mu mg\cos \theta}{\sqrt{mk}}
+	\end{equation*}
+	\newpage
+	\section{Question 4-10}
+	\noindent Given a probe particle $m$ on the surface of the moon, according to the law of gravitation:
+	\begin{equation}
+		F_G=\frac{Gm_mm}{R^2}
+	\end{equation}
+	Hence:
+	\begin{equation*}
+    	g_m=\frac{F_G}{m}=\frac{Gm_m}{R^2}=1.7m/s^2
+	\end{equation*}
+	Escape velocity allows particles to travel from the surface of the moon to infinity.
+	\begin{equation}
+		\frac{1}{2}{mv_2}^2=\frac{Gm_mm}{R_m}
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		v_2=\sqrt{\frac{2Gm_m}{R_m}}=2.4\times 10^3m/s
+	\end{equation*}
+	\section{Question 4-16}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{"../Latex/slope and ball"}
+		\caption*{Figure for 4-16}
+		\label{fig:slope-and-ball}
+	\end{figure}
+	\noindent The motion from point B to point C is given by the kinematic formula:
+	\begin{equation}
+		2R\sin \alpha =vt\cos \alpha 
+	\end{equation}
+	\begin{equation}
+		gt=2v\sin \alpha 
+	\end{equation}
+	From point A to point B, according to the conservation of mechanical energy:
+	\begin{equation}
+		\frac{1}{2}mv^2=mgh-mgR\left( 1+\cos \alpha \right) 
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		h=R(1+cos\alpha+\frac{1}{2cos\alpha})
+	\end{equation*}
+	\newpage
+	\section{Question 4-17}
+	\begin{figure}[H]% 插入两张图片并且并排
+		\centering
+		\begin{minipage}{0.48\textwidth}
+			\centering
+			\includegraphics[width=0.83\textwidth]{"../Latex/ting1"}
+			\caption*{\fontsize{10pt}{15pt}\selectfont Figure 1 for 4-17}
+		\end{minipage}
+		\hspace{0cm}% 图片间距
+		\hfill% 撑满整行
+		\begin{minipage}{0.48\textwidth}
+			\centering
+			\includegraphics[width=0.83\textwidth]{"../Latex/ting2"}
+			\caption*{\fontsize{10pt}{15pt}\selectfont Figure 2 for 4-17}
+		\end{minipage}
+	\end{figure}
+	\noindent As shown in Figure 2, the ball will fall out of the orbit at the position shown in Figure 2, at that moment, the centripetal force is provided entirely by the component of gravity.
+	\begin{equation}
+		\frac{1}{2}mv^2=mgl\left( 1-\sin \alpha \right)
+	\end{equation}
+	\begin{equation}
+		m\frac{v^2}{l}=mg\sin \alpha
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		H_{max}=l(1+sin\alpha)+\frac{(vcos\alpha)^2}{2g}=\frac{50}{27}l
+	\end{equation*}
+	\section{Question 4-19}
+	\subsection{}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\linewidth]{../Latex/weiyuan}
+		\caption*{Figure for 4-19}
+		\label{fig:weiyuan}
+	\end{figure}
+	\noindent According to the definition of the center of mass:
+	\begin{equation}
+		y_C=\frac{1}{\rho _l\pi R}\int_0^{\pi}{R\sin \theta \cdot \rho _lRd\theta}
+	\end{equation}
+	The kinetic energy theorem tells us:
+	\begin{equation}
+		\frac{1}{2}mv^2=mg(y_C+\frac{1}{2}\pi R)
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		v=\sqrt{2gR(\frac{\pi}{2}+\frac{2}{\pi})}
+	\end{equation*}
+	\subsection{}
+	\noindent Follow the example above:
+	\begin{equation}
+		\frac{1}{2}mv^2=\frac{1}{3}mg\left( \frac{1}{\frac{1}{3}\rho _l\pi R}\int_{\frac{2}{3}\pi}^{\pi}{R\sin \theta \cdot \rho _lRd\theta +\frac{1}{6}\pi R} \right) 
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		v=\sqrt{\frac{gR}{3}(\frac{\pi}{3}+\frac{3}{\pi})}
+	\end{equation*}
+	Consider the most general case, the length of the chain that slides out $x=\theta R$.
+	\begin{equation}
+		\frac{1}{2}mv^2=\frac{\theta}{\pi}mg\left( \frac{1}{\rho _l\theta R}\int_{\pi -\theta}^{\pi}{R\sin \theta \cdot \rho _lRd\theta +\frac{\theta}{2}\pi R} \right) 
+	\end{equation}
+	Hence:
+	\begin{equation}
+		v=\sqrt{2gR\left( \frac{1-\cos \theta}{\pi}+\frac{\theta ^2}{2\pi} \right)}
+	\end{equation}
+	Notice that:
+	\begin{equation}
+		R\cdot\frac{d}{dt}\theta=v
+	\end{equation}
+	Hence:
+	\begin{equation}
+		a=\frac{d}{dt}v=g\left( \frac{\sin \theta}{\pi}+\frac{\theta}{\pi} \right)
+	\end{equation}
+	Let $\theta=\frac{\pi}{3}$, we get:
+	\begin{equation*}
+		a=g\left( \frac{\sqrt{3}}{2\pi}+\frac{1}{3} \right)
+	\end{equation*}
+	\newpage
+	\section{Question 4-21}
+	\subsection{}
+	\noindent According to conservation of momentum and conservation of mechanical energy.
+	\begin{equation}
+		m_1v_1=m_2v_2
+	\end{equation}
+	\begin{equation}
+		m_1gl=\frac{1}{2}m_1{v_1}^2+\frac{1}{2}m_2{v_2}^2
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		v_2=\sqrt{\frac{{m_1}^2}{\left( m_1+m_2 \right) m_2}2gl}
+	\end{equation*}
+	\subsection{}
+	\noindent Follow the example above:
+	\begin{equation}
+		m_1gl\cos 60^o=\frac{1}{2}m_1{v_1}^2+\frac{1}{2}m_2{v_2}^2
+	\end{equation}
+	\begin{equation}
+		m_1v_1\cos 60^o=m_2v_2
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		v_2=\sqrt{\frac{gl}{3{m_1}^2+7m_1m_2+4{m_2}^2}}
+	\end{equation*}
+	\subsection{}
+	\noindent Obviously the answer is YES.
+	\begin{equation*}
+		W=\frac{1}{2}mv_1^2-m_1gl=-\frac{m_1^2}{m_1+m_2}gl<0
+	\end{equation*}
+	\section{Question 4-28}
+	\noindent When $m_2$ happens to leave the ground:
+	\begin{equation}
+		k\Delta x=m_2g
+	\end{equation}
+	After $m$ and $m_1$ are adhered to, the distance between the center of motion of their simple harmonic motion and the original length of the spring is:
+	\begin{equation}
+		k\Delta x_0=(m+m_1)g
+	\end{equation}
+	The energy of the new spring oscillator meets:
+	\begin{equation}
+		\frac{1}{2}k\left( \Delta x+\Delta x_0 \right) ^2=\frac{1}{2}\left( m+m_1 \right) v^2+\frac{1}{2}k\Delta {x_1}^2
+	\end{equation}
+	And:
+	\begin{equation}
+		k\Delta x_1=m_1g
+	\end{equation}
+	For a completely inelastic collision:
+	\begin{equation}
+		\frac{1}{2}\left( m+m_1 \right) v^2=\frac{1}{2}{mv_0}^2-\frac{1}{2}{\mu v_0}^2
+	\end{equation}
+	And $\mu$ is called reduced mass:
+	\begin{equation}
+		\mu =\frac{mm_1}{m+m_1}
+	\end{equation}
+	The kinetic energy theorem of the falling process of $m$ states:
+	\begin{equation}
+		\frac{1}{2}{mv_0}^2=mgh
+	\end{equation}
+	Hence:
+	\begin{equation*}
+		h=\frac{g}{2m^2k}\left( m+m_1 \right) \left( m_1+m_2 \right) \left( 2m+m_1+m_2 \right) 
+	\end{equation*}
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+\end{document}% 结束文档编辑，后面写啥都编译不出来

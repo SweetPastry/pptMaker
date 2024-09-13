@@ -1,0 +1,133 @@
+\documentclass[a4paper,11pt]{amsart}
+
+
+\usepackage{times}
+\usepackage[top=27mm, left=23mm, bottom=23mm, right=23mm]{geometry}
+\usepackage{amsfonts, amssymb, amsgen, amsthm, amscd, amsmath}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+
+\usepackage{bm}
+%\usepackage{mathpazo}
+\usepackage{domitian}
+\usepackage[T1]{fontenc}
+\let\oldstylenums\oldstyle
+
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage[all]{xy}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\outimes}[2]{\overset{#1}{\underset{#2}{\otimes}}}
+\newcommand{\C}[1]{\mathcal{#1}}
+\newcommand{\B}[1]{\mathbb{#1}}
+\newcommand{\G}[1]{\mathfrak{#1}}
+\newcommand{\rmod}[1]{\text{{\bf Mod}-}{#1}}
+
+\newcommand{\Span}{\text{\rm Span}}
+\newcommand{\Tor}{\text{\rm Tor}}
+\newcommand{\Ind}{\text{\rm Ind}}
+\newcommand{\Res}{\text{\rm Res}}
+\newcommand{\Ext}{\text{\rm Ext}}
+\newcommand{\Hom}{\text{\rm Hom}}
+\newcommand{\CoInd}{\text{\rm CoInd}}
+\newcommand{\Simp}{{\Delta}}
+\newcommand{\Diff}{{\Omega}}
+\newcommand{\xla}[1]{\xleftarrow{#1}}
+\newcommand{\colim}{\text{colim}}
+\renewcommand{\baselinestretch}{1.15}
+
+\setlength{\parskip}{1.2mm}
+\setlength{\parindent}{0mm}
+
+\title{Electromagnetism Assignment For The First Time}
+
+\author{Haixuan Lin - 23307110267}
+\email{23307110267@m.fudan.edu.cn}
+
+
+\address{Fudan University, Physics Department, China}
+
+\begin{document}
+	
+	\begin{abstract}
+		Here is the electromagnetism assignment for the first time which is for the corse given by professor Weichao Liu. In order to practise the expertise in scientific film of physics, students need to practise using \LaTeX to composing their own work, even if this is only a ordinary homework.
+	\end{abstract}
+	
+	\maketitle
+	\section*{Main Text}
+	\subsection*{1-1}
+	\subsubsection*{(1)}Consider the classical model, according to Coulomb's law, and use the radius given in the problem as the Bohr radius as the distance between the electron and the hydrogen atom, we have
+	\begin{equation}
+		\boldsymbol{F}_{\mathrm{E}}=-\dfrac{1}{4\pi \varepsilon _0}\frac{e^2}{r^2}\bm{\hat{r}}
+	\end{equation}
+	The $\bm{\hat{r}}$ is defined as $\vec{r}/r$ and $\vec{r}$ is the position vetor of electron with the hydrogen nuclei to be refrence point. After calculation we get
+	\begin{equation}
+		{F}_{\mathrm{E}}=8.24\times10^{-8}\thinspace\mathrm{N}
+	\end{equation}
+	\subsubsection*{(2)}Consider the classical model, according to law of universal gravitation, and use the radius given in the problem as the Bohr radius as the distance between the electron and the hydrogen atom, we have
+	\begin{equation}
+		\boldsymbol{F}_{\mathrm{G}}=-G\frac{m_\mathrm{p}m_{\mathrm{e}}}{r^2}\bm{\hat{r}}
+	\end{equation}
+	Put in the data to get
+	\begin{equation}
+		{F}_{\mathrm{G}}=3.63\times10^{-47}\thinspace\mathrm{N}
+	\end{equation}
+	The division of two forces is obtained
+	\begin{equation}
+		\frac{F_{\mathrm{E}}}{F_{\mathrm{G}}}=\frac{1}{4\pi \varepsilon _0G}\frac{e^2}{m_{\mathrm{e}}m_{\mathrm{p}}}
+	\end{equation}
+	Put in the data to get
+	\begin{equation}
+		\frac{F_{\mathrm{E}}}{F_{\mathrm{G}}}=2.27\times10^{39}
+	\end{equation}
+	\subsubsection*{(3)}Considering the classical model, the Coulomb force provides the centripetal force of the electron moving in a circle around the nucleus of a hydrogen atom
+	\begin{equation}
+		-\dfrac{1}{4\pi \varepsilon _0}\frac{e^2}{r^2}\bm{\hat{r}}=-m_{\mathrm{e}}\frac{v_{\mathrm{e}}^{2}}{r}\hat{\boldsymbol{r}}
+	\end{equation}
+	We conclude
+	\begin{equation}
+		v_{\mathrm{e}}=\sqrt{\frac{1}{4\pi \varepsilon _0}\frac{e^2}{mr}}
+	\end{equation}
+	Put in the data to get
+	\begin{equation}
+		v_\mathrm{e}=2.19\times10^{6}\thinspace\mathrm{m/s}
+	\end{equation}
+
+	\subsection*{1-6}Let the amount of charge carried by the oil drop be small enough that the amount of charge can be estimated discretely, look at the difference between two numerically similar numbers.
+	\begin{align}
+	8.204\times10^{-19}-6.563\times10^{-19}&=1.641\times10^{-19}\\
+	13.13\times10^{-19}-11.50\times10^{-19}&=1.63\times10^{-19}\\
+	18.08\times10^{-19}-16.48\times10^{-19}&=1.60\times10^{-19}\\
+	&\cdots
+	\end{align}
+	So may as well guess
+	\begin{equation}
+		e=1.63\times10^{-19}\thinspace\mathrm{C}
+	\end{equation}
+	
+	\subsection*{1-9}Taking $O$ point at the left end of the rod as the origin, the $x$-axis is established in the direction of the rod, and the Coulomb force on a point charge on the rod is investigated
+	\begin{equation}
+		\mathrm{d}\boldsymbol{F}_{\mathrm{c}}=\frac{1}{4\pi \varepsilon _0}\frac{\eta \mathrm{d}xq}{\left( l+a-x \right) ^2}\bm{\hat{x}}=\frac{1}{4\pi \varepsilon _0}\frac{\eta _0\left( 1-2x/l \right) \mathrm{d}xq}{\left( l+a-x \right) ^2}\bm{\hat{x}}
+	\end{equation}
+	And we do calculus
+	
+	\begin{equation}
+		\boldsymbol{F}_{\mathrm{c}}=\int_0^l{\frac{1}{4\pi \varepsilon _0}\frac{\eta _0\left( 1-\frac{2x}{l} \right) q}{\left( l+a-x \right) ^2}}\mathrm{d}x\hat{\boldsymbol{x}}=\frac{1}{4\pi \varepsilon _0}\left[ 2\ln \left( 1+\frac{l}{a} \right) -\frac{\left( 2a+l \right) l}{a\left( a+l \right)} \right] \hat{\boldsymbol{x}}
+	\end{equation}
+	
+	
+	\bibliographystyle{siam}
+	\bibliography{C:/Users/Administrator/Desktop/VScode/LaTeX/arXiv-2402.19291v1/main.bbl}
+	
+\end{document}
+

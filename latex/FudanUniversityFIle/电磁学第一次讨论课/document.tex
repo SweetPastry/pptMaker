@@ -1,0 +1,250 @@
+\documentclass{beamer}
+
+
+\usepackage{amsmath, fontspec}
+\usefonttheme{serif}
+
+
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun} % 设置中文字体为宋体
+
+
+\usepackage{beamerthemesplit} % 加载主题宏包
+\usetheme{Warsaw} % 选用该主题
+
+
+%插入图片, 写公式, 画表格等
+\usepackage{subfig}
+\usepackage{amssymb,mathtools}
+\usepackage{amsfonts,booktabs}
+\usepackage{lmodern,textcomp}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{bm}
+
+\setbeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber} % 页脚为页码
+\setbeamertemplate{headline}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 注意这部分代码将全角的逗号句号转换为了半角的逗号句号且半角逗号后面跟了一个空格，要求用xelatex编译，但模板撰写的时候默认用pdflatex，不推荐使用
+
+\catcode`，=\active
+\newcommand{，}{, }
+
+\catcode`。=\active
+\newcommand{。}{.}
+
+\catcode`：=\active
+\newcommand{：}{: }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+	
+	%基本信息
+	\title{Noether 定理的简要推导与运用}
+	\subtitle{电磁学荣誉课讨论}
+	\author{林海轩}
+	\institute{复旦大学物理学系}
+	\date{}
+	
+	%生成标题页
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%目录页，代码无需改动
+	\begin{frame}
+		\tableofcontents
+	\end{frame}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\section{前置数学定理}
+	
+	\subsection{Eluer-Lagrange方程}
+	
+	\begin{frame}
+		\frametitle{Eluer-Lagrange方程}
+		设 $\mathcal{L}=\mathcal{L}(q,\dot{q},t)$ 是Lagrange量, 其中 $q$ 是广义坐标, 运算 $\dot{x}=\dfrac{\mathrm{d}x}{\mathrm{d}t}$表示对时间求一次导数, $\displaystyle S[q]=\int_{t_1}^{t_2}\hspace{-5pt}\mathcal{L}\mathrm{d}t$ 是作用量, 当作用量取得极值($\delta S=0$)时, 有
+		\begin{equation}
+			\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}-\frac{\partial \mathcal{L}}{\partial q_i}=0\nonumber
+		\end{equation}
+		此定理的证明略过。
+	\end{frame}
+	
+	\subsection{最小作用量原理}
+	\begin{frame}
+		\frametitle{最小作用量原理}
+		对于所有的自然现象，其发生的方式总是趋向于使得作用量取最小值，即
+		$$
+		\delta S=0
+		$$
+		$\delta$ 是变分运算符，表示当 Lagrange 量(被积函数)发生微小变化时作用量的微小变化
+		$$
+		\delta S[q]=S[q+\delta q]-S[q]
+		$$
+		$\delta q$ 是一个很小的但是性质良好的扰动函数。
+	\end{frame}
+	
+	\subsection{多个元函数的变分}
+	\begin{frame}
+		\frametitle{多个元函数的变分}
+		设 $\tilde{\delta}$ 是既考虑广义坐标 $\delta q$ 又考虑时间 $\delta t$ 的变分算符, $\delta$ 是仅考虑广义坐标 $\delta q$ 的变分算符
+		$$
+		\tilde{\delta}=\delta+\delta t\dfrac{\mathrm{d}}{\mathrm{d}t}
+		$$
+		可以理解为链式法则和复合微分的结合，具体证明略去。
+	\end{frame}
+	
+	\subsection{变分与微分可对易}
+	\begin{frame}
+		\frametitle{变分与微分可对易}
+	设 $f$ 是性质良好的函数，则
+	$$
+	\delta(\mathrm{d}f)=\mathrm{d}\left( \delta f\right) 
+	$$
+	可以理解为 $d$ 算符是在横轴上给予一微小变化, $\delta$ 是在纵轴上给予一微小变化，因为两者是正交的，所以互不影响。
+	\end{frame}
+	\section{推导}
+	\begin{frame}
+		\frametitle{推导}
+		根据最小作用量原理 $\tilde{\delta}S=0$, 考察其形式
+		\begin{align*}
+			\tilde{\delta}S&=\tilde{\delta}\int_{t_1}^{t_2}{\hspace{-5pt}\mathcal{L} \mathrm{d}t}
+			\\
+			&=\int_{t_1}^{t_2}{\tilde{\delta}\left( \mathcal{L} \mathrm{d}t \right)}
+			\\
+			&=\int_{t_1}^{t_2}{\left( \tilde{\delta}\mathcal{L} \right) \mathrm{d}t+\mathcal{L} \tilde{\delta}\left( \mathrm{d}t \right)}
+			\\
+			&=\int_{t_1}^{t_2}{\left( \delta \mathcal{L} +\delta t\frac{\mathrm{d}\mathcal{L}}{\mathrm{d}t} \right) \mathrm{d}t+\mathcal{L} \mathrm{d}\left( \tilde{\delta}t \right)}
+			\\
+			&=\int_{t_1}^{t_2}{\delta \mathcal{L} \mathrm{d}t+\left( \delta t\mathrm{d}\mathcal{L} +\mathcal{L} \mathrm{d}\left( \delta t \right) \right)}
+			\\
+			&=\int_{t_1}^{t_2}{\delta \mathcal{L} \mathrm{d}t+\mathrm{d}\left( \mathcal{L} \delta t \right)}\tilde{\delta}S
+			\\
+			&=\left[\mathcal{L}\delta t\right]_{t_1}^{t_2}+\int_{t_1}^{t_2}\delta\mathcal{L}\mathrm{d}t
+		\end{align*}
+	\end{frame}
+
+	\begin{frame}
+
+		下面考察右侧第二项
+		\begin{align*}
+			\int_{t_1}^{t_2}{\delta \mathcal{L} \mathrm{d}t}&=\int_{t_1}^{t_2}{\sum_i{\left( \frac{\partial \mathcal{L}}{\partial q_i}\delta q_i+\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta \dot{q}_i \right) \mathrm{d}t}}
+			\\
+			&=\int_{t_1}^{t_2}{\sum_i{\left( \frac{\partial \mathcal{L}}{\partial q_i}\delta q_i-\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta q_i+\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta q_i+\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta \dot{q}_i \right) \mathrm{d}t}}
+			\\
+			&=\int_{t_1}^{t_2}{\sum_i{\left( \frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta q_i+\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta \dot{q}_i \right) \mathrm{d}t}}
+			\\
+			&=\int_{t_1}^{t_2}{\sum_i{\left[ \mathrm{d}\left( \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \right) \delta q_i+\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta \left( \mathrm{d}q_i \right) \right]}}
+			\\
+			&=\int_{t_1}^{t_2}{\sum_i{\left[ \mathrm{d}\left( \frac{\partial \mathcal{L}}{\partial \dot{q}_i} \right) \delta q_i+\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\mathrm{d}\left( \delta q_i \right) \right]}}
+			\\
+			&=\int_{t_1}^{t_2}{\sum_i{\mathrm{d}\left( \frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta q_i \right)}}=\left[ \sum_i{\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\delta q_i} \right] _{t_1}^{t_2}
+		\end{align*}
+	\end{frame}
+	
+	\begin{frame}
+		所以 $\displaystyle\tilde{\delta}S=\left[\mathcal{L}\delta t+\sum_i\dfrac{\partial \mathcal{L}}{\partial\dot{q}_i}\delta q_i \right]_{t_1}^{t_2}$, 再凑一个恒等变形
+		\begin{align*}
+			\tilde{\delta}S&=\left[ \mathcal{L} \delta t+\sum_i{\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\left( \tilde{\delta}q_i-\delta t\dot{q}_i \right)} \right] _{t_1}^{t_2}
+			\\
+			&=\left[ \sum_i{\frac{\partial 
+				\mathcal{L}}{\partial \dot{q}_i}\tilde{\delta}q_i-\left( \sum_i{\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\dot{q}_i-\mathcal{L}} \right) \delta t} \right] _{t_1}^{t_2}
+			\\
+			&=\left[ \sum_i{p_i\Delta q_i-E\Delta t} \right] _{t_1}^{t_2}
+			\\
+			&=I\left( t_2 \right) -I\left( t_1 \right) 
+		\end{align*}
+		即有 $I(t_1)=I(t_2)$
+		
+	\end{frame}
+	
+	\begin{frame}
+		由于 $t_1$ 和 $t_2$ 是任意选取的，所以
+		$$
+		I(t) := \sum_i{p_i\Delta q_i-E\Delta t}
+		$$
+		$I(t)$ 就是此系统在某对称性下的一个守恒量。
+	\end{frame}
+	
+	\section{定理的运用}
+	\subsection{正则动量}
+	\begin{frame}
+		\frametitle{正则动量}
+		考察洛伦兹力
+		\begin{align*}
+			\boldsymbol{F}&=q\left( \boldsymbol{E}+\boldsymbol{v}\times \boldsymbol{B} \right) 
+			\\
+			&=q\left( -\nabla U-\frac{\partial \boldsymbol{A}}{\partial t}+\boldsymbol{v}\times \left( \nabla \times \boldsymbol{B} \right) \right) 
+			\\
+			&=q\left( -\nabla U-\frac{\partial \boldsymbol{A}}{\partial t}+\nabla \left( \boldsymbol{v}\cdot \boldsymbol{B} \right) -\left( \boldsymbol{v}\cdot \nabla \right) \boldsymbol{B} \right) 
+			\\
+			&=-q\nabla \left( U-\boldsymbol{v}\cdot \boldsymbol{B} \right) -q\frac{\partial \boldsymbol{A}}{\partial t}-q\left( \boldsymbol{v}\cdot \nabla \right) \boldsymbol{B}
+		\end{align*}
+		联立 Newton 第二定律 $\boldsymbol{F}=\dfrac{\mathrm{d}\left(m\bm{v} \right) }{\mathrm{d}t}$
+		$$
+		\frac{\mathrm{d}}{\mathrm{d}t}\left( m\boldsymbol{v} \right) +\frac{\partial}{\partial t}\left( q\boldsymbol{A} \right) =-q\left( \nabla \left( U-\boldsymbol{v}\cdot \boldsymbol{B} \right) +\left( \boldsymbol{v}\cdot \nabla \right) \boldsymbol{B} \right) 
+		$$
+	\end{frame}
+	\begin{frame}
+		当沿着粒子的轨道 $A$ 不变的时候(某种沿着轨道的对称性)，例如在匀强磁场中
+		$$
+		\frac{\partial}{\partial t}\boldsymbol{A}=\frac{\mathrm{d}}{\mathrm{d}t}\boldsymbol{A}\qquad \left( \boldsymbol{v}\cdot \nabla \right) \boldsymbol{A}=0
+		$$
+		代回上面的方程得到
+		$$
+		\frac{\mathrm{d}}{\mathrm{d}t}\left( m\boldsymbol{v}+q\boldsymbol{A} \right) =-q\nabla \left( U-\boldsymbol{v}\cdot \boldsymbol{A} \right) 
+		$$
+		定义正则动量
+		$$
+		\bm{p}:=m\boldsymbol{v}+q\boldsymbol{A}
+		$$
+		当等式的右侧为 0 时, 比如无静电场且速度与磁场垂直，且 $\bm{A}$ 的选取恰当的时候，正则动量就是一个守恒量。
+	\end{frame}
+	\begin{frame}
+		例如平面匀强磁场，可以写出正则动量守恒的分量方程
+		\begin{equation*}
+			\left\{
+			\begin{aligned}	
+				m\Delta v_x&=-qB\Delta y\\
+				m\Delta v_y&=qB\Delta y
+			\end{aligned}
+			\right.
+		\end{equation*}
+		这个结论同样可以通过 Lorentz 力冲量来推导，这对方程也是每一个经历了高考物理的同学非常熟悉的.
+	\end{frame}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	
+	%参考文献(非调用.bib文件，而是手动输入)
+	%举例：Jones, Edward. 2020. "Studies in Grass Biology." Journal of Plant Research 15 (2): 123-145. https://doi.org/10.1086/123456.
+	
+	% Lastname, Firstname. Year. "Article Title." Journal Name volume (issue): page range. DOI or URL.
+	
+	\appendix
+	\begin{frame}{参考文献}
+		\begin{thebibliography}{99} % 最大可能的参考文献编号宽度，可以根据实际情况调整
+			\bibitem[Author et al., 2021]{ref1}
+			[1] 郑永令. 2023.《电磁学》. 高等教育出版社. 
+			
+			\bibitem[Another Author, 2022]{ref2}
+			 [2] 一点也不慌的YZL（知乎用户名）. 2021. 理论力学笔记2：诺特定理、对称性与守恒量. https://zhuanlan.zhihu.com/p/103841536
+			 
+			 \bibitem[Another Author, 2023]{ref3}
+			 [3] 赵凯华. 2022. 《电磁学》. 高等教育出版社. 磁矢势与磁场中带电粒子的动量： 186-188.
+		\end{thebibliography}
+	\end{frame}
+	
+	\begin{frame}[plain,c]
+		\begin{center}
+			\Huge 感谢聆听 ！
+		\end{center}
+	\end{frame}
+	
+\end{document}
